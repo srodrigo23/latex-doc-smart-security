@@ -1,0 +1,26 @@
+\ProvidesPackage{docstyle}
+
+\newcommand\nombreAutor{Sergio Rodrigo Cárdenas Rivera}
+\newcommand\nombreProyecto{(Nombre del proyecto de grado)}
+\newcommand\nombreTutor{Jorge Orellana Araoz}
+\newcommand\nombreCiudadPais{Cochabamba - Bolivia}
+\newcommand\fecha{Diciembre - 2020}
+\newcommand\nombreUniversidad{Universidad Mayor de San simón}
+\newcommand\nombreFacultad{Facultad de Ciencia y Tecnología}
+\newcommand\nombreCarrera{Ingenieria Informática}
+\newcommand\descripcion{Proyecto de Grado Presentado para optar
+a el grado en Ingeniera Informática}
+
+
+% Configuraciones Necesarias
+\renewcommand{\familydefault}{\sfdefault}
+\setlength\bibitemsep{3\itemsep} 
+\setlength{\parindent}{0cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{
+\scriptsize\textbf{\nombreProyecto}\\
+\nombreAutor
+}
+\cfoot{\thepage}

@@ -1,0 +1,61 @@
+% Autor: Sergio rodrigo Cardenas Rivera
+
+% Clase de Documento, formato lib
+\documentclass[12pt,letterpaper]{book}
+% Paquete para el soporte de idiomas
+\usepackage[spanish,es-tabla]{babel}
+% Paquete para la manipulación de imágenes.
+\usepackage{graphicx}
+% Paquete para la referencias links y marcadores en el menu del pdf
+\usepackage{hyperref}
+% Márgenes de la hoja
+\usepackage[top=2cm,bottom=2cm,left=3cm,right=2cm]{geometry}
+% Paquete para encabezados o pies de página.
+\usepackage{fancyhdr}   
+% Paquete para la prevensión de aparición 
+% de pies de página, encabezados y numeración.
+\usepackage{emptypage}  
+% Paquete para la adecuación de cuadros y tablas.
+\usepackage{float}      
+% Paquete que permite la construcción de tablas
+% que abarquen mas de una página.
+\usepackage{longtable}       
+% Paquete que ofrece el soporte de citación 
+% estilo APA.
+\usepackage{apacite} 
+% Paquetes para el uso de fórmulas matemáticas.
+\usepackage{amsmath, amsthm, amssymb}
+% Paquete para la inclusión de Anexos
+\usepackage{appendix}
+% Paquete para la graficación
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+% Paquete para la incrustación de datos personales
+\usepackage{configs/docstyle}
+
+\begin{document}
+    \include{configs/conf}
+    \include{caratula}
+    
+    \frontmatter
+    \include{capitulos/cap_0_dedicatoria}
+    \include{capitulos/cap_0_agradecimientos}
+    \tableofcontents
+    \listoffigures
+    \listoftables
+    
+    \mainmatter     
+    \include{capitulos/cap_1_ejemplos_de_uso}
+    
+    \backmatter
+    \bibliographystyle{apacite}
+    \bibliography{bibliografia}
+
+    \appendix
+    \clearpage
+    \addappheadtotoc
+    \appendixpage
+    \include{anexos/anexo_A}
+    \include{anexos/anexo_B}
+    
+\end{document}
