@@ -1,14 +1,21 @@
 \chapter{Marco Teórico}
+
 % En este capítulo, se presenta las principales tecnologías de detección en primer  plano del objeto en movimiento, descripción y extracción de características,  clasificación y reconocimiento del movimiento humano. Basado en el flujo óptico para la detección de objetos en movimiento. Como también la imagen de flujo de energía óptico para la detección de características de movimiento y se adoptaron redes neuronales convolucionales de región para elegir  características y reducir la dimensión. Luego, gracias al clasificador de máquina de vectores de soporte que puede ser entrenado y utilizado para clasificar y reconocer acciones; es posible distinguir efectivamente las acciones humanas y mejorar significativamente la precision del reconocimineto de las acciones humanas.
 
-\section{Introducción}
-Un sistema de video vigilancia es una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen la alerta y poseen un gran efecto disuasorio (REFERENCIA). Un sistema de video vigilancia es un sistema digital que captura imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación. Estos sistemas pueden ser usados en cualquier ambiente. Seguridad y vigilancia son requeridos en todo el mundo. Gobiernos, empresas, instituciones financieras, organizaciones de salud han requerido cierto grado de medidas de seguridad y como resultado hubo dramático incremento en la demanda de aplicaciones de seguridad como por ejemplo video vigilancia, monitoreo y grabación de: fronteras, puertos, infraestructura de transporte, hogares, corporaciones, instituciones educativas, lugares públicos, edificios, etc.\\
+\section{Sistema de video vigilancia}
+La videovigilancia consiste en la instalción de cámaras de vídeo que sirven como grabadoras las cuales guardan su contenido en un almacén digital el cual puede ser visto en un monitor central. Un sistema de video vigilancia es una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen la alerta y poseen un gran efecto disuasorio \cite{wikipedia:vvigilancia}.\\
 
-La creciente demanda en el mercado de la vigilancia ha reducido costos en este tipo de sistemas, lo cual permitió que desarrolladores y fabricantes diseñen nuevas implementaciones de sistemas de video vigilancia agregándoles diversas capacidades dependiendo de la tecnología utilizada en su desarrollo.\\
+Estos sistemas capturan imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza la composición de un sistema de video vigilancia actual. Este sistema compone de un conjunto de cámaras que estan conectados directamente a un (NVR - Network Video Recorder) grabador de video en red, el cual permite la visualización de lo que las cámaras estan captando en un monitor local y por medio de una conección a un punto de acceso a internet, permite la visualización de esta transmisión en dispositivos externos a la red local\\.
 
-El mercado global de la video vigilacia fue avaluado en 42,94 billones de dólares en 2019 y esta proyectado alcanzar a los 144,85 billones de dólares hasta el 2027, registrando una taza de crecimiento anual compuesta del 14,6\% desde el 2020 al 2027.\\
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{img/capitulo_2/sis_videovigilancia.png}
+    \end{center}
+    \caption{Sistema actual de videovigilancia\\Fuente: Web}
+    \label{fig:sistema_video_vigilancia}
+\end{figure}
 
-
+A continuación se detalla los componentes que forman parte del prototipo del sistema de video vigilancia inteligente propuesto.
 
 % Sistemas de videovigilancia inteligente La técnica clave del reconocimiento de la accion humana basada en la vision  por compoutadora consiste en describir y comprender los comportamientos humanos por medio de la vision por computadora.\\
 
@@ -16,15 +23,13 @@ El mercado global de la video vigilacia fue avaluado en 42,94 billones de dólar
 
 % La detección de un objeto móvil consiste en separar las áreas de cambio en el video es decir en las imádgenes de fondo que comprenden el video, dicho de otra manera, separar correctamente las áreas y contornos del objetico movil. Es critico para el siguiente procesamiento la segementación efectiva \\
 
-\section{Sistemas de videovigilancia}
+
 
 \section{Visión por Computadora}
 
 \section{Redes Neuronales}
 
 \section{Protocolos de red IP/HTTP}
-
-\section{Metodología de desarrollo}
 
 \subsection{TCP/IP}
 
@@ -37,3 +42,5 @@ El mercado global de la video vigilacia fue avaluado en 42,94 billones de dólar
 \subsubsection{HLS}
 
 \subsubsection{DASH}
+
+\section{Metodología de desarrollo}
