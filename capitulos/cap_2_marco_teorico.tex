@@ -84,19 +84,56 @@ Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del
 El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
 
 \subsection{Redes Neuronales}
-Son un modelo computacional basado en un grán número de unidades (neuronas simples), de forma similar de lo que se ha observado en los axones de las neuronas de un cerebro biológico.
+Las redes neuronales artificiales son un modelo inspirado en el funcionamiento del cerebro humano. Está formado por un conjunto de nodos conocidos como neuronas artificiales que están conectadas y transmiten señales entre sí. Estas señales se transmiten desde la entrada hasta generar una salida. En la figura \ref{fig:classical_ml} se aprecia la estructura propia de una neurona artificial.\\
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=7cm]{img/capitulo_2/neurona.png}
     \end{center}
-    \caption{Neurona artificial
+    \caption{Ilustración de una Neurona artificial
         \\Fuente: Web}
     \label{fig:classical_ml}
 \end{figure}
 
+El objetivo principal de un modelo neuronal, es aprender modificándose automáticamente a si mismo, llegando a realizar tareas complejas que no podrían ser realizadas mediante la clásica programación basada en reglas. De esta forma se pueden automatizar funciones que al principio solo podrían ser realizadas por personas. Con su semejanza al del cerebro humano, las redes reciben una serie de valores de entrada y cada una de estas entradas llega a un nodo llamado neurona.\\
+
+Las neuronas de la red están a su vez agrupadas en capas que forman la red neuronal. Cada una de las neuronas de la red posee a su vez un peso, un valor numérico, con el que modifica la entrada recibida. Los nuevos valores obtenidos salen de las neuronas y continúan su camino por la red. Este funcionamiento puede observarse de forma esquemática en la figura \ref{fig:estructura_red_neuronal}.\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=7cm]{img/capitulo_2/Redes_neuronales_esquema.png}
+    \end{center}
+    \caption{Ilustración de una Red Neuronal
+        \\Fuente: Web}
+    \label{fig:estructura_red_neuronal}
+\end{figure}
+
+Una vez que se alcanza el final de la red se obtiene una salida que será la predicción calculada por la red. Cuantas más capas posea la red y más compleja sea, también serán mas complejas las funciones que pueda realizar. Para conseguir que una red neuronal realice las funciones deseadas, es necesario \textbf{entrenarla}.\\
+
+El entrenamiento de una red neuronal se realiza modificando los pesos de sus neuronas para que consiga extraer los resultados deseados. Para ello lo que se hace es introducir datos de entrenamiento en la red, en función del resultado que se obtenga, se modifican los pesos de las neuronas según el error obtenido y en función de cuanto haya contribuido cada neurona a dicho resultado. Este método es conocido como Backpropagation o propagación hacia atrás. Con este método se consigue que la red aprenda, consiguiendo un modelo capaz de obtener resultados muy acertados incluso con datos muy diferentes a los que han sido utilizados durante su entrenamiento \cite{atriainnovation:ia}.\\
+
+Estas redes neuronales son utilizadas para tareas de predicción y clasificación. Esta técnica se ha convertido en una pieza clave para el desarrollo de la Inteligencia Artificial, como se describió previamente es uno de los principales campos de investigación y el que más esta evolucionando con el tiempo, ofreciendo cada vez soluciones más complejas y eficientes.
+
+\subsubsection{Redes neuronales convolucionales}
+Dentro del conjunto de tipos de redes neuronales tenemos las convolucionales, que específicamente serviran en el campo de la visión artificial. Las redes neuronales convolucionales son un algoritmo de Aprendizaje Profundo (Deep Learning) que está diseñado para trabajar con imágenes, tomando estas como entrada, asignándoles importancias (pesos) a ciertos elementos en la imagen para así poder diferenciar unos de otros.\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_2/convolucional.png}
+    \end{center}
+    \caption{Ilustración de una Red Neuronal Convolucional
+        \\Fuente: Web}
+    \label{fig:red_neuronal_convolucional}
+\end{figure}
+
+Este es uno de los principales algoritmos que ha contribuido en el desarrollo y perfeccionamiento del campo de visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:estructura_red_neuronal}, donde las primeras puedan detectar líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
+
+Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general. La red toma como entrada los pixeles de una imagen.
+
 \section{Visión por Computadora}
 La visión por computadora es una técnica de recolección de información que surge por la inspiración en el sistema visual humano, el cual es la principal fuente de información para el cerebro. Su meta es de modelar y automatizar el proceso de reconocimiento visual de objetos en la vida real.\\
+
+
 
 De los cinco sentidos que poseen las personas, la vista es la más importante. Por lo tanto la visión, es una tarea de procesamiento de información; pero tiene un grado de complejidad elevado, ya que para saber que es lo qué hay en el mundo nuestros cerebros deben ser capaces de representar esta información en toda su abundancia de color, forma, movimiento, detalle y belleza. \cite{iaarbook:artificialvision}\\
 
