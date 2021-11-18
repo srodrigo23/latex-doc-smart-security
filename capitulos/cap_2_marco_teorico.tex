@@ -35,7 +35,7 @@ Para el desarrollo del prototipo propuesto se implementan todos los componentes 
     \item Aplicación Movil (Cliente)
 \end{itemize}
 
-A continuación se detalla los componentes que forman parte del prototipo del sistema de video vigilancia inteligente propuesto.
+A continuación se detalla los componentes que forman parte del prototipo del sistema de video vigilancia inteligente propuesto.\
 
 \section{Inteligencia Artificial}
 La Inteligencia Artificial (I.A.), es una tecnología innovadora que en los últimos tiempos no esta reservado solo para la investigación si no más bien ha ido formando parte en el desarrollo de la sociedad. El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace a este ser, un ser inteligente.\\
@@ -59,7 +59,7 @@ A diferencia de la computación tradicional, donde los algoritmos resuelven prob
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=7cm]{img/capitulo_2/machinelearning.png}
+        \includegraphics[width=10cm]{img/capitulo_2/machinelearning.png}
     \end{center}
     \caption{Diferencias entre programación clásica y M.L.\\Fuente: Deep Learning with Python}
     \label{fig:classical_ml}
@@ -70,13 +70,13 @@ En la figura \ref{fig:classical_ml} se aprecia la diferencia y similitud entre l
 \subsection{Métodos de Machine Learning}
 En el Machine Learning, las tareas son generalmente clasificadas en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado.\\
 
-Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado, que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\\
+Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado, que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
 
 \subsubsection{Aprendizaje Supervisado}
-La computadora esta provista con entradas de ejemplo las cuales están categorizadas con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda 1 ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
+La computadora esta provista con entradas de ejemplo las cuales están categorizadas con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda 1 ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\
 
 \subsubsection{Aprendizaje No Supervisado}
-La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\\
+La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\
 
 \section{Deep Learning (Aprendizaje profundo)}
 Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos.\\
@@ -128,12 +128,31 @@ Dentro del conjunto de tipos de redes neuronales tenemos las convolucionales, qu
 
 Este es uno de los principales algoritmos que ha contribuido en el desarrollo y perfeccionamiento del campo de visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:estructura_red_neuronal}, donde las primeras puedan detectar líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
 
-Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general. La red toma como entrada los pixeles de una imagen.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=3cm]{img/capitulo_2/kernel.png}
+    \end{center}
+    \caption{Movimiento del Kernel
+        \\Fuente: Web}
+    \label{fig:kernel}
+\end{figure}
+
+El proceso que se distingue de estas redes son las convoluciones. El cual consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
+
+El kernel en las redes convolucionales se considera como un filtro que se aplica para extraer ciertas características importantes o patrones de esta y es usado para detectar bordes, enfoque, desenfoques, entre otras características de la imagen y es logrado para la convolución entre la imagen y el kernel.
+
+Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que este filtro o kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen. La convolución permite multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo .\\
+
+Es una operación que se usa en las redes convolucionales. El padding se aplica agregando píxeles de valor cero alrededor de la imagen original.
+Tiene dos usos:
+El primero es para que al realizar la convolución la imagen resultante sea de igual tamaño que la imagen original.
+El segundo es cuando se tiene información relevante en las esquinas de la imagen por lo que al realizar convolución el filtro pasa más por el centro de la imagen que en las esquinas, por lo que se aplica el padding para tener la información más relevante cerca del centro.\\
+
+Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general. La red toma como entrada los pixeles de una imagen. 
+
 
 \section{Visión por Computadora}
 La visión por computadora es una técnica de recolección de información que surge por la inspiración en el sistema visual humano, el cual es la principal fuente de información para el cerebro. Su meta es de modelar y automatizar el proceso de reconocimiento visual de objetos en la vida real.\\
-
-
 
 De los cinco sentidos que poseen las personas, la vista es la más importante. Por lo tanto la visión, es una tarea de procesamiento de información; pero tiene un grado de complejidad elevado, ya que para saber que es lo qué hay en el mundo nuestros cerebros deben ser capaces de representar esta información en toda su abundancia de color, forma, movimiento, detalle y belleza. \cite{iaarbook:artificialvision}\\
 

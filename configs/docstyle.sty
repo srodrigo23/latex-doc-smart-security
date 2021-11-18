@@ -10,15 +10,17 @@
 \newcommand\nombreCarrera{Ingenieria Informática}
 \newcommand\descripcion{Proyecto de Grado Presentado para optar el grado en Ingeniera Informática}
 
-
 \renewcommand{\familydefault}{\sfdefault}
 \setlength\bibitemsep{3\itemsep} 
 \setlength{\parindent}{0cm}
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{
-    \scriptsize\textbf{\nombreProyecto}\\
-    \nombreAutor
-}
+% to delete header line
+\renewcommand{\headrulewidth}{0pt}
+% to delete header title and author book
+% \lhead{
+%     \scriptsize\textbf{\nombreProyecto}\\
+%     \nombreAutor
+% }
 \cfoot{\thepage}
