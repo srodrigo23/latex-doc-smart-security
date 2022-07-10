@@ -3,7 +3,7 @@
 \section{Identificación de Requerimientos}
 
 \begin{table}[H]
-    \caption{Título de la tabla}
+    \caption{Detalle de las pruebas realizadas}
     \label{tabla:ejemplo}
     \begin{center}
         \begin{tabular}{c|c|c|c|}
@@ -17,18 +17,84 @@
     Nota. Extraída de Apellido, N. (2000) \textit{Nombre del libro}.
     Editorial o universidad que lo publicó.
 \end{table}
+% \usepackage{cellspace}
+% \setlength\cellspacetoplimit{4pt}
+% \setlength\cellspacebottomlimit{4pt}
+% \newcommand\cincludegraphics[2][]{\raisebox{-0.3\height}{\includegraphics[#1]{#2}}}
+\begin{table}[H]
+    \caption{Detalle de las pruebas realizadas}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|>{\centering}m{0.3\textwidth}|m{0.3\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
+            \hline
+            \begin{minipage}{.3\textwidth}
+                \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
+            \end{minipage}& lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+            & \begin{itemize} 
+                \item Remote delivery 
+                \item Immersive experiences
+                \item text proved
+            \end{itemize} \\ 
+            \hline
+            \begin{minipage}{.3\textwidth}
+                \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
+            \end{minipage} & cell8 & \begin{itemize} 
+                \item Remote delivery 
+                \item Immersive experiences
+                \item text proved
+            \end{itemize} \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \caption{Detalle de las pruebas realizadas}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.6\textwidth}|m{0.3\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Columna 1} & \textbf{Columna 3} \\
+            \hline
+            \begin{minipage}{.3\textwidth}
+                \includegraphics[width=\linewidth, height=40mm]{img/capitulo_4/db.png}
+            \end{minipage}
+            & \begin{itemize} 
+                \item Remote delivery 
+                \item Immersive experiences
+                \item text proved
+            \end{itemize} \\ 
+            \hline
+            \begin{minipage}{0.6\textwidth}
+                \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
+            \end{minipage} & \begin{itemize} 
+                \item Remote delivery 
+                \item Immersive experiences
+                \item text proved
+            \end{itemize} \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+
+\begin{table}[H]
+    \caption{Detalle de las pruebas realizadas}
+    \label{tabla:ejemplo}
+    \begin{center}
+        \begin{tabular}{c|c|c|c|}
+            \cline{2-4}
+            & \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\ \hline
+            \multicolumn{1}{|c|}{Fila 1 }& item             & item               & item               \\ \hline
+            \multicolumn{1}{|c|} {Fila 2} & {item}               & item               & item               \\ \hline
+            \multicolumn{1}{|c|} {Fila 3} & {item}              & item               & item               \\  \hline
+        \end{tabular}
+    \end{center}
+    Nota. Extraída de Apellido, N. (2000) \textit{Nombre del libro}.
+    Editorial o universidad que lo publicó.
+\end{table}
 
 \section{Identificación de Subsistemas}
-Referenciando a la figura \ref{fig:ejemplo}.
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=6cm]{img/capitulo_4/cascada.png}
-    \end{center}
-    \caption{Ilustración de un ladrón}
-    Fuente: Adaptada de Apellido, N. (2000) \textit{Nombre del libro}.
-    Editorial o universidad que lo publicó.
-    \label{fig:ejemplo}
-\end{figure}
 
 Referenciando a la figura \ref{fig:ejemplo}.
 \begin{figure}[H]

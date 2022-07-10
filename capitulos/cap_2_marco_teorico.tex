@@ -224,4 +224,49 @@ Python usa tipado dinámico y conteo de referencias para la administración de m
 
 Es usado en Machine Learning y Deep Learning es el lenguaje lider en la inteligencia artificial
 
-\section{Metodología de desarrollo Cascada (Waterfall)}
+\section{Metodología de desarrollo}
+El término de ingenieria de software se toma propone por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada donde en ese entonces los proyectos de software complejos eran problemáticos y costosos de completar donde se supuso que sería beneficioso considerar el desarrollo de software como ingeniería \cite{Ganis}.\\
+
+Los encargados de la codificación del software denominados programadores, en un principio eran ingenieros y como el costo computacional era alto, se utilizó un concepto de hardware denominado "mide dos veces, corta una vez"\cite{Ganis}.\\
+La naturaleza cautelosa de esta costumbre provocó el desarrollo de metodologías que permitieron a los equipos de proyectos creen planes lentos y metódicos para la creación de sistemas de software.\\
+
+\subsection{Modelo Cascada (Waterfall)}
+En el inicio de su definición como un modelo para el desarrollo de software; este concepto fue abordado por el Dr. Winston Royce, por medio de un artículo escrito sobre la gestión y dirección de proyectos grandes y complejos de software \cite{Winston}. En ese artículo basandose en experiencias de desarrollo de software para la planificacion de misiones aereas; el autor describe los fundamentos del desarrollo de software. Gran parte de esos fundamentos aun son aplicables en la actualidad. En el planteamiento de estos fundamentos, Royce presenta un conjunto de fases los cuales forman parte de una secuencia de desarrollo de software ilustrada en la figura \ref{fig:cascada}.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_2/cascada2.png}
+    \end{center}
+    \caption{Modelo Cascada}
+    \centering{Fuente: Elaboracion Propia}
+    \label{fig:cascada}
+\end{figure}
+
+Una vez definida esta secuencia, se creó el concepto de ``Cascada", como un modelo de desarrollo con actividades bien definidas y organizadas con un objetivo independiente dando origen al diseño del primer S.D.M.\footnote{Metodología de Desarrollo de Software} \cite{Bell&Thayer}. En la figura \ref{fig:cascada} la fase de análisis y la de codificación entregan la mayor parte del producto esperado, mientras que las otras fases estan puestas para ser organizadas y planificadas de manera independiente para un mejor manejo de los recursos del proyecto.\\
+
+De acuerdo al modelo Cascada, se enfatiza en la dependecia secuencial del producto entregado en el paso previo. Es decir existe una dependencia que mantiene en espera el diseño del sistema mientras que el análisis del modelo no sea aprobado o concluido y consecuentemente la fase de codificación se verá en espera también hasta que el diseño se concluya.\\
+
+Cada una de las fases guarda una relacion iterativa con el siguiente paso definido en la metodología que asegura la completitud del producto entregado en la fase antetior. Esta relación esta ilustrada en la figura \ref{fig:cascada_iterativa}. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida dentro de un proyecto de desarrollo de software.\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_2/cascada_iterativa.png}
+    \end{center}
+    \caption{Modelo Cascada: Relación iterativa entre las fases sucesivas.}
+    \centering{Fuente: Elaboracion Propia}
+    \label{fig:cascada_iterativa}
+\end{figure}
+
+Existen diferentes versiones de las fases del modelo en cascada y según la versión o enfoque, la cantidad de fases puede variar. Sin embargo las principales son las siguientes:
+
+\begin{enumerate}
+    \item Requerimientos del sistema
+    \item Requerimientos de Software
+    \item Análisis
+    \item Diseño del programa
+    \item Codificación
+    \item Pruebas
+    \item Mantenimiento 
+\end{enumerate}
+
+A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
