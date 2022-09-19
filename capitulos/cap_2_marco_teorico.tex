@@ -3,9 +3,9 @@
 % En este capítulo, se presenta las principales tecnologías de detección en primer  plano del objeto en movimiento, descripción y extracción de características,  clasificación y reconocimiento del movimiento humano. Basado en el flujo óptico para la detección de objetos en movimiento. Como también la imagen de flujo de energía óptico para la detección de características de movimiento y se adoptaron redes neuronales convolucionales de región para elegir  características y reducir la dimensión. Luego, gracias al clasificador de máquina de vectores de soporte que puede ser entrenado y utilizado para clasificar y reconocer acciones; es posible distinguir efectivamente las acciones humanas y mejorar significativamente la precision del reconocimineto de las acciones humanas.
 
 \section{Sistema de video vigilancia}
-La videovigilancia consiste en la instalación de cámaras de vídeo que fucionan como filmadoras, las cuales guardan el contenido recolectado en un almacén digital el cual puede ser visto en un monitor central. Un sistema de video vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciónes locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen una alerta activa y poseen un gran efecto disuasorio \cite{wikipedia:vvigilancia}.\\
+La videovigilancia consiste en el despliegue de cámaras de vídeo que funcionan como video-filmadoras, las cuales guardan el contenido recolectado en un almacén digital el cual puede ser visto en un monitor central. Un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen una alerta activa y poseen un gran efecto disuasorio \cite{wikipedia:vvigilancia}.\\
 
-El sistema captura imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video vigilancia. Este sistema compone de un conjunto de cámaras que estan conectados directamente a un (NVR - Network Video Recorder) grabador de video en red, el cual permite la visualización de lo que las cámaras estan captando en un monitor local y por medio de una conección a un punto de acceso a internet, permite la visualización de esta transmisión en dispositivos externos a la red local\\.
+El sistema captura imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video vigilancia. Este sistema compone de un conjunto de cámaras que estan conectados directamente a un grabador de video en red o N.V.R. o por sus siglas en inglés(Network Video Recorder), el cual permite la visualización de lo que las cámaras captan en un monitor local y por medio de una conección a un punto de acceso a internet, permite la visualización de esta transmisión en dispositivos externos a la red local.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -21,21 +21,21 @@ La creciente demanda en el mercado de la vigilancia ha reducido costos en este t
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_2/surveillance-market.jpg}
     \end{center}
-    \caption{Proyección del mercado de la videovigilancia\\Fuente: MarketsAndMarkets(web)}
+    \caption{Proyección del mercado de la video-vigilancia\\Fuente: MarketsAndMarkets(web)}
     \label{fig:surveillance-market}
 \end{figure}
 
-El aspecto más importante a resaltar en el mercado de la videovigilancia es la potenciación de funcionalidades de estos sistemas gracias a la Inteligencia Artificial (I.A.) y la escalabilidad por servicios basados en la nube. Las ramas de inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permitiran potenciar las capacidades de este tipo de sistemas.
+El aspecto más importante a resaltar en el mercado de la video-vigilancia es la potenciación de funcionalidades de estos sistemas gracias a la Inteligencia Artificial (I.A.) y la escalabilidad por servicios basados en la nube. Las ramas de inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permitiran potenciar las capacidades de este tipo de sistemas.
 
-Para el desarrollo del prototipo propuesto se implementan todos los componentes involucrados en el sistema de videovigilancia como ser:
+Para el desarrollo del prototipo propuesto se implementan todos los componentes involucrados en el sistema de video-vigilancia como ser:
 \begin{itemize}
-    \item Cámaras (Nodos)
-    \item Servidor TCP
-    \item Servidor Web
-    \item Aplicación Movil (Cliente)
+    \item Cámaras (denominados "nodos")
+    \item Servidor TCP (Protocolo de transmisión para sockets de conección)
+    \item Servidor HTTP (Protocolo web para la transmisión en vivo de video)
+    \item Módulo SMTP (Módulo de comunicación para correo electrónico para notificaciones)
 \end{itemize}
 
-A continuación se detalla los componentes que forman parte del prototipo del sistema de video vigilancia inteligente propuesto.\
+Para la implementación del prototipo es necesario describir los conceptos necesarios para la captura de fotogramas de video, transmisión de paquetes por un enlace tcp/ip, reconstrucción de mensajes, consolidación y procesamiento de imagenes, y transmisión de video en vivo. A continuación se detallan los conceptos teóricos y prácticos descritos anteriormente que son relevantes en el desarrollo del prototipo de sistema de video-vigilancia propuesto.\\
 
 \section{Inteligencia Artificial}
 La Inteligencia Artificial (I.A.), es una tecnología innovadora que en los últimos tiempos no esta reservado solo para la investigación si no más bien ha ido formando parte en el desarrollo de la sociedad. El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace a este ser, un ser inteligente.\\
