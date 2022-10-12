@@ -15,7 +15,7 @@ El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, alm
     \label{fig:sistema_video_vigilancia}
 \end{figure}
 
-Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del planeta especialmente en Asia y la región del pacífico, debido a la apertura de pequeños negociosl, como la construcción de áreas residenciales y ciudades inteligentes. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales emplean nuevas características permitidas por la tecnología actual.\\
+Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del planeta especialmente en Asia y la región del Pacífico, debido a la apertura de pequeños negocios, como la construcción de áreas residenciales y ciudades ``inteligentes''. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales aplican nuevas características logradas por la tecnología actual.\\
 
 En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia tuvo un valor de 42.9 billones de dólares en el 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026; cuyo incremento registra una taza de crecimiento anual compuesto del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
 
@@ -27,17 +27,17 @@ En la figura \ref{fig:surveillance-market} se muestra como el mercado global de 
     \label{fig:surveillance-market}
 \end{figure}
 
-Lo más relevante en este crecimiento es la mejora en las características de este tipo de sistemas; gracias a la implementación de técnicas de visión por computadora e inteligencia artificial (I.A.), como a la escalabilidad debido al uso servicios basados en la nube. Las ramas de la inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permiten potenciar sus capacidades.\\
+Lo más relevante del crecimiento de oportunidades, es la implementación de nuevas características en este tipo de sistemas; gracias a la implementación de técnicas de visión por computadora e inteligencia artificial (I.A.), como a la escalabilidad lograda por el uso de servicios basados en la nube. Las ramas de la inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permiten potenciar estas características.\\
 
 Para el desarrollo del prototipo propuesto se implementan los siguientes componentes involucrados en el sistema:
 \begin{itemize}
     \item Cámaras (denominados "nodos")
     \item Servidor TCP (Servicio que emplea el protocolo Tcp/Ip)
-    \item Servidor HTTP (Serviccio que emplea el protocolo Web)
-    \item Módulo SMTP (Módulo de despacho de correo electrónico)
+    \item Servidor HTTP (Servicio que emplea el protocolo Web)
+    \item Módulo SMTP (Módulo de envio de correo electrónico)
 \end{itemize}
 
-Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por el enlace tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, transmisión de video en vivo. A continuación se detallan los conceptos teóricos y prácticos descritos anteriormente, siendo estos fundamentales en el desarrollo del prototipo de sistema de video-vigilancia propuesto.\\
+Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por el enlace tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes y transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
 
 \section{Protocolos de red}
 Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red. Similar a la manera de hablar el mismo lenguaje entre dos personas simplifica la comunicación, los protocoles de red permiten que diferentes dispositivos puedan interactuar en base a las reglas de software y hardware definidas por un protocolo. Ni las redes de área local (LAN) ni las redes de área amplia (WAN) podrian ser tan importantes como lo son ahora gracias a los protolos de red. <Enlace de pagina>\\
@@ -58,7 +58,13 @@ Estos protocolos son usados tanto en la comunicación analógica y la digital, y
 \subsection{TCP/IP}
 El Protocolo de Control de Transmisión es uno de los protocolos fundamentales en Internet. Fue creado entre los años 1973-1974 por Vint Cerf y Robert Kahn. Este es uno de los principales protocolos de la ``capa de transporte'' del modelo TCP/IP. En el nivel de aplicación, posibilita la administración de datos que vienen del nivel más bajo del modelo, o van hacia él, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP, este los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipación que el protocolo es TCP). \\
 
-<POSIBLE ILUSTRACION>
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{img/capitulo_2/tcp_ip_osi.jpg}
+    \end{center}
+    \caption{Modelo TCP/IP y el modelo OSI\\Fuente: Web}
+    \label{fig:sistema_video_vigilancia}
+\end{figure}
 
 Como es un protocolo orientado a la conexión, este permite que dos máquinas que están comunicadas controlen el estado de la transmisión <es decir?????>. Las principales características del protocolo TCP son las siguientes: 
 
@@ -73,7 +79,14 @@ El protocolo de transferencia de hipertexto (HTTP) es el protocolo más utilizad
 
 HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema ``petición - respuesta'' entre un cliente y un servidor. 
 
-<POSIBLE IMAGEN??? O ILUSTRacion??>
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{img/capitulo_2/http1.jpg}
+    \end{center}
+    \caption{Protocolo HTTP\\Fuente: Web}
+    \label{fig:sistema_video_vigilancia}
+\end{figure}
+
 
 El protocolo tiene las siguientes partes:
 \begin{itemize}
@@ -252,14 +265,27 @@ Existen otras librerias que no son tan populares y representan un pago adicional
 \section{Transmision de video en vivo}
 <figuras> y conceptos
 
-\subsection{Formatos Multimedia}
+\subsection{Protocolos}
 <figuras> y conceptos
 
 \subsubsection{HLS}
-<figuras> y conceptos
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_2/hls.jpg}
+    \end{center}
+    \caption{HLS\\Fuente: web}
+    \label{fig:classical_ml}
+\end{figure}
 
 \subsubsection{DASH}
-<figuras> y conceptos
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_2/dash.png}
+    \end{center}
+    \caption{Dash\\Fuente: web}
+    \label{fig:classical_ml}
+\end{figure}
+
 
 \section{Lenguaje de Programacion}
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.\\
