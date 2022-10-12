@@ -3,9 +3,9 @@
 % En este capítulo, se presenta las principales tecnologías de detección en primer  plano del objeto en movimiento, descripción y extracción de características,  clasificación y reconocimiento del movimiento humano. Basado en el flujo óptico para la detección de objetos en movimiento. Como también la imagen de flujo de energía óptico para la detección de características de movimiento y se adoptaron redes neuronales convolucionales de región para elegir  características y reducir la dimensión. Luego, gracias al clasificador de máquina de vectores de soporte que puede ser entrenado y utilizado para clasificar y reconocer acciones; es posible distinguir efectivamente las acciones humanas y mejorar significativamente la precision del reconocimineto de las acciones humanas.
 
 \section{Sistema de video vigilancia}
-El término ``video-vigilancia'' se basa en el despliegue de cámaras de vídeo que funcionan como videofilmadoras, las cuales guardan el contenido recolectado en un almacén digital el cual puede ser visto en un monitor central. Un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen una alerta activa y poseen un gran efecto disuasorio \cite{wikipedia:vvigilancia}.\\
+El término ``video-vigilancia'' es usado para hacer referencia al despliegue de cámaras de vídeo que cumplen el rol de videofilmadoras, las cuales guardan el contenido recolectado en un almacén digital, el cual puede ser visualizado en un monitor central. Entonces un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen una alerta activa y poseen un gran efecto disuasorio \cite{wikipedia:vvigilancia}.\\
 
-El sistema captura imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video vigilancia. Este sistema compone de un conjunto de cámaras que estan conectados directamente a un grabador de video en red o N.V.R. o por sus siglas en inglés(Network Video Recorder), el cual permite la visualización de lo que las cámaras captan en un monitor local y por medio de una conección a un punto de acceso a internet, permite la visualización de esta transmisión en dispositivos externos a la red local.\\
+El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video vigilancia. Este sistema compone de un conjunto de cámaras que estan conectadas directamente a un grabador de video en red o N.V.R. (Network Video Recorder), el cual permite la visualización de las imágenes captadas por las cámaras en un monitor local y por medio de una conección a internet, permite la visualización en dispositivos externos a la red local.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -15,7 +15,9 @@ El sistema captura imágenes y vídeos, que pueden ser comprimidos, almacenados,
     \label{fig:sistema_video_vigilancia}
 \end{figure}
 
-La creciente demanda en el mercado de la vigilancia ha reducido costos en este tipo de sistemas, lo cual permitió que desarrolladores y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia agregando nuevas características que dependen de la tecnología utilizada en su desarrollo. En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia fue avaluado en 42.9 billones de dólares en 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026, registrando una taza de crecimiento anual compuesta del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
+Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del planeta especialmente en Asia y la región del pacífico, debido a la apertura de pequeños negociosl, como la construcción de áreas residenciales y ciudades inteligentes. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales emplean nuevas características permitidas por la tecnología actual.\\
+
+En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia tuvo un valor de 42.9 billones de dólares en el 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026; cuyo incremento registra una taza de crecimiento anual compuesto del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
 
 \begin{figure}[H]
     \begin{center}
@@ -25,44 +27,69 @@ La creciente demanda en el mercado de la vigilancia ha reducido costos en este t
     \label{fig:surveillance-market}
 \end{figure}
 
-El aspecto más importante que resalta en el ámbito de la video-vigilancia es la mejora de las características de estos sistemas gracias a la implementación de técnicas de visión por computadora e inteligencia artificial (IA) y su escalabilidad gracias a servicios basados en la nube. Las ramas de inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permiten potenciar las capacidades de este tipo de sistemas.
+Lo más relevante en este crecimiento es la mejora en las características de este tipo de sistemas; gracias a la implementación de técnicas de visión por computadora e inteligencia artificial (I.A.), como a la escalabilidad debido al uso servicios basados en la nube. Las ramas de la inteligencia artificial como el Machine Learning(Aprendizaje Automático) y el Deep Learning(Aprendizaje profundo) permiten potenciar sus capacidades.\\
 
-Para el desarrollo del prototipo propuesto se implementan todos los componentes involucrados en el sistema de video-vigilancia como ser:
+Para el desarrollo del prototipo propuesto se implementan los siguientes componentes involucrados en el sistema:
 \begin{itemize}
     \item Cámaras (denominados "nodos")
-    \item Servidor TCP (Protocolo de transmisión para sockets de conección)
-    \item Servidor HTTP (Protocolo web para la transmisión en vivo de video)
-    \item Módulo SMTP (Módulo de comunicación para correo electrónico para notificaciones)
+    \item Servidor TCP (Servicio que emplea el protocolo Tcp/Ip)
+    \item Servidor HTTP (Serviccio que emplea el protocolo Web)
+    \item Módulo SMTP (Módulo de despacho de correo electrónico)
 \end{itemize}
 
-Para la implementación del prototipo es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por un enlace tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, transmisión de video en vivo. A continuación se detallan los conceptos teóricos y prácticos descritos anteriormente, siendo estos fundamentales en el desarrollo del prototipo de sistema de video-vigilancia propuesto.\\
+Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por el enlace tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, transmisión de video en vivo. A continuación se detallan los conceptos teóricos y prácticos descritos anteriormente, siendo estos fundamentales en el desarrollo del prototipo de sistema de video-vigilancia propuesto.\\
 
 \section{Protocolos de red}
-Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red.\\
+Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red. Similar a la manera de hablar el mismo lenguaje entre dos personas simplifica la comunicación, los protocoles de red permiten que diferentes dispositivos puedan interactuar en base a las reglas de software y hardware definidas por un protocolo. Ni las redes de área local (LAN) ni las redes de área amplia (WAN) podrian ser tan importantes como lo son ahora gracias a los protolos de red. <Enlace de pagina>\\
 
-Similar a la manera de hablar el mismo lenguaje entre dos personas simplifica la comunicación, los protocoles de red permiten que diferentes dispositivos puedan interactuar en base a las reglas de software y hardware definidas por un protocolo. Ni las redes de área local (LAN) ni las redes de área amplia (WAN) podrian ser tan importantes como lo son ahora gracias a los protolos de red.\\
-
-Estos protocolos son usados tanto en comunicación analógica y digital y pueden ser usados en el procesos importantes, que van desde la transferencia de archivos hasta el acceso a internet. Los tipos mas comunes de protocolos de comunicación incluyen:
+Estos protocolos son usados tanto en la comunicación analógica y la digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet. Los tipos mas comunes de protocolos de comunicación incluyen:
 
 \begin{itemize}
     \item \textbf{Automatización}: Estos protocolos se utilizan para automatizar diferentes procesos tanto en entornos comerciales como personales, como en edificios inteligentes, tecnología en la nube o vehículos autónomos.
     \item \textbf{Mensajeria Instantánea}: La comunicación basada en texto, en teléfonos inteligentes y computadoras suceden debido a una serie de diferentes protocolos de mensajeria instantánea.
     \item \textbf{Enrutamiento}: Protocolos de enrutamiento permiten la comunicación entre routers y otros dispositivos de red.
-    \item \textbf{Transferencia de archivos}: Envio de archivos por medio de un
-    \item 
-  
+    \item \textbf{Transferencia de archivos}: Envio de archivos por medio de un canal de comunicacion.
+    \item <FALTAN ITEMS!!!!!>
 \end{itemize}
 
+<Resumir el oingreso del TCP/IP Y WEB>
+
+
 \subsection{TCP/IP}
-El Protocolo de Control de Transmisión es uno de los protocolos fundamentales en Internet. Fue creado entre los años 1973-1974 por Vint Cerf y Robert Kahn. Este es uno delos principales protocolos de la capa de transporte del modelo TCP/IP. En el nivel de aplicación, posibilita la administración de datos que vienen del nivel más bajo del modelo, o van hacia él, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP,los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipación que el protocolo es TCP).Como es un protocolo orientado a conexión permite que dos máquinas que están comunicadas controlen el estado de la transmisión. Las principales características del protocolo TCP son las siguientes: Da soporte a muchas de las aplicaciones más populares de Internet, incluidas HTTP, SMTP,SSH y FTP. Permite colocar los datagramas nuevamente en orden cuando vienen del protocolo IP.
+El Protocolo de Control de Transmisión es uno de los protocolos fundamentales en Internet. Fue creado entre los años 1973-1974 por Vint Cerf y Robert Kahn. Este es uno de los principales protocolos de la ``capa de transporte'' del modelo TCP/IP. En el nivel de aplicación, posibilita la administración de datos que vienen del nivel más bajo del modelo, o van hacia él, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP, este los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipación que el protocolo es TCP). \\
+
+<POSIBLE ILUSTRACION>
+
+Como es un protocolo orientado a la conexión, este permite que dos máquinas que están comunicadas controlen el estado de la transmisión <es decir?????>. Las principales características del protocolo TCP son las siguientes: 
+
+\begin{itemize}
+    \item Dar soporte a muchas de las aplicaciones más populares de internet, incluidas HTTP, SMTP,SSH y FTP. 
+    \item Permite colocar los datagramas nuevamente en orden cuando vienen del protocolo IP.
+    \item <HAY MAS???>
+\end{itemize}
 
 \subsection{HTTP}
-(Protocolo de transferencia de hipertexto) es el protocolo más utilizado en Internet. Es el protocolo usado en cada transacción de la Web (WWW).El propósito del protocolo HTTP es permitir la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web (denominado, entre otros, http en equipos UNIX).HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema petición- respuesta entre un cliente y un servidor. Al cliente que efectúa la petición (un navegador o un spider) se lo conoce como"user agent" (agente del usuario). A la información transmitida se la llama recurso y se la identifica mediante una cadena de caracteres denominada dirección URL. Los recursos pueden ser archivos, el resultado de la ejecución de un programa, una consulta a una base de datos, la traducción automática de un documento, etc.
+El protocolo de transferencia de hipertexto (HTTP) es el protocolo más utilizado en Internet. Es el protocolo usado en cada transacción de la Web (www). Este protocolo permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web.\\
+
+HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema ``petición - respuesta'' entre un cliente y un servidor. 
+
+<POSIBLE IMAGEN??? O ILUSTRacion??>
+
+El protocolo tiene las siguientes partes:
+\begin{itemize}
+    \item Al cliente que efectúa la petición (un navegador o un spider) se lo conoce como "user agent" (agente del usuario). 
+    \item A la información transmitida se la llama recurso y se la identifica mediante una cadena de caracteres denominada dirección URL.
+    \item Los recursos pueden ser archivos, el resultado de la ejecución de un programa, una consulta a una base de datos, la traducción automática de un documento, etc.
+\end{itemize}
+
+<en la imagen???>
 
 \section{Inteligencia Artificial}
-La Inteligencia Artificial (I.A.), es una tecnología innovadora que en los últimos tiempos no esta reservado solo para la investigación si no más bien ha ido formando parte en el desarrollo de la sociedad. El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace a este ser, un ser inteligente.\\
+La Inteligencia Artificial (I.A.), como área de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y ha formado parte del desarrollo de la sociedad.\\
 
-Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero en la construcción de estas máquinas artificialmente inteligentes se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, es el campo de estudio de la Inteligencia Artificial.
+El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace a este ser, un ser inteligente.<cita??????>\\
+
+Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero en la construcción de estas máquinas artificialmente inteligentes se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, son estudiados por la inteligencia artificial.
 
 \begin{figure}[H]
     \begin{center}
@@ -73,37 +100,6 @@ Durante décadas se ha investigado para construir máquinas inteligentes con cer
 \end{figure}
 
 A menudo los términos Inteligencia Artificial, Aprendizaje Automático (Machine Learning) y Aprendiazaje Profundo (Deep Learning) son usados de manera indistinta, pero se debe tener en cuenta su significado diferente. Por los años `80 la Inteligencia Artificial era una característica que se alcanzaba al definir un conjunto de reglas que decían que hacer en un determinado momento, de esta manera un sistema `inteligente' solo obedecía reglas de acción programadas \cite{researchgate:ia}. En la figura \ref{fig:ia} se ilustra como la Inteligencia Artificial engloba a sus subcampos de estudio como ser el Machine Learning y el Deep Learning.
-
-\section{Machine Learning (Aprendizaje de Máquina)}
-Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estructura de la información y ajustar estos datos en modelos que puedan ser entendidos y utilizados por las personas. \cite{digitalocean:machinelearning}.\\
-
-A diferencia de la computación tradicional, donde los algoritmos resuelven problemas específicos, los algoritmos de Machine Learning entrenan a las computadoras con datos de entrada y emplean análisis estadístico para generar valores de salida que se clasifican según a un rango específico. Por eso el Machine Learning facilita a las computadoras construir modelos a partir de datos ejemplo para automatizar el proceso de toma de decisiones basados en estos datos.\\
-
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/machinelearning.png}
-    \end{center}
-    \caption{Diferencias entre programación clásica y M.L.\\Fuente: Deep Learning with Python}
-    \label{fig:classical_ml}
-\end{figure}
-
-En la figura \ref{fig:classical_ml} se aprecia la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen; y de esta manera permitiendo desarrollar reglas que generarán respuestas para nuevos datos.
-
-\subsection{Métodos de Machine Learning}
-En el Machine Learning, las tareas son generalmente clasificadas en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado.\\
-
-Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado, que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
-
-\subsubsection{Aprendizaje Supervisado}
-La computadora esta provista con entradas de ejemplo las cuales están categorizadas con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda 1 ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\
-
-\subsubsection{Aprendizaje No Supervisado}
-La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\
-
-\section{Deep Learning (Aprendizaje profundo)}
-Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos.\\
-
-El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
 
 \subsection{Redes Neuronales}
 Las redes neuronales artificiales son un modelo inspirado en el funcionamiento del cerebro humano. Está formado por un conjunto de nodos conocidos como neuronas artificiales que están conectadas y transmiten señales entre sí. Estas señales se transmiten desde la entrada hasta generar una salida. En la figura \ref{fig:classical_ml} se aprecia la estructura propia de una neurona artificial.\\
@@ -172,8 +168,43 @@ El segundo es cuando se tiene información relevante en las esquinas de la image
 
 Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general. La red toma como entrada los pixeles de una imagen. 
 
+\section{Machine Learning (Aprendizaje de Máquina)}
+Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estructura de la información y ajustar estos datos en modelos que puedan ser entendidos y utilizados por las personas. \cite{digitalocean:machinelearning}.\\
 
-\section{Visión por Computadora}
+A diferencia de la computación tradicional, donde los algoritmos resuelven problemas específicos, los algoritmos de Machine Learning entrenan a las computadoras con datos de entrada y emplean análisis estadístico para generar valores de salida que se clasifican según a un rango específico. Por eso el Machine Learning facilita a las computadoras construir modelos a partir de datos ejemplo para automatizar el proceso de toma de decisiones basados en estos datos.\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_2/machinelearning.png}
+    \end{center}
+    \caption{Diferencias entre programación clásica y M.L.\\Fuente: Deep Learning with Python}
+    \label{fig:classical_ml}
+\end{figure}
+
+En la figura \ref{fig:classical_ml} se aprecia la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen; y de esta manera  desarrollar reglas que generan respuestas para nuevos datos.
+
+\subsection{Métodos de Machine Learning}
+En el Machine Learning, las tareas son generalmente clasificadas en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado.\\
+
+Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado, que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
+
+\subsubsection{Aprendizaje Supervisado}
+La computadora esta provista con entradas de ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
+<Posible imagen>
+
+En la ilsutracion.....
+
+\subsubsection{Aprendizaje No Supervisado}
+La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\
+
+<Mas conceptos> <ref bibliografica>
+
+\section{Deep Learning (Aprendizaje profundo)}
+Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos.\\
+
+El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
+
+\section{Técnicas de visión por computadora}
 La visión por computadora es una técnica de recolección de información que surge por la inspiración en el sistema visual humano, el cual es la principal fuente de información para el cerebro. Su meta es de modelar y automatizar el proceso de reconocimiento visual de objetos en la vida real.\\
 
 De los cinco sentidos que poseen las personas, la vista es la más importante. Por lo tanto la visión, es una tarea de procesamiento de información; pero tiene un grado de complejidad elevado, ya que para saber que es lo qué hay en el mundo nuestros cerebros deben ser capaces de representar esta información en toda su abundancia de color, forma, movimiento, detalle y belleza. \cite{iaarbook:artificialvision}\\
@@ -193,12 +224,16 @@ Esta rama de la Inteligencia Artificial aún sigue en investigación y mejoras d
     \item \textbf{Detección de rostros:} Mediante algoritmos de reconocimiento facial se reconocen rostros usados en métodos de biometría.
 \end{itemize}
 
-\subsection{OpenCV}
-Es una biblioteca de uso libre para el desarrollo de aplicaciones usando visión artificial desarrollada por Intel. Esta libreria reune diversas caracteristicas que la hacen popular, por ejemplo: 
+\subsection{Librerias}
+Una de las librerias mas utilizadas para las técnicas de vision por computadora es OpenCV. Es una biblioteca de uso libre para el desarrollo de aplicaciones usando visión artificial desarrollada por Intel. Esta libreria reune diversas caracteristicas que la hacen popular, por ejemplo: 
 \begin{itemize}
     \item Permite su uso para fines comerciales y de investigación.
     \item Se encuentra disponible par varias plataformas como ser GNU/Linux, Mac OS, Windows y Android.
     \item Documentación completa y explicada, con una comunidad de desarrolladores activa.
+    \item El procesamiento de imágenes en su escalado, eliminación de ruido y formateo de imagen y video.
+    \item El uso y modificación de sus 2500 modelos pre-optimizados que son incluidos en la libreria, acorde a las necesidades del usuario.
+    \item El uso del estado del arte de modelos de visión por computadora como también de aprendizaje de máquina (Machine Learning).
+    \item El desarrollo de modelos en varias categorías de investigación como ser: reconocimiento facial, detección y seguimiento de objetos, extracción de modelos 3D, etc.
 \end{itemize}
 
 \begin{figure}[H]
@@ -209,30 +244,32 @@ Es una biblioteca de uso libre para el desarrollo de aplicaciones usando visión
     \label{fig:cv2_logo}
 \end{figure}
 
-Esta biblioteca permite:
-\begin{itemize}
-    \item El procesamiento de imágenes en su escalado, eliminación de ruido y formateo de imagen y video.
-    \item El uso y modificación de sus 2500 modelos pre-optimizados que son incluidos en la libreria, acorde a las necesidades del usuario.
-    \item El uso del estado del arte de modelos de visión por computadora como también de aprendizaje de máquina (Machine Learning).
-    \item El desarrollo de modelos en varias categorías de investigación como ser: reconocimiento facial, detección y seguimiento de objetos, extracción de modelos 3D, etc.
-\end{itemize}
-
 Una de las características mas interesantes de OpenCV es el reconocimiento facial. OpenCV, en su extensa biblioteca de funciones, brinda las capacidades para realizar las tareas de preprocesamiento sin ningún problema, así como los algoritmos de predicción. Además de usar el algoritmo de detección de objetos, es posible usar el seguimiento de objetos, para identificar rostros en una transmisión de video. OpenCV incluso posee funciones para configurar fácilmente el modelo en una transmisión en vivo, como en un video pregrabado \cite{medium:opencv}. 
 
+Existen otras librerias que no son tan populares y representan un pago adicional.
+
 % \section{Redes Neuronales}
-\section{Video Streaming}
+\section{Transmision de video en vivo}
+<figuras> y conceptos
 
 \subsection{Formatos Multimedia}
+<figuras> y conceptos
 
 \subsubsection{HLS}
+<figuras> y conceptos
 
 \subsubsection{DASH}
+<figuras> y conceptos
 
-\section{Python}
+\section{Lenguaje de Programacion}
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.\\
+
+<logo>
 
 Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos).\\
 
+<imagen de popularidad>
+Motivo
 Es usado en Machine Learning y Deep Learning es el lenguaje lider en la inteligencia artificial
 
 \section{Metodología de desarrollo}
@@ -281,3 +318,5 @@ Existen diferentes versiones de las fases del modelo en cascada y según la vers
 \end{enumerate}
 
 A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
+
+<detalle de cada fase>!!!1
