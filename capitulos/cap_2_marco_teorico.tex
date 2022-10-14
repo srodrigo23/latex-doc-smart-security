@@ -39,24 +39,72 @@ Para el desarrollo del prototipo propuesto se implementan los siguientes compone
 
 Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por el enlace tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes y transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
 
-\section{Protocolos de red}
-Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red. Similar a la manera de hablar el mismo lenguaje entre dos personas simplifica la comunicación, los protocoles de red permiten que diferentes dispositivos puedan interactuar en base a las reglas de software y hardware definidas por un protocolo. Ni las redes de área local (LAN) ni las redes de área amplia (WAN) podrian ser tan importantes como lo son ahora gracias a los protolos de red. <Enlace de pagina>\\
+\section{Arquitectura de red}
+Una arquitectura de red es un esquema completo de red de comunicación entre computadoras, que provee un marco de trabajo, diseño principal, construcción y manejo de una red de comunicación. <CITA>.\\
 
-Estos protocolos son usados tanto en la comunicación analógica y la digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet. Los tipos mas comunes de protocolos de comunicación incluyen:
+La arquitectura de red de Interconexión de Sistemas Abiertos (OSI), desarrollada por la Organización Internacional para la Estandarización (ISO), es un estándar abierto para la comunicación en red a través de diferentes equipos y aplicaciones de diferentes procedencias. Aunque no está ampliamente implementado, el modelo de 7 capas OSI es considerado el modelo de arquitectura de red principal para la intercomputación y comunicaciones entre redes. En la figura \ref{fig:osi} se puede apreciar el modelo OSI de 7 capas, detallando a continuación las siguientes capas:
+
+\begin{enumerate}
+    \item Capa física (Physical)
+    \item Capa de enlace (Data Link)
+    \item Capa de red (Network)
+    \item Capa de transporte (Transport)
+    \item Capa de sesión (Session)
+    \item Capa de presentación (Presentation)
+    \item Capa de aplicación (Aplication)
+\end{enumerate}
+
+Básicamente, las capas 7 a 4 se ocupan de las comunicaciones de extremo a extremo entre la fuente de datos y destinos, mientras que las capas 3 a 1 se ocupan de las comunicaciones entre los dispositivos de red. Por otro lado, las siete capas del modelo OSI pueden dividirse en dos grupos: \textbf{capas superiores} (capas 7, 6 y 5) y \textbf{capas inferiores} (capas 4, 3, 2, 1).\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=11cm]{img/capitulo_2/capas.png}
+    \end{center}
+    \caption{Modelo OSI\\Fuente: <Libro>}
+    \label{fig:osi}
+\end{figure}
+
+La contraparte en las arquitecturas de red del modelo OSI, es TCP/IP, que no sigue exactamente el modelo OSI. Desafortunadamente, no existe un acuerdo universal sobre cómo describir TCP/IP con un modelo en capas. Generalmente se acepta que TCP/IP tiene menos niveles (de tres a cinco capas) que las siete capas del modelo OSI. En la figura \ref{fig:tcpip} se visualiza las capas que se adoptan en esta arquitectura. 
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=8cm]{img/capitulo_2/tcp_ip_osi.jpg}
+    \end{center}
+    \caption{TCP/IP\\Fuente: Web}
+    \label{fig:tcpip}
+\end{figure}
+
+La arquitectura TCP/IP omite algunas características que se encuentran en el modelo OSI, combina las características de algunas capas OSI adyacentes y separa otras capas. La estructura de 4 capas de TCP/IP se construye a medida que la información se transmite de
+la capa de aplicacion a la capa de red física.\\
+
+Cuando se envían datos, cada capa trata toda la información que recibe de la capa superior como datos, agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.
+modelo para la arquitectura TCP/IP.\\
+
+\subsection{Protocolos de red}
+Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red. Similar a la manera de hablar el mismo lenguaje entre dos personas simplifica la comunicación, los protocoles de red permiten que diferentes dispositivos puedan interactuar en base a las reglas de software y hardware definidas por un protocolo.\\
+
+La arquitectura de red proporciona solo un marco conceptual para las comunicaciones entre computadoras. El modelo en sí no proporciona métodos específicos de comunicación. La comunicación real está definida por varios protocolos de comunicación.
+
+Los protocolos de comunicación permiten la comunicación entre dispositivos entre dispositivos de distintas redes. Son usados en la comunicación analógica y en la digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet. Los tipos mas comunes de protocolos de comunicación incluyen:
 
 \begin{itemize}
     \item \textbf{Automatización}: Estos protocolos se utilizan para automatizar diferentes procesos tanto en entornos comerciales como personales, como en edificios inteligentes, tecnología en la nube o vehículos autónomos.
     \item \textbf{Mensajeria Instantánea}: La comunicación basada en texto, en teléfonos inteligentes y computadoras suceden debido a una serie de diferentes protocolos de mensajeria instantánea.
     \item \textbf{Enrutamiento}: Protocolos de enrutamiento permiten la comunicación entre routers y otros dispositivos de red.
     \item \textbf{Transferencia de archivos}: Envio de archivos por medio de un canal de comunicacion.
-    \item <FALTAN ITEMS!!!!!>
+    \item \textbf{Protocolo de Internet}: El protocolo de Internet(IP) permite que los datos sean enviados entre dispositivos por medio de la red de internet.
 \end{itemize}
 
-<Resumir el oingreso del TCP/IP Y WEB>
-
+A continuación se detalla algunos de los protocolos más conocidos:
+\begin{itemize}
+    \item \textbf{HTTP - Protocolo de transferencia de hipertexto}: Este protocolo de internet define la manera en la que los datos son enviados por internet y determina como los navegadores web y buscadores deben responder a determinados comandos.
+    \item \textbf{SSH - Secure Socket Shell}: Este protocolo provee un acceso seguro al dispositivo, incluso si se encuentra en una red no segura. SSH es particularmente usado por administradores de red quienes manejan diferentes sistemas de manera remota.
+    \item \textbf{SMS - Servicio de envio de mensajes cortos}: Este protocolo ha sido creado para enviar y recibir mensajes de texto sobre redes de telefonía celular. SMS refiere exclusivamente a mensajes basados en texto. Las imágenes, videos u otro contenido multimedia requiere el protocolo de Servicio de mensajeria multimedia (MMS), que es una extensión del protocolo SMS.
+\end{itemize}
 
 \subsection{TCP/IP}
 El Protocolo de Control de Transmisión es uno de los protocolos fundamentales en Internet. Fue creado entre los años 1973-1974 por Vint Cerf y Robert Kahn. Este es uno de los principales protocolos de la ``capa de transporte'' del modelo TCP/IP. En el nivel de aplicación, posibilita la administración de datos que vienen del nivel más bajo del modelo, o van hacia él, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP, este los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipación que el protocolo es TCP). \\
+
 
 \begin{figure}[H]
     \begin{center}
