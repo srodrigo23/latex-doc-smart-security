@@ -1,11 +1,22 @@
 \chapter{Implementación}
+En este capitulo se describe a detalle el proceso de implementación de los diferentes módulos que forman parte del sistema  de video-vigilancia inteligente.
 
-\section{Servidor SMTP(Simple Mail Transfer Protocol -  Protocolo de Transferencia de Correo Simple}
-
-\subsection{Introducción}
-
-\subsubsection{Introduccion}
-
+\section{Módulo de Cámara}
+\subsection{Diseño de clases}
+\subsection{Diseño de interfaz de simulador}
+\subsection{Captura de video}
+\subsection{Conexión a Servidor TCP}
+\subsection{Comunicacion y envío de fotogramas}
+\section{Módulo de Servidor TCP}
+\subsection{Diseño de clases}
+\subsection{Manejador de conectores de clientes}
+\subsection{Streamming HLS}
+\subsection{Detectores}
+\subsubsection{Detector de movimiento}
+\subsubsection{Detector de intrusos}
+\subsubsection{Detector de fuego/humo}
+\section{Servidor HTTP}
+\section{Modulo de envío de correo electrónico}
 
 \begin{longtable}{p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
     \caption{Titulo de tabla multipágina} \label{tabla:tabla_largo_ejemplo} \\
@@ -40,23 +51,9 @@
     \multicolumn{1}{|c|}{\textbf{Fila 12}} & Lorem ipsum dolor sit amet, consectetuer adipiscing elit. & Lorem ipsum dolor sit amet, consectetuer adipiscing elit. & Lorem ipsum dolor sit amet, consectetuer adipiscing elit. & Lorem ipsum dolor sit amet, consectetuer adipiscing elit. \\ \hline    
 \end{longtable}
 
-
-\section{Módulo Cámara}
-\subsection{Modelo de clases}
-\subsection{RapsBerricam}
-\subsection{webCam}
-\subsection{captura de frames}
-\subsection{Comunicacion de los nodos}
-
-\section{Módulo Servidor}
-\subsection{Sockets}
-\subsection{Frames}
-\subsection{HTTP}
-
-\section{Módulo Cliente - Aplicación Móvil}
-\subsection{Android}
-\subsection{ExoPlayer}
-\subsection{Notificacion FireBase}
-\subsection{Disenio de Interfaz}
-\subsection{Historial de notificaciones}
-
+% \section{Módulo Cliente - Aplicación Móvil}
+% \subsection{Android}
+% \subsection{ExoPlayer}
+% \subsection{Notificacion FireBase}
+% \subsection{Disenio de Interfaz}
+% \subsection{Historial de notificaciones}
