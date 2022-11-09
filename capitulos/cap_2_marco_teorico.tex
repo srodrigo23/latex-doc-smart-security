@@ -35,7 +35,7 @@ Lo más relevante del crecimiento de estas oportunidades, es la implementación 
 
 Para el desarrollo del prototipo propuesto se implementan los siguientes componentes involucrados en el sistema:
 \begin{itemize}
-    \item Cámaras (A ser denominados "nodos")
+    \item Cámaras (Nodos)
     \item Servidor TCP (Servicio que emplea el protocolo TCP/IP)
     \item Servidor HTTP (Servicio que emplea el protocolo de la Web)
     \item Módulo SMTP (Módulo de envio de correo electrónico)
@@ -86,7 +86,7 @@ La arquitectura TCP/IP omite algunas características que se encuentran en el mo
 Cuando son envíados los datos, cada capa trata toda la información que recibe de la capa superior como datos, agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
 
 \subsection{Protocolos}
-El modelo OSI, y cualquier otro modelo de comunicación de red, proporciona solo un esquema conceptual para la comunicación entre computadoras, pero el modelo en sí mismo no proporciona métodos específicos de comunicación \textbf{<cita}. La comunicación real está definida por varios protocolos de comunicación.\\
+El modelo OSI, y cualquier otro modelo de comunicación de red, proporciona solo un esquema conceptual para la comunicación entre computadoras, pero el modelo en sí mismo no proporciona métodos específicos de comunicación \cite{wikipedia:modeloosi}. La comunicación real está definida por varios protocolos de comunicación.\\
 
 En el contexto de la comunicación de datos, un protocolo es un conjunto formal de reglas, convenciones y estructuras de datos que determinan cómo las computadoras y otros dispositivos de red intercambian información a través de una red. Este método estándar permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y agrega un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red.\\
 
@@ -112,7 +112,7 @@ A continuación se detalla algunos de los protocolos más conocidos:
 \end{itemize}
 
 \subsection{Modelo cliente-servidor}
-El modelo cliente-servidor es una estructura de aplicación distribuida que divide tareas o cargas de trabajo entre los proveedores de un recurso o servicio, denominados servidores, y los solicitantes del servicio, denominados clientes <cita 1>. A menudo, los clientes y los servidores se comunican a través de una red informática en hardware independiente, pero tanto el cliente como el servidor pueden residir en el mismo sistema.\\
+El modelo cliente-servidor es una estructura de aplicación distribuida que divide tareas o cargas de trabajo entre los proveedores de un recurso o servicio, denominados servidores, y los solicitantes del servicio, denominados clientes \cite{wikipedia:cliente_servidor}. A menudo, los clientes y los servidores se comunican a través de una red informática en hardware independiente, pero tanto el cliente como el servidor pueden residir en el mismo sistema.\\
 
 Un servidor ejecuta uno o más programas de servidor, que comparten sus recursos con los clientes. Un cliente normalmente no comparte ninguno de sus recursos, pero solicita contenido o servicio de un servidor. En la figura \ref{fig:client_server} se aprecia un diagrama que representa el modelo cliente-servidor, donde los clientes acceden al servicio del servidor por medio de una red.\\
 
@@ -215,9 +215,9 @@ El protocolo tiene las siguientes partes:
 \end{itemize}
 
 \section{Inteligencia Artificial}
-La Inteligencia Artificial (I.A.), como área de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y ha formado parte del desarrollo de la sociedad.\\
+La Inteligencia Artificial (I.A.), como área de estudio de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y ha formado parte del desarrollo de la sociedad.\\
 
-El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace a este ser, un ser inteligente \cite{}.\\
+El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace inteligente al ser humano \cite{intro_ia}.\\
 
 Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero en la construcción de estas máquinas artificialmente inteligentes se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, son estudiados por la inteligencia artificial.
 
@@ -290,9 +290,7 @@ Este es uno de los principales algoritmos que ha contribuido en el desarrollo y 
 
 El proceso que se distingue de estas redes son las convoluciones. El cual consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
 
-El kernel en las redes convolucionales se considera como un filtro que se aplica para extraer ciertas características importantes o patrones de esta y es usado para detectar bordes, enfoque, desenfoques, entre otras características de la imagen y es logrado para la convolución entre la imagen y el kernel.
-
-Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que este filtro o kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen. La convolución permite multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo .\\
+El kernel en las redes convolucionales se considera como un filtro que se aplica para extraer ciertas características importantes o patrones de esta y es usado para detectar bordes, enfoque, desenfoques, entre otras características de la imagen y es logrado para la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que este filtro o kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen. La convolución permite multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo .\\
 
 Es una operación que se usa en las redes convolucionales. El padding se aplica agregando píxeles de valor cero alrededor de la imagen original.
 Tiene dos usos:
@@ -323,14 +321,9 @@ Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisa
 
 \subsubsection{Aprendizaje Supervisado}
 La computadora esta provista con entradas de ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
-<Posible imagen>
-
-En la ilsutracion.....
 
 \subsubsection{Aprendizaje No Supervisado}
 La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\
-
-<Mas conceptos> <ref bibliografica>
 
 \section{Deep Learning (Aprendizaje profundo)}
 Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos.\\
@@ -371,7 +364,7 @@ Una de las librerias mas utilizadas para las técnicas de vision por computadora
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=3cm]{img/capitulo_2/cv2_logo.png}
+        \includegraphics[width=2cm]{img/capitulo_2/cv2_logo.png}
     \end{center}
     \caption{Logotipo de la libreria\\Fuente: Web}
     \label{fig:cv2_logo}
@@ -381,19 +374,70 @@ Una de las características mas interesantes de OpenCV es el reconocimiento faci
 
 Existen otras librerias que no son tan populares y representan un pago adicional.
 
-% \section{Redes Neuronales}
-\section{Transmision de video en vivo}
-<figuras> y conceptos
+\section{Streamming}
+También denominado como transmisión, lectura en continuo, difusión en flujo, lectura en tránsito, difusión en continuo, descarga continua; es la distribución digital de multimedia a través de una red de computadoras, de manera que el usuario consume el producto (generalmente archivo de vídeo o audio) en paralelo mientras se descarga \cite{streamming:austerberry}.\\
 
-\subsection{Protocolos}
-<figuras> y conceptos
-En la figura, \ref{fig:hls}
+El término se aplica habitualmente a la difusión de audio o vídeo. El Streaming requiere una conexión por lo menos de igual ancho de banda que la tasa de transmisión del servicio. El Streaming de vídeo se popularizó a fines de la década de 2000, cuando el ancho de banda se hizo lo suficientemente barato para gran parte de la población. Sin embargo, con la tecnología del Streaming, un archivo puede descargarse y reproducirse al mismo tiempo, con lo que el tiempo de espera es mínimo \cite{streamming:austerberry}. El streamming permite una reproducción directa en del contenido multimedia, sin la necesidad de almacenar en memoria la información para después reproducirla, como se puede ver en la figura \ref{fig:stream}.\\
 
-\subsubsection{HLS}
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_2/hls.jpg}
-        \caption{HLS.\\}
+        \includegraphics[width=10cm]{img/capitulo_2/stream.png}
+        \caption{Streaming en un servidor web.\\}
+        Fuente: \cite{streamming:austerberry}
+        \label{fig:stream}
+    \end{center}
+\end{figure}
+
+El servidor más utilizado para la transmisión de contenidos multimedia es el servidor web, tipificado por Apache. Los servidores Web utilizan HTTP a través de TCP/IP para entregar sus páginas HTML y archivos de imagen asociados. El protocolo TCP/IP se utiliza como la capa de transporte a través de Internet. Los archivos se descargan a la memoria caché del navegador web más rápido de lo que el sistema permite. TCP incorpora control de flujo para gestionar la velocidad de descarga.\\
+\subsection{Servidor web para Streaming de Audio y Video}
+
+El flujo que sigue el servidor web para reproducir contenido multimedia es el siguiente: Primero el servidor web mediante una aplicación proporciona una dirección que permite acceder a un archivo multimedia a un reproductor luego este mismo se conecta al servidor web mediante ese mismo vinculo mandando la señal para que el servidor transmita el contenido, pero el servidor web redirige al reproductor a un servidor Streaming para luego recién poder realizar la reproducción del contenido digital, como se puede observar en la figura \ref{fig:streamming}.\\
+
+Un servidor web por si solo no podría realizar este proceso sin un servidor Streaming de por medio ya que solo se limitaría a permitir la descarga del archivo en su totalidad para que después se realice la reproducción por parte del reproductor. Gracias al servidor Streaming se podrá decodificar del bitrate en el que se codifico. Los oyentes necesitan tener instalado un reproductor multimedia en su ordenador, aunque también pueden escuchar la emisión sin necesidad de él. Se podría utilizar: Windows Media Player, VLC, o algún software compatible.\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_2/streamming.png}
+        \caption{Streaming en un servidor web.\\}
+        Fuente: \cite{streamming:austerberry}
+        \label{fig:streamming}
+    \end{center}
+\end{figure}
+
+Se maneja el termino bitrate que no es nada más que la calidad de la señal. Usualmente se utilizan 24, 32, 48, 64 kbps pero si lo desea puede emitir a un bitrate superior, por ejemplo 96 kbps o 128 kbps. Debemos tener en cuenta no obstante que a mayor bitrate mayor ancho de banda se necesitará, así como mayor será el costo. Sin la tecnología de Streaming, para reproducir un archivo en línea seria necesario descargarlo previamente en memoria del computador para después recién poder reproducir en el computador.\\
+
+\subsubsection{Http Live Streaming (HLS)}
+HLS es un protocolo utilizado para enviar audio y video sobre HTTP, soporta bitrate adaptivo y es compatible con la mayoría de los dispositivos. Este protocolo fue desarrollado por Apple y puede ser utilizado tanto para video en vivo como video en demanda. Entre sus características importantes se encuentra:
+
+\begin{itemize}
+    \item Se adapta a las condiciones de la red. Dependiendo el ancho de banda de internet del espectador, se le entregará una calidad o bitrate adecuado.
+    \item Además puede ser entregado desde un servidor tradicional de HTTP.
+    \item Y puede ser protegido con encripción o autenticación.  Esto con el fin de proteger derechos de autor.
+\end{itemize}
+
+El flujo del protocolo es como sigue: 
+\begin{enumerate}
+    \item El archivo de video se codifica con compresión de video H.264 y compresión de Audio AAC.
+    \item Selecciona MPEG2-TS como contenedor de video, esto lo hace normalmente un encoder de video.
+    \item Cuando es codificado el video, se realiza un proceso de segmentación.  Este proceso realiza cortes del video cada ciertos segundos, usualmente cada 10 segundos. A estos fragmentos se les conoce como segmentos o chunks de video.
+    \item Se genera un archivo índice. Este archivo contiene la información de los segmentos y en donde se encuentran para que el player los descargue. Este mismo proceso se realiza tanto para video en vivo o video en demanda (video almacenado).
+    \item Cuando se decide encriptar la información, se ejecuta un algoritmo para proteger cada uno de los segmentos. Donde el player que tenga la llave para desencriptarlos puede ver el contenido.
+    \item  Estas llaves pueden ser estáticas o dinámicas, puede generarse una llave para todos los videos o una llave por video. Y lo único que hace falta es compartir el URL del archivo índice que es algo como:
+\end{enumerate}
+            
+\begin{center}
+    \verb|http://nombre-del-dominio/directorio-del-video/mi-video.m3u8|    
+\end{center}
+
+Y puede ser protegido con encripción o autenticación.  Esto con el fin de proteger derechos de autor.
+HTTP Live Streaming (HLS), es un protocolo que permite el envío de audio y video a través de HTTP desde un servidor web común para su reproducción en dispositivos basados en iOS, incluidos iPhone, iPad, iPod touch y Apple TV, y en computadoras de escritorio (macOS). Usando el mismo protocolo que impulsa la web, HLS implementa contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.\\
+
+% Es un protcolo (HLS) envía audio y video a través de HTTP desde un servidor web común para su reproducción en dispositivos basados en iOS, incluidos iPhone, iPad, iPod touch y Apple TV, y en computadoras de escritorio (macOS). Usando el mismo protocolo que impulsa la web, HLS implementa contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.
+En la figura, \ref{fig:hls}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{img/capitulo_2/hls.jpg}
+        \caption{Http Live Streaming.\\}
         Fuente: \cite{hls}
         \label{fig:hls}
     \end{center}
@@ -404,8 +448,8 @@ En la figura \ref{fig:dash}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_2/dash.png}
-        \caption{Dash.\\}
+        \includegraphics[width=10cm]{img/capitulo_2/dash.png}
+        \caption{Dinamyc Adaptative Streamming Over Http.\\}
         Fuente: \cite{dash}
         \label{fig:dash}
     \end{center}
@@ -415,13 +459,16 @@ En la figura \ref{fig:dash}
 \section{Lenguaje de Programacion}
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.\\
 
-<logo>
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=2cm]{img/capitulo_2/python.png}
+        \caption{Logo del lenguaje de programación Python.\\}
+        Fuente: Web
+        \label{fig:python}
+    \end{center}
+\end{figure}
 
-Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos).\\
-
-<imagen de popularidad>
-Motivo
-Es usado en Machine Learning y Deep Learning es el lenguaje lider en la inteligencia artificial
+Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). También es usado en el campor del Machine Learning y el Deep Learning. Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.
 
 \section{Metodología de desarrollo}
 El término de ingenieria de software se toma propone por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada donde en ese entonces los proyectos de software complejos eran problemáticos y costosos de completar donde se supuso que sería beneficioso considerar el desarrollo de software como ingeniería \cite{Ganis}.\\
