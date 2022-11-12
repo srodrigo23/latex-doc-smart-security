@@ -3,13 +3,13 @@
 % En este capítulo, se presenta las principales tecnologías de detección en primer  plano del objeto en movimiento, descripción y extracción de características,  clasificación y reconocimiento del movimiento humano. Basado en el flujo óptico para la detección de objetos en movimiento. Como también la imagen de flujo de energía óptico para la detección de características de movimiento y se adoptaron redes neuronales convolucionales de región para elegir  características y reducir la dimensión. Luego, gracias al clasificador de máquina de vectores de soporte que puede ser entrenado y utilizado para clasificar y reconocer acciones; es posible distinguir efectivamente las acciones humanas y mejorar significativamente la precision del reconocimineto de las acciones humanas.
 
 \section{Sistema de video vigilancia}
-El término ``video-vigilancia'' es usado para hacer referencia al despliegue de cámaras de vídeo que cumplen el rol de videofilmadoras, las cuales guardan el contenido recolectado en un almacén digital y puede ser visualizado en un monitor central \cite{wikipedia:vvigilancia}. Entonces un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, mantienen una alerta activa y poseen un gran efecto disuasorio.\\
+El término ``video-vigilancia'' es usado para hacer referencia al despliegue de cámaras de vídeo que cumplen el rol de videofilmadoras, las cuales guardan el contenido recolectado en un almacén digital y puede ser visualizado en un monitor central \cite{wikipedia:vvigilancia}. Por lo tanto, un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, manteniendo una alerta activa con un gran efecto disuasorio.\\
 
 El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video-vigilancia. Este sistema compone de un conjunto de cámaras que estan conectadas directamente a un grabador de video en red o N.V.R. (Network Video Recorder), el cual permite la visualización de las imágenes captadas por las cámaras en un monitor local y por medio de una conección a internet, permite su visualización en dispositivos externos a la red local.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=9cm]{img/capitulo_2/sis_videovigilancia.png}
+        \includegraphics[width=7cm]{img/capitulo_2/sis_videovigilancia.png}
         \caption{Componentes de una sistema de video-vigilancia.\\}
         Fuente: \cite{videosurvellance}
         \label{fig:sistema_video_vigilancia}
@@ -17,13 +17,13 @@ El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, alm
     
 \end{figure}
 
-Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del mundo especialmente en Asia y la región del Pacífico, debido a la apertura de pequeños negocios, como la construcción de áreas residenciales y ciudades ``inteligentes'' \cite{marketsandmarkets:market-surveillance}. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales aplican nuevas características alcanzadas por la tecnología actual.\\
+Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del mundo especialmente en Asia y la región del Pacífico, debido a la apertura de pequeños negocios y la construcción de áreas residenciales como también ciudades ``inteligentes'' \cite{marketsandmarkets:market-surveillance}. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales aplican nuevas características realizables gracias a la tecnología actual.\\
 
 En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia tuvo un valor de 42.9 billones de dólares en el 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026; cuyo incremento registra una taza de crecimiento anual compuesto del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_2/surveillance-market.jpg}
+        \includegraphics[width=12cm]{img/capitulo_2/surveillance-market.jpg}
         \caption{Proyección del mercado de la video-vigilancia.\\}
         Fuente: \cite{marketsandmarkets:market-surveillance}
         \label{fig:surveillance-market}
@@ -31,20 +31,20 @@ En la figura \ref{fig:surveillance-market} se muestra como el mercado global de 
     % \caption{Proyección del mercado de la video-vigilancia\\}    
 \end{figure}
 
-Lo más relevante del crecimiento de estas oportunidades, es la implementación de nuevas características en este tipo de sistemas; gracias a la implementación de técnicas de visión por computadora e inteligencia artificial (I.A.), como a la escalabilidad lograda por el uso de servicios basados en la nube. Las ramas de la inteligencia artificial como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) permiten lograr estas características.\\
+El aspecto más relevante del crecimiento en las oportunidades de este campo, se da en la implementación de nuevas características en este tipo de sistemas; gracias a las técnicas de visión por computadora e inteligencia artificial (I.A.), a la escalabilidad gracias al uso de servicios basados en la nube. Las ramas afines a la inteligencia artificial, como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) han permitido lograr grandes avances en el campo de la video-vigilancia.\\
 
-Para el desarrollo del prototipo propuesto se implementan los siguientes componentes involucrados en el sistema:
+Para el desarrollo del prototipo propuesto se implementan los siguientes componentes que forman parte del sistema:
 \begin{itemize}
-    \item Cámaras (Nodos)
-    \item Servidor TCP (Servicio que emplea el protocolo TCP/IP)
-    \item Servidor HTTP (Servicio que emplea el protocolo de la Web)
+    \item Visualizador de fotogramas.(Simulador de cámara)
+    \item Servidor TCP (Servicio que aplica el protocolo TCP/IP)
+    \item Servidor HTTP (Servicio que aplica el protocolo de la Web)
     \item Módulo SMTP (Módulo de envio de correo electrónico)
 \end{itemize}
 
-Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por medio de la red por el protocolo tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes y transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
+Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por medio de la red por el protocolo tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, como también la transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
 
 \section{Arquitectura de red}
-Una arquitectura de red es un esquema completo de comunicación entre computadoras, el cual provee: un esquema de trabajo, un diseño principal, la construcción y manejo de una red. \cite[1]{networkProtocolos:handbook}.La arquitectura de red más importante es la de Interconexión de Sistemas Abiertos (OSI), desarrollada por la Organización Internacional para la Estandarización (ISO).\\
+Una arquitectura de red es un esquema completo de comunicación entre computadoras, el cual provee: un esquema de trabajo, un diseño principal, la construcción y manejo de una red. \cite[1]{networkProtocolos:handbook}. La arquitectura de red más importante es la de Interconexión de Sistemas Abiertos (OSI), desarrollada por la Organización Internacional para la Estandarización (ISO).\\
 
 La arquitectura OSI, es un estándar abierto para la comunicación en red a través de diferentes equipos y aplicaciones. Aunque no está ampliamente implementado, el modelo de 7 capas OSI es considerado el modelo de arquitectura de red principal para la intercomputación y comunicación entre redes. En la figura \ref{fig:osi} se puede apreciar el modelo OSI de 7 capas, detallando a continuación las siguientes capas:
 
@@ -62,14 +62,14 @@ Este modelo se organiza de la siguiente manera: las capas 7 a 4 se ocupan de las
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=7cm]{img/capitulo_2/capas.png}
+        \includegraphics[width=9cm]{img/capitulo_2/capas.png}
         \caption{Esquema de capas del modelo OSI.\\}
         Fuente: \protect\cite[3]{networkProtocolos:handbook}
         \label{fig:osi}
     \end{center}
 \end{figure}
 
-Su contraparte en las arquitecturas de red del modelo OSI, es TCP/IP, que no sigue exactamente el modelo OSI. Desafortunadamente, no existe un acuerdo universal sobre cómo describir TCP/IP con un modelo en capas. Generalmente se acepta que TCP/IP tiene menos niveles (de tres a cinco capas) que las siete capas del modelo OSI. En la figura \ref{fig:tcpip} se visualiza las capas que se adoptan en esta arquitectura. 
+Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, que no sigue exactamente el modelo OSI. Desafortunadamente, no existe un acuerdo universal sobre cómo describir TCP/IP con un modelo en capas. Generalmente se acepta que TCP/IP tiene menos niveles (de tres a cinco capas) que las siete capas del modelo OSI. En la figura \ref{fig:tcpip} se visualiza las capas que se adoptan en esta arquitectura. 
 
 \begin{figure}[H]
     \centering
@@ -83,26 +83,26 @@ Su contraparte en las arquitecturas de red del modelo OSI, es TCP/IP, que no sig
 
 La arquitectura TCP/IP omite algunas características que se encuentran en el modelo OSI, combina las características de algunas capas OSI adyacentes y separa otras capas. La estructura de 4 capas de TCP/IP (capa de aplicación, transporte, internet y acceso a la red) se construye a medida que la información se transmite de la capa de aplicacion a la capa de red física.\\
 
-Cuando son envíados los datos, cada capa trata toda la información que recibe de la capa superior como datos, agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
+Cuando los datos son envíados, cada capa trata la información que recibe de la capa superior como datos y agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
 
 \subsection{Protocolos}
 El modelo OSI, y cualquier otro modelo de comunicación de red, proporciona solo un esquema conceptual para la comunicación entre computadoras, pero el modelo en sí mismo no proporciona métodos específicos de comunicación \cite{wikipedia:modeloosi}. La comunicación real está definida por varios protocolos de comunicación.\\
 
 En el contexto de la comunicación de datos, un protocolo es un conjunto formal de reglas, convenciones y estructuras de datos que determinan cómo las computadoras y otros dispositivos de red intercambian información a través de una red. Este método estándar permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y agrega un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red.\\
 
-Similar a la manera de hablar el mismo lenguaje entre dos personas; un protocolo, simplifica la comunicación. La arquitectura de red proporciona solo un esquema conceptual para la comunicación. El modelo no proporciona métodos específicos de comunicación, sino mas bien, la comunicación real está definida por varios protocolos de comunicación que son usados en la comunicación analógica y digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet.\\
+Similar a la manera de hablar el mismo lenguaje entre dos personas; un protocolo, simplifica la comunicación entre dispositivos. La arquitectura de red proporciona solo un esquema conceptual para la comunicación. El modelo no proporciona métodos específicos de comunicación, sino mas bién, la comunicación real está definida por varios protocolos de comunicación que son usados en la comunicación analógica y digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet.\\
 
 Los protocolos de comunicación en red más populares, incluyen:
 
 \begin{itemize}
-    \item \textbf{Automatización}: Estos protocolos se utilizan para automatizar diferentes procesos tanto en entornos comerciales como personales, como en edificios inteligentes, tecnología en la nube o vehículos autónomos.
+    \item \textbf{Automatización}: Automatizan diferentes procesos tanto en entornos comerciales como personales: en edificios inteligentes, tecnología en la nube o vehículos autónomos.
     \item \textbf{Mensajeria Instantánea}: La comunicación basada en texto, en teléfonos inteligentes y computadoras suceden debido a una serie de diferentes protocolos de mensajeria instantánea.
     \item \textbf{Enrutamiento}: Protocolos de enrutamiento permiten la comunicación entre routers y otros dispositivos de red.
-    \item \textbf{Transferencia de archivos}: Envio de archivos por medio de un canal de comunicacion.
-    \item \textbf{Acceso a Internet}: El protocolo de Internet(IP) permite que los datos sean enviados entre dispositivos por medio de la red de internet.
+    \item \textbf{Transferencia de archivos}: Envio de archivos por medio de un canal de comunicación.
+    \item \textbf{Acceso a Internet}: El protocolo de Internet (IP) permite que los datos sean enviados entre dispositivos por medio de la red de internet.
 \end{itemize}
 
-A continuación se detalla algunos de los protocolos más conocidos:
+A continuación se detallan algunos de los protocolos más conocidos:
 \begin{itemize}
     \item \textbf{HTTP - Protocolo de transferencia de hipertexto}: Este protocolo de internet define la manera en la que los datos son enviados por internet y determina como los navegadores web y buscadores deben responder a determinados comandos.
     \item \textbf{SSH - Secure Socket Shell}: Este protocolo provee un acceso seguro al dispositivo, incluso si se encuentra en una red no segura. SSH es particularmente usado por administradores de red quienes manejan diferentes sistemas de manera remota.
@@ -114,20 +114,20 @@ A continuación se detalla algunos de los protocolos más conocidos:
 \subsection{Modelo cliente-servidor}
 El modelo cliente-servidor es una estructura de aplicación distribuida que divide tareas o cargas de trabajo entre los proveedores de un recurso o servicio, denominados servidores, y los solicitantes del servicio, denominados clientes \cite{wikipedia:cliente_servidor}. A menudo, los clientes y los servidores se comunican a través de una red informática en hardware independiente, pero tanto el cliente como el servidor pueden residir en el mismo sistema.\\
 
-Un servidor ejecuta uno o más programas de servidor, que comparten sus recursos con los clientes. Un cliente normalmente no comparte ninguno de sus recursos, pero solicita contenido o servicio de un servidor. En la figura \ref{fig:client_server} se aprecia un diagrama que representa el modelo cliente-servidor, donde los clientes acceden al servicio del servidor por medio de una red.\\
+Un servidor ejecuta uno o más programas de servidor, que comparten sus recursos con los clientes. Un cliente normalmente no comparte ninguno de sus recursos, pero solicita contenido o servicio de un servidor. En la figura \ref{fig:client_server} se aprecia un diagrama que representa el modelo cliente-servidor, donde los clientes acceden al servicio del servidor por medio de la misma red de internet.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=9cm]{img/capitulo_2/client-server.jpeg}
+        \includegraphics[width=10cm]{img/capitulo_2/client-server.jpeg}
         \caption{Ilustración del Modelo cliente-servidor\\}
         Fuente: \cite{clientserver}
         \label{fig:client_server}
     \end{center}
 \end{figure}
 
-Por lo tanto, los clientes, inician sesiones de comunicación con los servidores, que esperan las solicitudes entrantes. Para mencionar algunos ejemplos de aplicaciones informáticas que utilizan este modelo cliente-servidor son el correo electrónico, la impresión en red y la World Wide Web (Internet).\\
+Por lo tanto los clientes, inician sesiones de comunicación con los servidores, que esperan las solicitudes entrantes. Para mencionar algunos ejemplos de aplicaciones informáticas que utilizan este modelo cliente-servidor son el correo electrónico, la impresión en red y la World Wide Web (Internet).\\
 
-La comunicación entre el cliente y el servidor se realiza por medio de una conexión o enchufe (socket) el cual define la dirección y puerto por la cual va a ser enviada y/o recibida la información entre ambos actores. En la figura \ref{fig:socket_request} se visualiza la forma en la que se realiza la conexión entre el lado del cliente y el servidor por medio de un conector o (socket). En el lado del cliente: este conoce el nombre de host de la máquina en la que se ejecuta el servidor y el número de puerto en el que escucha el servidor.\\
+La comunicación entre el cliente y el servidor se realiza por medio de una conexión o enchufe ``socket'' el cual define la dirección y puerto por la cual va a ser enviada y/o recibida la información entre ambos actores. En la figura \ref{fig:socket_request} se visualiza la forma en la que se realiza la conexión entre el lado del cliente y el servidor por medio de un conector o ``socket''. En el lado del cliente: este conoce el nombre de host de la máquina en la que se ejecuta el servidor y el número de puerto en el que escucha el servidor.\\
 
 Para realizar una solicitud de conexión, el cliente intenta conectarse con el servidor en la máquina y el puerto del servidor, además el cliente también necesita identificarse ante el servidor, para vincularse a un número de puerto local que se utiliza durante esa conexión. Normalmente lo asigna el sistema.\\
 
@@ -140,7 +140,7 @@ Para realizar una solicitud de conexión, el cliente intenta conectarse con el s
     \end{center}
 \end{figure}
 
-Si todo va bien, el servidor acepta la conexión. Tras la aceptación, el servidor obtiene un nuevo socket vinculado al mismo puerto local como también tiene su punto final remoto establecido en la dirección y el puerto del cliente. En la figura \ref{fig:socket_connection} se visualiza el comportamiento del conector o socket despues de la aceptación a la petición de conexión del cliente; ya que despues establecida la conexión, el servidor necesita un nuevo socket para continuar escuchando las nuevas solicitudes de conexión mientras atiende las necesidades del cliente conectado.\\
+Si el proceso tiene exito, el servidor acepta la conexión. Tras la aceptación, el servidor obtiene un nuevo ``socket'' o conector vinculado al mismo puerto local como también tiene su punto final remoto establecido en la dirección y el puerto del cliente. En la figura \ref{fig:socket_connection} se visualiza el comportamiento del socket después de la aceptación a la petición de conexión del cliente; ya que después establecida la conexión, el servidor necesita un nuevo socket para continuar escuchando las nuevas solicitudes de conexión mientras atiende las necesidades del cliente conectado.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -164,7 +164,7 @@ Si todo va bien, el servidor acepta la conexión. Tras la aceptación, el servid
 %     \item Organiza los datagramas nuevamente en orden cuando vienen del protocolo IP.
 % \end{itemize}
 
-El flujo de interacción es como sigue: el servidor TCP establece un conector o socket en una determinada dirección y puerto, y se mantiene escuchando constantemente si un conector cliente (que conoce la dirección y puerto del servidor) solicita una conexión, una vez que el servidor acepta la conexión, se brinda un nuevo puerto diferente de manera automática para comunicarse exclusivamente con ese cliente y mantiene el puerto original a la escucha de nuevos clientes, como se ve en la figura \ref{fig:tcp_flow}. Una vez que esta conexión es establecida, tanto como el cliente y el servidor pueden enviar y recibir datagramas. Cuando el cliente decide cerrar la conexión, el servidor pone de nuevo el puerto utilizado anteriormente como disponible.\\
+El flujo general de interacción es como sigue: el servidor TCP establece un conector en una determinada dirección y puerto, y se mantiene escuchando constantemente si algún conector cliente (que conoce la dirección y puerto del servidor) solicita una conexión, una vez que el servidor acepta la conexión, se brinda un nuevo puerto diferente de manera automática para comunicarse exclusivamente con ese cliente y mantiene el puerto original a la escucha de nuevos clientes, como se ve en la figura \ref{fig:tcp_flow}. Una vez que esta conexión es establecida, tanto como el cliente y el servidor pueden enviar y recibir datos. Cuando el cliente decide cerrar la conexión, el servidor pone de nuevo el puerto utilizado anteriormente como disponible.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -175,7 +175,7 @@ El flujo de interacción es como sigue: el servidor TCP establece un conector o 
     \end{center}
 \end{figure}
 
-A continuación se detallan los métodos que se muestran en el gráfico anterior:
+A continuación se detalla los métodos que se muestran en la figura \ref{fig:tcp_flow}:
 \begin{itemize}
     \item socket(): Crea un punto final para la comunicación en el servidor.
     \item bind(): Asigna un número único al socket y reservar una combinación única de dirección IP y puerto para el socket creado.
@@ -192,11 +192,11 @@ A continuación se detallan los métodos que se muestran en el gráfico anterior
 
 % Un punto final es una combinación de una dirección IP y un número de puerto. Cada conexión TCP se puede identificar de forma única por sus dos puntos finales. De esa manera, puede tener múltiples conexiones entre su host y el servidor.
 
-Los clientes y servidores intercambian mensajes en un patrón de mensajería de solicitud-respuesta. El cliente envía una solicitud y el servidor devuelve una respuesta. Este intercambio de mensajes es un ejemplo de comunicación entre procesos. Para comunicarse, las computadoras deben tener un lenguaje común y deben seguir reglas para que tanto el cliente como el servidor sepan qué esperar. El idioma y las reglas de comunicación se definen en un protocolo de comunicaciones. Todos los protocolos operan en la capa de aplicación.\\
+Los clientes y servidores intercambian mensajes en un patrón de mensajería de solicitud-respuesta. Para comunicarse, las computadoras deben tener un lenguaje común y deben seguir reglas para que tanto el cliente como el servidor sepan qué esperar. El idioma y las reglas de comunicación se definen en un protocolo de comunicaciones. Todos los protocolos operan en la capa de aplicación.\\
 
 % El protocolo de la capa de aplicación define los patrones básicos del diálogo. Para formalizar aún más el intercambio de datos, el servidor puede implementar una interfaz de programación de aplicaciones (API).[3] La API es una capa de abstracción para acceder a un servicio. Al restringir la comunicación a un formato de contenido específico, facilita el análisis. Al abstraer el acceso, facilita el intercambio de datos entre plataformas.[4]
 \subsection{HTTP}
-El protocolo de transferencia de hipertexto (HTTP) es el protocolo más utilizado en Internet. Es usado en cada transacción de la Web (www)y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema ``petición - respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre un cliente y un servidor web.
+El protocolo de transferencia de hipertexto (HTTP) es el más utilizado en Internet. Se usa en cada transacción de la Web (www) y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema ``Petición - Respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre un cliente y un servidor web.
 
 \begin{figure}[H]
     \begin{center}
