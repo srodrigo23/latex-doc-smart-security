@@ -1,10 +1,44 @@
 \chapter{Inicialización}
 
-\section{Planificación General}
-El presente proyecto esta planteado para ser desarrollado en 20 dias
+% En este capítulo se tratan todos los aspectos preliminares para el implementación del producto final. Según la metodología ``Cascada'' las fases de: identificación de requerimientos, análisis, diseño del programa, son exclusivamente de diseño y establecimineto del proyecto. \\
+% Este proyecto es planteado para ser diseñado y desarrollado en un tiempo de 50 dias hábiles calendario y la distribución del tiempo se define segun la complejidad de las tareas que implica cada fase.
+% \section{Planificación General}
+% En este conjunto de fases basados en la metodología ``Cascada'', se plantean todos los aspectos necesarios a tomar en cuenta al momento del planteamiento del proyecto implementación, pruebas y despliegue.
 
 \section{Identificación de Requerimientos}
+Para la identificación de los requerimientos, se plantean los criterios de partida a tomar en cuenta en el diseño del sistema de video-vigilancia inteligente:
+\begin{itemize}
+    \item Costos altos en infraestructura de transmisión de video en vivo.
+    \item Las características de identificación automática, estan disponibles para sistemas de video-vigilancia de alto nivel.
+    \item Una alerta inmediata puede minimizar el impacto de alguna situación que ponga en peligro la integridad de bienes materiales y humanos.
+    \item Los usuarios finales son personas que a menudo dejan su hogar para salir a trabajar, y usan constamente su correo electrónico.
+\end{itemize}
+
 \subsection{Requerimientos del sistema}
+En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista inicial de requerimientos del sistema de video-vigilancia inteligente.\\
+
+\begin{table}[H]
+    \caption{Lista de requerimientos}
+    \label{tabla:ejemplo}
+    \begin{center}
+        \begin{tabular}{ |c|l|} 
+            \hline
+            1. & Capturar fotogramas por medio de una o varias cámaras portatiles.\\ \hline
+            2. & Visualizar los fotogramas capturados en tiempo real (captura de video).\\  \hline
+            3. & Ejecutar el servicio de análisis y procesamiento de los fotogramas capturados.\\  \hline
+            4. & Enviar los fotogramas capturados por medio de la red al servicio encargado de su análisis.\\ \hline
+            5. & Permitir la recepción de fotogramas de varias fuentes hacia el servicio.\\ \hline
+            6. & Transmitir los fotogramas convertidos en video en vivo desde fuentes diferentes.\\ \hline
+            7. & Detectar movimiento a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
+            8. & Detectar silueta humana a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
+            9. & Notificar al usuario por medio de un correo electrónico cuando se de una detección.\\ \hline
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        Fuente: Elaboración propia.
+    \end{center}
+\end{table}
+
 \begin{table}[H]
     \caption{Tabla de planificación de las diferentes fases del modelo Cascada}
     \label{tabla:ejemplo}
@@ -18,15 +52,12 @@ El presente proyecto esta planteado para ser desarrollado en 20 dias
             \textbf{4.} & Fase de pruebas        & 22-ago         &   2-sep     &    10     \\ \hline
             \textbf{5.} & Fase de mantenimiento        & 5-sep        & 9-sep        & 5        \\ \hline
         \end{tabular}
-    \end{center}
-    \begin{center}
         Fuente: Elaboración propia.
     \end{center}
     % Nota. Extraída de Apellido, N. (2000) \textit{Nombre del libro}.
     % Editorial o universidad que lo publicó.
     
 \end{table}
-
 
 Referenciando a la figura \ref{fig:gannt}.
 \begin{figure}[H]
@@ -42,8 +73,8 @@ Referenciando a la figura \ref{fig:camera_screen}.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_4/camera_screen.png}
-        \caption{Diagrama de Gannt.}
-        Fuente : Elaboración propia
+        \caption{Interfaz de la camara desarrollada.}
+        Fuente : Elaboración Propia.
         \label{fig:camera_screen}
     \end{center}
 \end{figure}
