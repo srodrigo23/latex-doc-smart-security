@@ -81,7 +81,7 @@ Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, 
     % \end{center}
 \end{figure}
 
-La arquitectura TCP/IP omite algunas características que se encuentran en el modelo OSI, combina las características de algunas capas OSI adyacentes y separa otras capas. La estructura de 4 capas de TCP/IP (capa de aplicación, transporte, internet y acceso a la red) se construye a medida que la información se transmite de la capa de aplicacion a la capa de red física.\\
+La arquitectura TCP/IP omite algunas características que se encuentran en el modelo OSI, combina las características de algunas capas OSI adyacentes y separa otras. La estructura de 4 capas de TCP/IP (capa de aplicación, transporte, internet y acceso a la red) se construye a medida que la información se transmite de la capa de aplicacion a la capa de red física.\\
 
 Cuando los datos son envíados, cada capa trata la información que recibe de la capa superior como datos y agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
 
@@ -140,7 +140,7 @@ Para realizar una solicitud de conexión, el cliente intenta conectarse con el s
     \end{center}
 \end{figure}
 
-Si el proceso tiene exito, el servidor acepta la conexión. Tras la aceptación, el servidor obtiene un nuevo ``socket'' o conector vinculado al mismo puerto local como también tiene su punto final remoto establecido en la dirección y el puerto del cliente. En la figura \ref{fig:socket_connection} se visualiza el comportamiento del socket después de la aceptación a la petición de conexión del cliente; ya que después establecida la conexión, el servidor necesita un nuevo socket para continuar escuchando las nuevas solicitudes de conexión mientras atiende las necesidades del cliente conectado.\\
+Si la solicitud tiene éxito, el servidor acepta la conexión. Después esta aceptación, el servidor obtiene un nuevo ``socket'' o conector vinculado al mismo puerto local como también tiene su punto final remoto establecido en la dirección y el puerto del cliente. En la figura \ref{fig:socket_connection} se visualiza el comportamiento del conector después de la aceptación a la petición de conexión del cliente; una vez establecida la conexión, el servidor necesita un nuevo socket para continuar escuchando las futuras solicitudes de conexión mientras atiende las necesidades del cliente conectado.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -149,9 +149,7 @@ Si el proceso tiene exito, el servidor acepta la conexión. Tras la aceptación,
         Fuente: \cite{socketconnection}
         \label{fig:socket_connection}
     \end{center}
-    
 \end{figure}
-
 
 % El protocolo de Control de Transmisión (TCP) es uno de los protocolos fundamentales de internet. Fue creado entre los años 1973-1974 por Vint Cerf y Robert Kahn. Este es uno de los principales protocolos de la ``capa de transporte'' del modelo TCP/IP.<cita> A nivel de aplicación, posibilita la administración de datos que vienen del nivel más bajo del modelo, o van hacia él, (es decir, al protocolo IP). Cuando se proporcionan los datos al protocolo IP, este los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipación que el protocolo es TCP). \\
 
@@ -164,7 +162,7 @@ Si el proceso tiene exito, el servidor acepta la conexión. Tras la aceptación,
 %     \item Organiza los datagramas nuevamente en orden cuando vienen del protocolo IP.
 % \end{itemize}
 
-El flujo general de interacción es como sigue: el servidor TCP establece un conector en una determinada dirección y puerto, y se mantiene escuchando constantemente si algún conector cliente (que conoce la dirección y puerto del servidor) solicita una conexión, una vez que el servidor acepta la conexión, se brinda un nuevo puerto diferente de manera automática para comunicarse exclusivamente con ese cliente y mantiene el puerto original a la escucha de nuevos clientes, como se ve en la figura \ref{fig:tcp_flow}. Una vez que esta conexión es establecida, tanto como el cliente y el servidor pueden enviar y recibir datos. Cuando el cliente decide cerrar la conexión, el servidor pone de nuevo el puerto utilizado anteriormente como disponible.\\
+El flujo general de interacción es como sigue: el servidor TCP establece un conector en una determinada dirección y puerto, y se mantiene escuchando constantemente si algún conector cliente (que conoce la dirección y puerto del servidor) solicita una conexión; cuando el servidor acepta la conexión, se brinda un nuevo puerto diferente de manera automática para comunicarse exclusivamente con la nueva coexión y mantiene el puerto original a la escucha de nuevas conexiones, como se ve en la figura \ref{fig:tcp_flow}. Cuando se establece esta conexión, tanto como el cliente y el servidor pueden enviar y recibir datos. Cuando el cliente decide cerrar la conexión, el servidor pone de nuevo el puerto utilizado anteriormente como disponible.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -196,146 +194,133 @@ Los clientes y servidores intercambian mensajes en un patrón de mensajería de 
 
 % El protocolo de la capa de aplicación define los patrones básicos del diálogo. Para formalizar aún más el intercambio de datos, el servidor puede implementar una interfaz de programación de aplicaciones (API).[3] La API es una capa de abstracción para acceder a un servicio. Al restringir la comunicación a un formato de contenido específico, facilita el análisis. Al abstraer el acceso, facilita el intercambio de datos entre plataformas.[4]
 \subsection{HTTP}
-El protocolo de transferencia de hipertexto (HTTP) es el más utilizado en Internet. Se usa en cada transacción de la Web (www) y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Es un protocolo orientado a transacciones y sigue el esquema ``Petición - Respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre un cliente y un servidor web.
+El protocolo de transferencia de hipertexto (HTTP) es el más utilizado en Internet. Se usa en cada transacción de la Web (www) y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Este protocolo se orienta a las transacciones y sigue el esquema ``Petición - Respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre el cliente y el servidor web.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/http1.jpg}
+        \includegraphics[width=8cm]{img/capitulo_2/http1.jpg}
         \caption{Interacción del protocolo HTTP.\\}
         Fuente: \cite{http}
         \label{fig:http}
     \end{center}
 \end{figure}
 
-El protocolo tiene las siguientes partes:
+Este protocolo se compone las siguientes características:
 \begin{itemize}
-    \item El cliente que efectúa la petición (un navegador o un spider) es denominado "user agent" (agente del usuario). 
-    \item La información transmitida es llamada ``recurso'' y es identificada mediante una cadena de caracteres denominada dirección URL.
+    \item El cliente que efectúa la petición (un navegador o un spider) es denominado ``user agent'' (agente del usuario). 
+    \item La información transmitida se denomina ``recurso'' y se identificada mediante una cadena de caracteres definida como dirección URL.
     \item Los recursos pueden ser archivos, el resultado de la ejecución de un programa, una consulta a una base de datos, la traducción automática de un documento, etc.
 \end{itemize}
 
 \section{Inteligencia Artificial}
-La Inteligencia Artificial (I.A.), como área de estudio de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y ha formado parte del desarrollo de la sociedad.\\
-
-El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto el cerebro es lo que hace inteligente al ser humano \cite{intro_ia}.\\
+La Inteligencia Artificial (I.A.), como área de estudio de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y pasó a formar parte del desarrollo de la sociedad. El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto, el cerebro es lo que hace inteligente al ser humano \cite{intro_ia}.\\
 
 Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero en la construcción de estas máquinas artificialmente inteligentes se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, son estudiados por la inteligencia artificial.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=8cm]{img/capitulo_2/ia.png}
-        \caption{Diagrama de la Inteligencia Artificial.\\}
+        \includegraphics[width=6cm]{img/capitulo_2/ia.png}
+        \caption{La Inteligencia Artificial y sus sub-areas\\}
         Fuente: \cite{ia}
         \label{fig:ia}
     \end{center}
 \end{figure}
 
-A menudo los términos Inteligencia Artificial, Aprendizaje Automático (Machine Learning) y Aprendiazaje Profundo (Deep Learning) son usados de manera indistinta, pero se debe tener en cuenta su significado diferente. Por los años `80 la Inteligencia Artificial era una característica que se alcanzaba al definir un conjunto de reglas que decían que hacer en un determinado momento, de esta manera un sistema `inteligente' solo obedecía reglas de acción programadas \cite{researchgate:ia}. En la figura \ref{fig:ia} se ilustra como la Inteligencia Artificial engloba a sus subcampos de estudio como ser el Machine Learning y el Deep Learning.
+A menudo los conceptos de Inteligencia Artificial, Aprendizaje Automático (Machine Learning) y Aprendiazaje Profundo (Deep Learning) son usados de manera indistinta. Por los años `80 la Inteligencia Artificial era una característica que se alcanzaba al definir un conjunto de reglas que decían que hacer en un determinado momento, de esta manera un sistema `inteligente' solo obedecía reglas de acción programadas \cite{researchgate:ia}. En la figura \ref{fig:ia} se ilustra como la Inteligencia Artificial engloba los subcampos de estudio como son el Machine Learning y el Deep Learning.
 
 \subsection{Redes Neuronales}
-Las redes neuronales artificiales son un modelo inspirado en el funcionamiento del cerebro humano. Está formado por un conjunto de nodos conocidos como neuronas artificiales que están conectadas y transmiten señales entre sí. Estas señales se transmiten desde la entrada hasta generar una salida. En la figura \ref{fig:classical_ml} se aprecia la estructura propia de una neurona artificial.\\
+Las redes neuronales artificiales, son un modelo inspirado en el funcionamiento del cerebro humano. Está formado por un conjunto de nodos conocidos como neuronas artificiales que están conectadas y transmiten señales entre sí. Estas señales se transmiten desde la entrada hasta generar una salida. En la figura \ref{fig:classical_ml} se aprecia la estructura propia de una neurona artificial.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=7cm]{img/capitulo_2/neurona.png}
+        \includegraphics[width=6cm]{img/capitulo_2/neurona.png}
         \caption{Ilustración de una Neurona artificial\\}
         Fuente: \cite{tensorflow_neurona}
     \label{fig:classical_ml}
     \end{center}
-    
 \end{figure}
 
-El objetivo principal de un modelo neuronal, es aprender modificándose automáticamente a si mismo, llegando a realizar tareas complejas que no podrían ser realizadas mediante la clásica programación basada en reglas. De esta forma se pueden automatizar funciones que al principio solo podrían ser realizadas por personas. Con su semejanza al del cerebro humano, las redes reciben una serie de valores de entrada y cada una de estas entradas llega a un nodo llamado neurona.\\
+El objetivo principal de un modelo neuronal, es aprender por medio de la modificación automática de si misma, llegando a realizar tareas complejas que no podrían ser realizadas mediante programación clásica basada en reglas. De esta forma se pueden automatizar funciones que al principio solo podrían ser realizadas por personas. Semejante al del cerebro humano, las redes neuronales reciben una serie de valores de entrada, donde cada una de estas llegan a un nodo llamado neurona.\\
 
-Las neuronas de la red están a su vez agrupadas en capas que forman la red neuronal. Cada una de las neuronas de la red posee a su vez un peso, un valor numérico, con el que modifica la entrada recibida. Los nuevos valores obtenidos salen de las neuronas y continúan su camino por la red. Este funcionamiento puede observarse de forma esquemática en la figura \ref{fig:estructura_red_neuronal}.\\
+Las neuronas de una red están a su vez agrupadas en capas formando una red neuronal. Cada una de las neuronas de la red poseen un peso, que es un valor numérico con el que modifica la entrada recibida. Los nuevos valores obtenidos por las neuronas continúan su camino por la red. En la figura \ref{fig:estructura_red_neuronal} se aprecia el funcionamiento anteriormente descrito.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=7cm]{img/capitulo_2/Redes_neuronales_esquema.png}
+        \includegraphics[width=6cm]{img/capitulo_2/Redes_neuronales_esquema.png}
         \caption{Modelo de capas de una red neuronal.\\}
         Fuente: \cite{perceptron_multicapa}
         \label{fig:estructura_red_neuronal}
     \end{center}
 \end{figure}
 
-Una vez que se alcanza el final de la red se obtiene una salida que será la predicción calculada por la red. Cuantas más capas posea la red y más compleja sea, también serán mas complejas las funciones que pueda realizar. Para conseguir que una red neuronal realice las funciones deseadas, es necesario \textbf{entrenarla}.\\
+Cuando este proceso llega al final de la red, se obtiene una salida que será la predicción calculada por la red. Cuantas más capas posea la red y aumente la complejidad de sus conexiones; mas complejas serán las funciones que pueda realizar. Para que una red neuronal realice las funciones deseadas, es necesario la ejecución del entrenamiento correspondiente.\\
 
-El entrenamiento de una red neuronal se realiza modificando los pesos de sus neuronas para que consiga extraer los resultados deseados. Para ello lo que se hace es introducir datos de entrenamiento en la red, en función del resultado que se obtenga, se modifican los pesos de las neuronas según el error obtenido y en función de cuanto haya contribuido cada neurona a dicho resultado. Este método es conocido como Backpropagation o propagación hacia atrás. Con este método se consigue que la red aprenda, consiguiendo un modelo capaz de obtener resultados muy acertados incluso con datos muy diferentes a los que han sido utilizados durante su entrenamiento \cite{atriainnovation:ia}.\\
+El entrenamiento de la red neuronal se realiza por medio de la modificación de los pesos de sus neuronas para que consiga extraer los resultados deseados. Para ello, se introduce datos de entrenamiento en la red, según el resultado obtenido y el error se modifican los pesos de las neuronas en función de cuanto haya contribuido cada neurona a dicho resultado. Este método es conocido como ``backpropagation'' o propagación hacia atrás. Con este método se consigue que la red ``aprenda'', consiguiendo un modelo capaz de obtener resultados muy acertados incluso con datos muy diferentes a los de su entrenamiento \cite{atriainnovation:ia}.\\
 
-Estas redes neuronales son utilizadas para tareas de predicción y clasificación. Esta técnica se ha convertido en una pieza clave para el desarrollo de la Inteligencia Artificial, como se describió previamente es uno de los principales campos de investigación y el que más esta evolucionando con el tiempo, ofreciendo cada vez soluciones más complejas y eficientes.
+Estas redes neuronales son utilizadas para tareas de predicción y clasificación. Esta técnica se ha convertido en una pieza clave para el desarrollo de la Inteligencia Artificial. Como se describió previamente, es uno de los principales campos de investigación y el que más ha evolucionado con el tiempo, ofreciendo cada vez soluciones más complejas y eficientes.\\
 
 \subsubsection{Redes neuronales convolucionales}
-Dentro del conjunto de tipos de redes neuronales tenemos las convolucionales, que específicamente serviran en el campo de la visión artificial. Las redes neuronales convolucionales son un algoritmo de Aprendizaje Profundo (Deep Learning) que está diseñado para trabajar con imágenes, tomando estas como entrada, asignándoles importancias (pesos) a ciertos elementos en la imagen para así poder diferenciar unos de otros.\\
+Dentro del conjunto de tipos de redes neuronales están las convolucionales, que se usan en el campo de la visión artificial. Las redes neuronales convolucionales representan un algoritmo de Aprendizaje Profundo (Deep Learning) que está diseñado para trabajar con imágenes. Toma las imágenes como entrada, les asigna un valor (peso) a ciertos elementos en la imagen para su clasificación.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{img/capitulo_2/convolucional.png}
+        \includegraphics[width=11cm]{img/capitulo_2/convolucional.png}
         \caption{Ilustración de una Red Neuronal Convolucional.\\}
         Fuente: \cite{intro_redes_neuronales}
         \label{fig:red_neuronal_convolucional}
     \end{center}
 \end{figure}
 
-Este es uno de los principales algoritmos que ha contribuido en el desarrollo y perfeccionamiento del campo de visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:estructura_red_neuronal}, donde las primeras puedan detectar líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
+Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:estructura_red_neuronal}, donde las primeras puedan detectan líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=3cm]{img/capitulo_2/kernel.png}
+        \includegraphics[width=2cm]{img/capitulo_2/kernel.png}
         \caption{Movimiento del Kernel.\\}
         Fuente: \cite{comprension_redes_neuronales}
         \label{fig:kernel}
     \end{center}
-    
 \end{figure}
 
-El proceso que se distingue de estas redes son las convoluciones. El cual consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
+Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida. El ``kernel'' dentro las redes convolucionales es considerado como un filtro que se aplica para extraer ciertas características importantes o patrones. Se usa para detectar bordes, enfoque, desenfoques, y características de la imagen por la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que el kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen permitiendo multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo. Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general.\\
 
-El kernel en las redes convolucionales se considera como un filtro que se aplica para extraer ciertas características importantes o patrones de esta y es usado para detectar bordes, enfoque, desenfoques, entre otras características de la imagen y es logrado para la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que este filtro o kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen. La convolución permite multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo .\\
-
-Es una operación que se usa en las redes convolucionales. El padding se aplica agregando píxeles de valor cero alrededor de la imagen original.
-Tiene dos usos:
-El primero es para que al realizar la convolución la imagen resultante sea de igual tamaño que la imagen original.
-El segundo es cuando se tiene información relevante en las esquinas de la imagen por lo que al realizar convolución el filtro pasa más por el centro de la imagen que en las esquinas, por lo que se aplica el padding para tener la información más relevante cerca del centro.\\
-
-Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general. La red toma como entrada los pixeles de una imagen. 
+% Tiene dos usos:
+% El primero es para que al realizar la convolución la imagen resultante sea de igual tamaño que la imagen original.
+% El segundo es cuando se tiene información relevante en las esquinas de la imagen por lo que al realizar convolución el filtro pasa más por el centro de la imagen que en las esquinas, por lo que se aplica el padding para tener la información más relevante cerca del centro.\\
 
 \section{Machine Learning (Aprendizaje de Máquina)}
-Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estructura de la información y ajustar estos datos en modelos que puedan ser entendidos y utilizados por las personas. \cite{digitalocean:machinelearning}.\\
-
-A diferencia de la computación tradicional, donde los algoritmos resuelven problemas específicos, los algoritmos de Machine Learning entrenan a las computadoras con datos de entrada y emplean análisis estadístico para generar valores de salida que se clasifican según a un rango específico. Por eso el Machine Learning facilita a las computadoras construir modelos a partir de datos ejemplo para automatizar el proceso de toma de decisiones basados en estos datos.\\
+Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estructura de la información y ajustar estos datos en modelos que puedan ser entendidos y utilizados por las personas. \cite{digitalocean:machinelearning}. A diferencia de la computación tradicional, donde los algoritmos resuelven problemas específicos, los algoritmos de Machine Learning entrenan a las computadoras con datos de entrada y emplean análisis estadístico para generar valores de salida que se clasifican según a un rango específico. Por eso el Machine Learning facilita a las computadoras construir modelos a partir de datos ejemplo para automatizar el proceso de toma de decisiones basados en estos datos.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=8cm]{img/capitulo_2/machinelearning.png}
+        \includegraphics[width=9cm]{img/capitulo_2/machinelearning.png}
         \caption{Diferencias entre programación clásica y M.L.\\}Fuente: \cite{classicprog_and_ml}
         \label{fig:classical_ml}
     \end{center}
 \end{figure}
 
-En la figura \ref{fig:classical_ml} se aprecia la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen; y de esta manera  desarrollar reglas que generan respuestas para nuevos datos.
+En la figura \ref{fig:classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.
 
 \subsection{Métodos de Machine Learning}
-En el Machine Learning, las tareas son generalmente clasificadas en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado.\\
+En el Machine Learning, las tareas se clasifican en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado. Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado y el no supervisado.\\
 
-Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado, que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
+% que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
 
 \subsubsection{Aprendizaje Supervisado}
-La computadora esta provista con entradas de ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
+La computadora es provista de entradas ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
 
 \subsubsection{Aprendizaje No Supervisado}
-La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\
+La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\\
 
 \section{Deep Learning (Aprendizaje profundo)}
-Según la figura \ref{fig:ia}, el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos.\\
-
-El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
+En la figura \ref{fig:ia}, se visualiza que el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos. El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
 
 \section{Técnicas de visión por computadora}
 La visión por computadora es una técnica de recolección de información que surge por la inspiración en el sistema visual humano, el cual es la principal fuente de información para el cerebro. Su meta es de modelar y automatizar el proceso de reconocimiento visual de objetos en la vida real.\\
 
-De los cinco sentidos que poseen las personas, la vista es la más importante. Por lo tanto la visión, es una tarea de procesamiento de información; pero tiene un grado de complejidad elevado, ya que para saber que es lo qué hay en el mundo nuestros cerebros deben ser capaces de representar esta información en toda su abundancia de color, forma, movimiento, detalle y belleza. \cite{iaarbook:artificialvision}\\
+De los cinco sentidos que poseen las personas, la vista es la más importante. Por lo tanto la visión, es una tarea de procesamiento de información; pero tiene un grado de complejidad elevado, saber que es lo qué hay en el mundo, el cerebo humano deben se capaz de representar esta información sobre el color, la forma, movimiento, detalle y belleza de los objetos. \cite{iaarbook:artificialvision}\\
 
-Por lo tanto, la visión por computadora o visión artificial compone de un conjunto de herramientas y métodos que permiten obtener, procesar y analizar imágenes del mundo real, con el objetivo de ser tratadas por una computadora. Estos métodos van a permitir automatizar un amplio conjunto de tareas al aportar a las computadoras información que es necesaria para la toma de desiciones en sus tareas asignadas. La visión por computadora trata de imitar a la visión humana, usando geometría y un enfoque estadístico para tratar el problema.\\
+La visión por computadora o visión artificial compone de un conjunto de herramientas y métodos que permiten obtener, procesar y analizar imágenes del mundo real por medio de una computadora. Estos métodos van a permitir automatizar un amplio conjunto de tareas al aportar a las computadoras información que es necesaria para la toma de desiciones en sus tareas asignadas. Esta técnica trata de imitar a la visión humana, usando geometría y un enfoque estadístico para solucionar el problema.\\
 
 \subsection{Aplicaciones}
 Esta rama de la Inteligencia Artificial aún sigue en investigación y mejoras donde sus aplicaciones más comunes son:
@@ -370,18 +355,18 @@ Una de las librerias mas utilizadas para las técnicas de vision por computadora
     \label{fig:cv2_logo}
 \end{figure}
 
-Una de las características mas interesantes de OpenCV es el reconocimiento facial. OpenCV, en su extensa biblioteca de funciones, brinda las capacidades para realizar las tareas de preprocesamiento sin ningún problema, así como los algoritmos de predicción. Además de usar el algoritmo de detección de objetos, es posible usar el seguimiento de objetos, para identificar rostros en una transmisión de video. OpenCV incluso posee funciones para configurar fácilmente el modelo en una transmisión en vivo, como en un video pregrabado \cite{medium:opencv}. 
+% Una de las características mas interesantes de OpenCV es el reconocimiento facial. OpenCV, en su extensa biblioteca de funciones, brinda las capacidades para realizar las tareas de preprocesamiento sin ningún problema, así como los algoritmos de predicción. Además de usar el algoritmo de detección de objetos, es posible usar el seguimiento de objetos, para identificar rostros en una transmisión de video. OpenCV incluso posee funciones para configurar fácilmente el modelo en una transmisión en vivo, como en un video pregrabado \cite{medium:opencv}. 
 
 Existen otras librerias que no son tan populares y representan un pago adicional.
 
 \section{Streamming}
-También denominado como transmisión, lectura en continuo, difusión en flujo, lectura en tránsito, difusión en continuo, descarga continua; es la distribución digital de multimedia a través de una red de computadoras, de manera que el usuario consume el producto (generalmente archivo de vídeo o audio) en paralelo mientras se descarga \cite{streamming:austerberry}.\\
+Este término también se denomina como transmisión, lectura en continuo, difusión en flujo, lectura en tránsito, difusión en continuo, descarga continua. Es la distribución digital de multimedia a través de una red de computadoras, de manera que el usuario consume el producto (generalmente archivo de vídeo o audio) en paralelo mientras se descarga \cite{streamming:austerberry}.\\
 
-El término se aplica habitualmente a la difusión de audio o vídeo. El Streaming requiere una conexión por lo menos de igual ancho de banda que la tasa de transmisión del servicio. El Streaming de vídeo se popularizó a fines de la década de 2000, cuando el ancho de banda se hizo lo suficientemente barato para gran parte de la población. Sin embargo, con la tecnología del Streaming, un archivo puede descargarse y reproducirse al mismo tiempo, con lo que el tiempo de espera es mínimo \cite{streamming:austerberry}. El streamming permite una reproducción directa en del contenido multimedia, sin la necesidad de almacenar en memoria la información para después reproducirla, como se puede ver en la figura \ref{fig:stream}.\\
+Se aplica habitualmente a la difusión de audio o vídeo. El streaming requiere una conexión por lo menos de igual ancho de banda que la tasa de transmisión del servicio. El streaming de vídeo se popularizó a fines de la década de 2000, cuando el ancho de banda se hizo lo suficientemente barato para gran parte de la población. Sin embargo, con la tecnología del streaming, un archivo puede descargarse y reproducirse al mismo tiempo, con lo que el tiempo de espera es mínimo \cite{streamming:austerberry}. El streamming permite la reproducción directa del contenido multimedia, sin la necesidad de almacenar en memoria la información para después reproducirla, como se puede ver en la figura \ref{fig:stream}.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/stream.png}
+        \includegraphics[width=8cm]{img/capitulo_2/stream.png}
         \caption{Streaming en un servidor web.\\}
         Fuente: \cite{streamming:austerberry}
         \label{fig:stream}
@@ -389,54 +374,53 @@ El término se aplica habitualmente a la difusión de audio o vídeo. El Streami
 \end{figure}
 
 El servidor más utilizado para la transmisión de contenidos multimedia es el servidor web, tipificado por Apache. Los servidores Web utilizan HTTP a través de TCP/IP para entregar sus páginas HTML y archivos de imagen asociados. El protocolo TCP/IP se utiliza como la capa de transporte a través de Internet. Los archivos se descargan a la memoria caché del navegador web más rápido de lo que el sistema permite. TCP incorpora control de flujo para gestionar la velocidad de descarga.\\
-\subsection{Servidor web para Streaming de Audio y Video}
+\subsection{Servidor web para el Streaming de contenido multimedia}
 
-El flujo que sigue el servidor web para reproducir contenido multimedia es el siguiente: Primero el servidor web mediante una aplicación proporciona una dirección que permite acceder a un archivo multimedia a un reproductor luego este mismo se conecta al servidor web mediante ese mismo vinculo mandando la señal para que el servidor transmita el contenido, pero el servidor web redirige al reproductor a un servidor Streaming para luego recién poder realizar la reproducción del contenido digital, como se puede observar en la figura \ref{fig:streamming}.\\
+El servidor web reproduce contenido multimedia de la siguiente forma: el servidor mediante una aplicación proporciona una dirección que permite acceder a un archivo multimedia por medio de un reproductor. Luego que se establece una conexión al servidor web mediante el mismo enlace, se manda una señal para que el servidor transmita el contenido. El servidor web redirige al reproductor a un servidor streaming para luego recién realizar la reproducción del contenido digital, como se observa en la figura \ref{fig:streamming}.\\
 
-Un servidor web por si solo no podría realizar este proceso sin un servidor Streaming de por medio ya que solo se limitaría a permitir la descarga del archivo en su totalidad para que después se realice la reproducción por parte del reproductor. Gracias al servidor Streaming se podrá decodificar del bitrate en el que se codifico. Los oyentes necesitan tener instalado un reproductor multimedia en su ordenador, aunque también pueden escuchar la emisión sin necesidad de él. Se podría utilizar: Windows Media Player, VLC, o algún software compatible.\\
+Un servidor web no realiza este proceso sin un servidor Streaming de por medio; permite la descarga del archivo en su totalidad para que después se realice la reproducción por parte del reproductor. El servidor streaming decodifica el bitrate en el que se codificó. Los oyentes deben tener instalado un reproductor multimedia en su ordenador, pero también se puede escuchar la emisión sin necesidad de éste último. Se podría utilizar: Windows Media Player, VLC, o algún software compatible.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/streamming.png}
+        \includegraphics[width=12cm]{img/capitulo_2/streamming.png}
         \caption{Streaming en un servidor web.\\}
         Fuente: \cite{streamming:austerberry}
         \label{fig:streamming}
     \end{center}
 \end{figure}
 
-Se maneja el termino bitrate que no es nada más que la calidad de la señal. Usualmente se utilizan 24, 32, 48, 64 kbps pero si lo desea puede emitir a un bitrate superior, por ejemplo 96 kbps o 128 kbps. Debemos tener en cuenta no obstante que a mayor bitrate mayor ancho de banda se necesitará, así como mayor será el costo. Sin la tecnología de Streaming, para reproducir un archivo en línea seria necesario descargarlo previamente en memoria del computador para después recién poder reproducir en el computador.\\
+El termino bitrate se refiere a la calidad de la señal, usualmente se utilizan 24, 32, 48, 64 kbps pero si se requiere se puede emitir a un bitrate superior, por ejemplo 96 kbps o 128 kbps. Se debe tener en cuenta que a mayor bitrate es necesario mayor ancho de banda, así como mayor será el costo. Sin la tecnología de Streaming, para reproducir un archivo multimedia, seria necesario descargar en memoria del computador para después recién reproducirlo.\\
 
 \subsubsection{Http Live Streaming (HLS)}
-HLS es un protocolo utilizado para enviar audio y video sobre HTTP, soporta bitrate adaptivo y es compatible con la mayoría de los dispositivos. Este protocolo fue desarrollado por Apple y puede ser utilizado tanto para video en vivo como video en demanda. Entre sus características importantes se encuentra:
+HLS es un protocolo utilizado para enviar audio y video sobre HTTP, soporta bitrate adaptivo y es compatible con la mayoría de los dispositivos. Este protocolo fue desarrollado por Apple y puede ser utilizado tanto para video en vivo como video en demanda. Entre sus características importantes se tiene:
 
 \begin{itemize}
-    \item Se adapta a las condiciones de la red. Dependiendo el ancho de banda de internet del espectador, se le entregará una calidad o bitrate adecuado.
-    \item Además puede ser entregado desde un servidor tradicional de HTTP.
-    \item Y puede ser protegido con encripción o autenticación.  Esto con el fin de proteger derechos de autor.
+    \item Se adapta a las condiciones de la red. Según el ancho de banda de internet del espectador, entrega una calidad o bitrate adecuado.
+    \item Puede ser entregado desde un servidor tradicional de HTTP.
+    \item Es protegido con encriptado o autenticación con el fin de proteger derechos de autor.
 \end{itemize}
 
 El flujo del protocolo es como sigue: 
 \begin{enumerate}
     \item El archivo de video se codifica con compresión de video H.264 y compresión de Audio AAC.
     \item Selecciona MPEG2-TS como contenedor de video, esto lo hace normalmente un encoder de video.
-    \item Cuando es codificado el video, se realiza un proceso de segmentación.  Este proceso realiza cortes del video cada ciertos segundos, usualmente cada 10 segundos. A estos fragmentos se les conoce como segmentos o chunks de video.
+    \item Cuando es codificado el video, se realiza un proceso de segmentación.  Este proceso realiza cortes del video cada ciertos segundos, usualmente cada 10 segundos. A estos fragmentos se les conoce como segmentos o ``chunks'' de video.
     \item Se genera un archivo índice. Este archivo contiene la información de los segmentos y en donde se encuentran para que el player los descargue. Este mismo proceso se realiza tanto para video en vivo o video en demanda (video almacenado).
     \item Cuando se decide encriptar la información, se ejecuta un algoritmo para proteger cada uno de los segmentos. Donde el player que tenga la llave para desencriptarlos puede ver el contenido.
-    \item  Estas llaves pueden ser estáticas o dinámicas, puede generarse una llave para todos los videos o una llave por video. Y lo único que hace falta es compartir el URL del archivo índice que es algo como:
+    \item  Estas llaves pueden ser estáticas o dinámicas. Puede generarse una llave para todos los videos o una llave por video.
 \end{enumerate}
-            
+La URL de reproducción tiene la siguiente forma:
 \begin{center}
     \verb|http://nombre-del-dominio/directorio-del-video/mi-video.m3u8|    
 \end{center}
 
-Y puede ser protegido con encripción o autenticación.  Esto con el fin de proteger derechos de autor.
-HTTP Live Streaming (HLS), es un protocolo que permite el envío de audio y video a través de HTTP desde un servidor web común para su reproducción en dispositivos basados en iOS, incluidos iPhone, iPad, iPod touch y Apple TV, y en computadoras de escritorio (macOS). Usando el mismo protocolo que impulsa la web, HLS implementa contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.\\
+Usando el mismo protocolo que impulsa la web, HLS comparte contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.\\
 
 % Es un protcolo (HLS) envía audio y video a través de HTTP desde un servidor web común para su reproducción en dispositivos basados en iOS, incluidos iPhone, iPad, iPod touch y Apple TV, y en computadoras de escritorio (macOS). Usando el mismo protocolo que impulsa la web, HLS implementa contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.
-En la figura, \ref{fig:hls}
+En la figura, \ref{fig:hls} se visualiza un esquema que representa el proceso de que sigue HLS. El archivo índice ``.m3u8'' permite a los reproductores de video descargar partes del contenido a medida que se reproduce, según el ancho de banda disponible en ese momento. Si el ancho de banda es bajo se realizan peticiónes del video de una calidad más baja para no interrumpir la reproducción, caso contrario se realizan peticiones a la calidad normal o más alta.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=9cm]{img/capitulo_2/hls.jpg}
+        \includegraphics[width=10cm]{img/capitulo_2/hls.jpg}
         \caption{Http Live Streaming.\\}
         Fuente: \cite{hls}
         \label{fig:hls}
@@ -444,7 +428,12 @@ En la figura, \ref{fig:hls}
 \end{figure}
 
 \subsubsection{DASH}
-En la figura \ref{fig:dash}
+
+MPEG DASH (Dynamic Adaptive Streaming over HTTP) es un estándar para la transmisión adaptativa a través de HTTP que tiene el potencial de reemplazar tecnologías patentadas existentes como Microsoft Smooth Streaming, Adobe Dynamic Streaming y Apple HTTP Live Streaming (HLS) \cite{dash_streamingmedia}. Todas las tecnologías de transmisión adaptativa basadas en HTTP utilizan una combinación de archivos multimedia codificados y archivos de manifiesto que identifican transmisiones alternativas y sus respectivas URL.\\
+
+Los reproductores respectivos monitorean el estado del búfer (HLS) y la utilización de la CPU (Smooth Streaming y HTTP Dynamic Streaming) cambiando las transmisiones según sea necesario, ubicando la transmisión alternativa de las URL especificadas en el archivo de manifiesto. HLS usa segmentos MPEG-2 Transport Stream (M2TS), almacenados como miles de pequeños archivos M2TS, mientras que Smooth Streaming y HLS usan código de tiempo para encontrar el fragmento necesario de los flujos elementales MP4 apropiados.\\
+
+En la figura \ref{fig:dash} se visualiza el funcionamiento del estándar DASH. El reproductor realiza las peticiones necesarias a un enlace el cual esta disponible y gestiona las peticiones de los clientes como del servidor en el momente de guardar los videos codificados.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -454,7 +443,6 @@ En la figura \ref{fig:dash}
         \label{fig:dash}
     \end{center}
 \end{figure}
-    
 
 \section{Lenguaje de Programacion}
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.\\
@@ -516,5 +504,6 @@ Existen diferentes versiones de las fases del modelo en cascada y según la vers
 \end{enumerate}
 
 A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
+
 
 <detalle de cada fase>!!!1
