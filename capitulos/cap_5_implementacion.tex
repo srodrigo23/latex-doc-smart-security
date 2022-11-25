@@ -2,21 +2,55 @@
 En este capitulo se describe a detalle el proceso de implementación de los diferentes módulos que forman parte del sistema  de video-vigilancia inteligente.
 
 \section{Módulo de Cámara}
-\subsection{Diseño de clases}
-\subsection{Diseño de interfaz de simulador}
-\subsection{Captura de video}
-\subsection{Conexión a Servidor TCP}
-\subsection{Comunicacion y envío de fotogramas}
-\section{Módulo de Servidor TCP}
-\subsection{Diseño de clases}
-\subsection{Manejador de conectores de clientes}
-\subsection{Streamming HLS}
-\subsection{Detectores}
-\subsubsection{Detector de movimiento}
-\subsubsection{Detector de intrusos}
-\subsubsection{Detector de fuego/humo}
-\section{Servidor HTTP}
-\section{Modulo de envío de correo electrónico}
+
+\subsection{Fuente de fotogramas}
+\subsubsection{Webcam}
+\subsubsection{Raspberry-picam}
+\subsection{Configuración}
+\subsection{Interfaz gráfica de usuario}
+
+Referenciando a la figura \ref{fig:camera_screen}.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=13cm]{img/capitulo_5/camera_screen.png}
+        \caption{Interfaz de la camara desarrollada.}
+        Fuente : Elaboración Propia.
+        \label{fig:camera_screen}
+    \end{center}
+\end{figure}
+
+Referenciando a la figura \ref{fig:camera_screen}.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=13cm]{img/capitulo_5/webcamera.png}
+        \caption{Diagrama de Gannt.}
+        Fuente : Elaboración propia
+        \label{fig:webcamera}
+    \end{center}
+\end{figure}
+
+Referenciando a la figura \ref{fig:securityvideo}.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=13cm]{img/capitulo_5/security-video.png}
+        \caption{Diagrama de Gannt.}
+        Fuente : Elaboración propia
+        \label{fig:securityvideo}
+    \end{center}
+\end{figure}
+
+\subsection{Conexión al servidor}
+
+\section{Módulo de Servidor}
+\subsection{Interfaz de usuario}
+\subsection{Manejador de conexiones}
+
+\subsection{Análisis de fotogramas}
+\subsubsection{Fuego y humo}
+\subsubsection{Silueta humana}
+\subsubsection{Movimiento}
+\subsection{Streamming Http}
+\section{Notificación por correo electrónico}
 
 \begin{longtable}{p{2cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
     \caption{Titulo de tabla multipágina} \label{tabla:tabla_largo_ejemplo} \\

@@ -1,77 +1,61 @@
 \chapter{Análisis y Diseño}
 
-Las etapas iniciales de la metodología ``Cascada'' consisten en el análisis y diseño previos al inicio de la implementación del producto final. Es importante que estas fases sean completadas en su totalidad para que el desarrollo sea éxitoso. Este proyecto se plantea para ser diseñado y desarrollado en un tiempo de 50 dias hábiles calendario y la distribución del tiempo se define segun la complejidad de las tareas que implican cada fase.
+Las etapas iniciales de la metodología ``Cascada'' consisten en el análisis y diseño que son previos al inicio de la implementación del producto final. Es importante que estas fases sean completadas en su totalidad para que el desarrollo sea éxitoso. Este proyecto plantea un diseñado y desarrollo de 50 dias hábiles calendario con la distribución del tiempo definido según la complejidad de las tareas que implican cada una de las fases.\\
 
 \section{Análisis}
-Para el diseño de un sistema de video-vigilancia inteligente es necesario tener en cuenta los elementos primordiales que lo componen. En este caso los principales módulos llegan a ser:
-\begin{itemize}
-    \item Visualizador de fotogramas.(Simulador de cámara)
-    \item Servidor TCP (Servicio que aplica el protocolo TCP/IP)
-    \item Servidor HTTP (Servicio que aplica el protocolo de la Web)
-    \item Módulo SMTP (Módulo de envio de correo electrónico)
-\end{itemize}
+Para el diseño de un sistema de video-vigilancia inteligente es necesario tener en cuenta los elementos principales que lo componen. Un sistema de video-vigilancia esta compuesto de cámaras individuales y un puesto central o servidor donde todas las conexiones convergen y se centralizan para su control. En el dispositivo central (servidor) se procesan las imágenes que las cámaras capturan y se convierten en video para ser visualizado en un monitor.\\
 
-A continuación se detalla el funcionamiento esperado del sistema de video-vigilancia intelegente. El módulo de visualización es el más importante dado que es el encargado de capturar los fotogramas por medio de un lente físico que trabaje como cámara. Las
+El sistema propuesto permite visualizar el video en vivo desde cualquier dispositivo con acceso a la red de internet además de que envía notificaciones automáticas en el instante en que se detecta: movimiento, fuego, humo o silueta de un intruso. El usuario recibe la notificación por correo electrónico el cual adjunta capturas y un enlace web para visualizar en vivo lo que esta captando la cámara.\\
 
-Referenciando a la figura \ref{fig:camera_screen}.
+% Los principales módulos del sistema son:
+% \begin{itemize}
+%     \item Módulo de cámara (Nodos)
+%     \item Módulo de servidor (Analizador y noti)
+%     % \item Servidor HTTP (Servicio que aplica el protocolo de la Web)
+%     % \item Módulo SMTP (Módulo de envio de correo electrónico)
+% \end{itemize}
+
+En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema propuesto. Las cámaras de video-vigilancia se encargan de capturar los fotogramas de video y se enlazan por medio de un socket o conector (uno por cada cámara) al servidor TCP. Cuando es registrada una nueva conexión, el sistema notifica al usuario por medio de un correo electrónico, compartiendo información relevante sobre la conexión de una nueva cámara. El servidor TCP que maneja todas las conexiones, realiza el análisis de los fotogramas de manera individual por cada cámara conectada por medio de una libreria de visión por computadora. Paralelamente se construye el video que se va a transmitir a partir de los fotogramas y es decodificado por medio de un conjunto de paquetes de software libre, los cuales arman las partes del archivo para el streaming de video por la red. Cuando un evento (fuego, humo, movimiento) es identificado, automáticamente se envia un correo electronico al usuario notificando una posible identificación de un evento.\\
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{img/capitulo_4/main.jpeg}
-        \caption{Diagrama de Gannt.}
+        \includegraphics[width=17cm]{img/capitulo_4/main.jpeg}
+        \caption{Diseño de interacción de los módulos del sistema de video-vigilancia}
         Fuente : Elaboración propia
-        \label{fig:webcamera}
+        \label{fig:system_desing}
     \end{center}
 \end{figure}
 
 \subsection{Definición de Requerimientos}
-Para la identificación de los requerimientos, se plantean los criterios de partida a tomar en cuenta en el diseño del sistema de video-vigilancia inteligente:
+La definición de requerimientos es una de las actividades más importantes del desarrollo de software; de ello depende el resto de actividades del proyecto. Anteriormente se describe completamente el comportamiento del sistema que se desarrolla para la identificación de los requerimientos. Inicialmente se plantean los criterios de partida a tomar en cuenta en el diseño del sistema de video-vigilancia inteligente:
+
 \begin{itemize}
-    \item Costos altos en infraestructura de transmisión de video en vivo.
+    \item Costos altos en la infraestructura de transmisión de video en vivo.
     \item Las características de identificación automática, estan disponibles para sistemas de video-vigilancia de alto nivel.
     \item Una alerta inmediata puede minimizar el impacto de alguna situación que ponga en peligro la integridad de bienes materiales y humanos.
     \item Los usuarios finales son personas que a menudo dejan su hogar para salir a trabajar, y usan constamente su correo electrónico.
 \end{itemize}
 
-
 \subsubsection{Requerimientos Funcionales}
-
-\subsubsection{Requerimientos No Funcionales}
-
-\section{Diseño}
-
-\subsection{Diseño de clases}
-
-\subsection{Diseño de interfaces}
-
-\subsection{Diseño de consola de servidor}
-
-\subsection{Diseño de entidad-relación (Base de datos)}
-
-\subsection{Diseño de notificación}
-
-\subsection{Diseño de interacción}
-
-\subsection{Diagrama de interacción Cámara-Servidor}
-
-
-\subsection{Requerimientos del sistema}
-En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista inicial de requerimientos del sistema de video-vigilancia inteligente.\\
+En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista de requerimientos funcionales del sistema de video-vigilancia inteligente.
 
 \begin{table}[H]
-    \caption{Lista de requerimientos}
-    \label{tabla:ejemplo}
+    \caption{Lista de requerimientos funcionales }
+    \label{tabla:req_funcionales}
     \begin{center}
         \begin{tabular}{ |c|l|} 
             \hline
             1. & Capturar fotogramas por medio de una o varias cámaras portatiles.\\ \hline
-            2. & Visualizar los fotogramas capturados en tiempo real (captura de video).\\  \hline
-            3. & Ejecutar el servicio de análisis y procesamiento de los fotogramas capturados.\\  \hline
-            4. & Enviar los fotogramas capturados por medio de la red al servicio encargado de su análisis.\\ \hline
-            5. & Permitir la recepción de fotogramas de varias fuentes hacia el servicio.\\ \hline
-            6. & Transmitir los fotogramas convertidos en video en vivo desde fuentes diferentes.\\ \hline
-            7. & Detectar movimiento a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
-            8. & Detectar silueta humana a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
-            9. & Notificar al usuario por medio de un correo electrónico cuando se de una detección.\\ \hline
+            2. & Visualizar fotogramas capturados en tiempo real (captura de video).\\  \hline
+            3. & Notificar al usuario cuando una nueva cámara se conecta.\\  \hline
+            4. & Enviar fotogramas capturados por medio de la red al servicio encargado de su análisis.\\ \hline
+            5. & Análizar y procesar fotogramas capturados individualmente por cada cámara.\\  \hline
+            6. & Permitir la recepción de fotogramas de varias fuentes hacia el servicio.\\ \hline
+            7. & Transmitir los fotogramas convertidos en video en vivo desde fuentes diferentes.\\ \hline
+            8. & Detectar movimiento a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
+            9. & Detectar silueta humana a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
+            10. & Detectar fuego y/o humo a partir de los fotogramas recibidos desde distintas fuentes.\\ \hline
+            11. & Notificar al usuario por medio de un correo electrónico cuando se de una detección.\\ \hline
         \end{tabular}
     \end{center}
     \begin{center}
@@ -79,67 +63,123 @@ En esta fase es necesario delimitar el alcance y las capacidades del sistema pla
     \end{center}
 \end{table}
 
+\subsubsection{Requerimientos No Funcionales}
+Los requisitos no funcionales son aquellos relacionados con la calidad y el proceso de desarrollo del sistema. Los tipos de requisitos no funcionales son: rendimiento, disponibilidad, acecesibilidad, usabilidad, estabilidad, portabilidad, costo, operatividad, interoperabilidad, escalabilidad, concurrencia, mantenibilidad, interfaz, plazo de entrega y herramientas. Los requisitos no funcionales surgen de la necesidad del usuario, debido a las restricciones en el presupuesto y las herramientas utilizadas.\\
+
+\begin{enumerate}
+    \item  \textbf{Requisitos de interfaz} 
+        \begin{itemize}
+            \item Las cámaras tendran una interfaz que permita visualizar el trabajo que estan ejecutando.
+            \item El servidor mostrará información necesaria sobre las tareas qeu realiza.
+            \item El sistema deberá ser de fácil configuración.
+            \item Las notificaciones por correo electrónico deberán ser visualmente agradables y estilizadas.
+        \end{itemize}
+    \item \textbf{Requisitos de portabilidad}
+        \begin{itemize}
+            \item Los módulos de cámara podran ser conectarse de forma cableada o inalámbrica.
+        \end{itemize}
+    \item \textbf{Requisitos de disponibilidad}
+        \begin{itemize}
+            \item La transmisión en vivo estará disponible cuando el usuario quiera visualizar lo que captan las cámaras.
+        \end{itemize}
+\end{enumerate}
+
+\section{Planificación}
+Todas las fases del modelo cascada son planificadas según la complejidad y tareas que presenta cada fase. Dado que cada fase debe culminarse por completo para pasar a la siguiente o en su defecto requerir mínimas modificaciones para regresar a la fase anterior, se plantea una planificación de 60 días hábiles que se visualiza en la tabla \ref{tabla:planning}.\\
+
 \begin{table}[H]
-    \caption{Tabla de planificación de las diferentes fases del modelo Cascada}
-    \label{tabla:ejemplo}
+    \caption{Tabla de planificación según fases del modelo Cascada.}
+    \label{tabla:planning}
     \begin{center}
         \begin{tabular}{|c|l|c|c|c|}
             \hline
-            \textbf{Num.} & \textbf{Fase}  &  \textbf{Fecha inicial} & \textbf{Fecha final} & \textbf{Duración (días)}\\ \hline
-            \textbf{1.} & Fase de requerimientos        & 6-jun        & 17-jun        & 10        \\ \hline
+            \textbf{Num.} & \textbf{Fase del modelo Cascada}  &  \textbf{Fecha inicial} & \textbf{Fecha final} & \textbf{Duración (días)}\\ \hline
+            \textbf{1.} & Fase de análilis        & 6-jun        & 17-jun        & 10        \\ \hline
             \textbf{2.} & Fase de diseño del sistema       & 20-jun        & 8-jul        & 15        \\ \hline
             \textbf{3.} & Fase de implementación        & 11-jul        & 19-ago        & 30        \\ \hline
             \textbf{4.} & Fase de pruebas        & 22-ago         &   2-sep     &    10     \\ \hline
             \textbf{5.} & Fase de mantenimiento        & 5-sep        & 9-sep        & 5        \\ \hline
         \end{tabular}
-        Fuente: Elaboración propia.
+        \begin{center}            
+            Fuente: Elaboración propia.
+        \end{center}
     \end{center}
 \end{table}
 
-\section{Identificación de Requerimientos del Sistema}
-Referenciando a la figura \ref{fig:gannt}.
+En la figura \ref{fig:gannt} se visualiza e diagrama de Gannt en base a la planificación expresada en la anterior tabla.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=17cm]{img/capitulo_4/gant.png}
+    \end{center}
+    \begin{center}
         \caption{Diagrama de Gannt.}
         Fuente : Elaboración propia
         \label{fig:gannt}
     \end{center}
 \end{figure}
 
+\section{Diseño}
+El diseño del sistema de video-vigilancia se divide y se desarrolla según los módulos que componen el sistema completo:
+\begin{itemize}
+    \item Módulo de cámaras
+    \item Módulo de servidor
+\end{itemize}
 
+\subsection{Módulo de cámaras}
+Este módulo es el encargado de controlar y conectar la cámara al servidor TCP. Esta planificado para funcionar en un dispositivo portatil como ser una raspberry. Gracias a la
+\subsubsection{Diseño de interfaz}
 
+\subsubsection{Diagrama de interacción}
 
-
-Referenciando a la figura \ref{fig:camera_screen}.
+En la figura \ref{fig:diagrama_interaccion_general}.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_4/camera_screen.png}
-        \caption{Interfaz de la camara desarrollada.}
-        Fuente : Elaboración Propia.
-        \label{fig:camera_screen}
+        \includegraphics[width=17cm]{img/capitulo_4/interaccion.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de interacción entre los módulos del sistema.}
+        Fuente: Elaboración propia.
+        \label{fig:diagrama_interaccion_general}
     \end{center}
 \end{figure}
 
-Referenciando a la figura \ref{fig:camera_screen}.
+\subsubsection{Diagrama de estado}
+
+\subsubsection{Diagrama de clases}
+
+En la figura \ref{fig:camera_clases}
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_4/webcamera.png}
-        \caption{Diagrama de Gannt.}
+        \includegraphics[width=15cm]{img/capitulo_4/camera_clases.jpg}
+        \caption{Diagrama de clases del módulo de cámara}
         Fuente : Elaboración propia
-        \label{fig:webcamera}
+        \label{fig:camera_clases}
     \end{center}
 \end{figure}
 
-Referenciando a la figura \ref{fig:securityvideo}.
+\subsection{Módulo de servidor}
+
+\subsubsection{Diagrama de interacción}
+
+\subsubsection{Diagrama de estado}
+
+\subsubsection{Diagrama de clases}
+
+\subsubsection{Diagrama de la base de datos}
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_4/security-video.png}
-        \caption{Diagrama de Gannt.}
+        \includegraphics[width=10cm]{img/capitulo_4/db.png}
+        % \caption{Diagrama de clases del módulo de cámara}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama entidad-relación.}
         Fuente : Elaboración propia
-        \label{fig:securityvideo}
+        \label{fig:db_diagram}
     \end{center}
 \end{figure}
+
+\subsubsection{Diseño de notificación por correo electrónico}
 
 Referenciando a la figura \ref{fig:servertcp_console}.
 \begin{figure}[H]
@@ -272,32 +312,3 @@ Referenciando a la figura \ref{fig:servertcp_console}.
     Nota. Extraída de Apellido, N. (2000) \textit{Nombre del libro}.
     Editorial o universidad que lo publicó.
 \end{table}
-
-\section{Identificación de Subsistemas}
-
-Referenciando a la figura \ref{fig:ejemplo}.
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_4/db.png}
-    \end{center}
-    \caption{Ilustración de un ladrón}
-    Fuente: Adaptada de Apellido, N. (2000) \textit{Nombre del libro}.
-    Editorial o universidad que lo publicó.
-    \label{fig:ejemplo}
-\end{figure}
-
-Referenciando a la figura \ref{fig:ejemplo}.
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=18cm]{img/capitulo_4/interaccion.png}
-    \end{center}
-    \caption{Ilustración de un ladrón}
-    Fuente: Adaptada de Apellido, N. (2000) \textit{Nombre del libro}.
-    Editorial o universidad que lo publicó.
-    \label{fig:ejemplo}
-\end{figure}
-\section{Comunicación de Sistemas}
-
-\subsection{Sockets}
-
-\section{Planificación}
