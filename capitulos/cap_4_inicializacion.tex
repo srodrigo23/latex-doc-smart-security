@@ -1,11 +1,29 @@
-\chapter{Inicialización}
+\chapter{Análisis y Diseño}
 
-% En este capítulo se tratan todos los aspectos preliminares para el implementación del producto final. Según la metodología ``Cascada'' las fases de: identificación de requerimientos, análisis, diseño del programa, son exclusivamente de diseño y establecimineto del proyecto. \\
-% Este proyecto es planteado para ser diseñado y desarrollado en un tiempo de 50 dias hábiles calendario y la distribución del tiempo se define segun la complejidad de las tareas que implica cada fase.
-% \section{Planificación General}
-% En este conjunto de fases basados en la metodología ``Cascada'', se plantean todos los aspectos necesarios a tomar en cuenta al momento del planteamiento del proyecto implementación, pruebas y despliegue.
+Las etapas iniciales de la metodología ``Cascada'' consisten en el análisis y diseño previos al inicio de la implementación del producto final. Es importante que estas fases sean completadas en su totalidad para que el desarrollo sea éxitoso. Este proyecto se plantea para ser diseñado y desarrollado en un tiempo de 50 dias hábiles calendario y la distribución del tiempo se define segun la complejidad de las tareas que implican cada fase.
 
-\section{Identificación de Requerimientos}
+\section{Análisis}
+Para el diseño de un sistema de video-vigilancia inteligente es necesario tener en cuenta los elementos primordiales que lo componen. En este caso los principales módulos llegan a ser:
+\begin{itemize}
+    \item Visualizador de fotogramas.(Simulador de cámara)
+    \item Servidor TCP (Servicio que aplica el protocolo TCP/IP)
+    \item Servidor HTTP (Servicio que aplica el protocolo de la Web)
+    \item Módulo SMTP (Módulo de envio de correo electrónico)
+\end{itemize}
+
+A continuación se detalla el funcionamiento esperado del sistema de video-vigilancia intelegente. El módulo de visualización es el más importante dado que es el encargado de capturar los fotogramas por medio de un lente físico que trabaje como cámara. Las
+
+Referenciando a la figura \ref{fig:camera_screen}.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{img/capitulo_4/main.jpeg}
+        \caption{Diagrama de Gannt.}
+        Fuente : Elaboración propia
+        \label{fig:webcamera}
+    \end{center}
+\end{figure}
+
+\subsection{Definición de Requerimientos}
 Para la identificación de los requerimientos, se plantean los criterios de partida a tomar en cuenta en el diseño del sistema de video-vigilancia inteligente:
 \begin{itemize}
     \item Costos altos en infraestructura de transmisión de video en vivo.
@@ -13,6 +31,28 @@ Para la identificación de los requerimientos, se plantean los criterios de part
     \item Una alerta inmediata puede minimizar el impacto de alguna situación que ponga en peligro la integridad de bienes materiales y humanos.
     \item Los usuarios finales son personas que a menudo dejan su hogar para salir a trabajar, y usan constamente su correo electrónico.
 \end{itemize}
+
+
+\subsubsection{Requerimientos Funcionales}
+
+\subsubsection{Requerimientos No Funcionales}
+
+\section{Diseño}
+
+\subsection{Diseño de clases}
+
+\subsection{Diseño de interfaces}
+
+\subsection{Diseño de consola de servidor}
+
+\subsection{Diseño de entidad-relación (Base de datos)}
+
+\subsection{Diseño de notificación}
+
+\subsection{Diseño de interacción}
+
+\subsection{Diagrama de interacción Cámara-Servidor}
+
 
 \subsection{Requerimientos del sistema}
 En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista inicial de requerimientos del sistema de video-vigilancia inteligente.\\
@@ -54,11 +94,9 @@ En esta fase es necesario delimitar el alcance y las capacidades del sistema pla
         \end{tabular}
         Fuente: Elaboración propia.
     \end{center}
-    % Nota. Extraída de Apellido, N. (2000) \textit{Nombre del libro}.
-    % Editorial o universidad que lo publicó.
-    
 \end{table}
 
+\section{Identificación de Requerimientos del Sistema}
 Referenciando a la figura \ref{fig:gannt}.
 \begin{figure}[H]
     \begin{center}
@@ -68,6 +106,10 @@ Referenciando a la figura \ref{fig:gannt}.
         \label{fig:gannt}
     \end{center}
 \end{figure}
+
+
+
+
 
 Referenciando a la figura \ref{fig:camera_screen}.
 \begin{figure}[H]
@@ -158,33 +200,33 @@ Referenciando a la figura \ref{fig:servertcp_console}.
 % \setlength\cellspacetoplimit{4pt}
 % \setlength\cellspacebottomlimit{4pt}
 % \newcommand\cincludegraphics[2][]{\raisebox{-0.3\height}{\includegraphics[#1]{#2}}}
-\begin{table}[H]
-    \caption{Detalle de las pruebas realizadas}
-    \begin{center}
-        \begin{tabular}{|>{\centering}p{0.3\textwidth}|>{\centering}m{0.3\textwidth}|m{0.3\textwidth}<{\centering}|} 
-            \hline
-            \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
-            \hline
-            \begin{minipage}{.3\textwidth}
-                \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
-            \end{minipage}& lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-            & \begin{itemize} 
-                \item Remote delivery 
-                \item Immersive experiences
-                \item text proved
-            \end{itemize} \\ 
-            \hline
-            \begin{minipage}{.3\textwidth}
-                \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
-            \end{minipage} & cell8 & \begin{itemize} 
-                \item Remote delivery 
-                \item Immersive experiences
-                \item text proved
-            \end{itemize} \\
-            \hline
-        \end{tabular}
-    \end{center}
-\end{table}
+% \begin{table}[H]
+%     \caption{Detalle de las pruebas realizadas}
+%     \begin{center}
+%         \begin{tabular}{|>{\centering}p{0.3\textwidth}|>{\centering}m{0.3\textwidth}|m{0.3\textwidth}<{\centering}|} 
+%             \hline
+%             \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3} \\
+%             \hline
+%             \begin{minipage}{.3\textwidth}
+%                 \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
+%             \end{minipage}& lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+%             & \begin{itemize} 
+%                 \item Remote delivery 
+%                 \item Immersive experiences
+%                 \item text proved
+%             \end{itemize} \\ 
+%             \hline
+%             \begin{minipage}{.3\textwidth}
+%                 \includegraphics[width=\linewidth]{img/capitulo_4/db.png}
+%             \end{minipage} & cell8 & \begin{itemize} 
+%                 \item Remote delivery 
+%                 \item Immersive experiences
+%                 \item text proved
+%             \end{itemize} \\
+%             \hline
+%         \end{tabular}
+%     \end{center}
+% \end{table}
 
 \begin{table}[H]
     \caption{Detalle de las pruebas realizadas}

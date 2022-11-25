@@ -33,14 +33,6 @@ En la figura \ref{fig:surveillance-market} se muestra como el mercado global de 
 
 El aspecto más relevante del crecimiento en las oportunidades de este campo, se da en la implementación de nuevas características en este tipo de sistemas; gracias a las técnicas de visión por computadora e inteligencia artificial (I.A.), a la escalabilidad gracias al uso de servicios basados en la nube. Las ramas afines a la inteligencia artificial, como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) han permitido lograr grandes avances en el campo de la video-vigilancia.\\
 
-Para el desarrollo del prototipo propuesto se implementan los siguientes componentes que forman parte del sistema:
-\begin{itemize}
-    \item Visualizador de fotogramas.(Simulador de cámara)
-    \item Servidor TCP (Servicio que aplica el protocolo TCP/IP)
-    \item Servidor HTTP (Servicio que aplica el protocolo de la Web)
-    \item Módulo SMTP (Módulo de envio de correo electrónico)
-\end{itemize}
-
 Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por medio de la red por el protocolo tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, como también la transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
 
 \section{Arquitectura de red}
@@ -420,7 +412,7 @@ Usando el mismo protocolo que impulsa la web, HLS comparte contenido usando serv
 En la figura, \ref{fig:hls} se visualiza un esquema que representa el proceso de que sigue HLS. El archivo índice ``.m3u8'' permite a los reproductores de video descargar partes del contenido a medida que se reproduce, según el ancho de banda disponible en ese momento. Si el ancho de banda es bajo se realizan peticiónes del video de una calidad más baja para no interrumpir la reproducción, caso contrario se realizan peticiones a la calidad normal o más alta.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/hls.jpg}
+        \includegraphics[width=13cm]{img/capitulo_2/hls.jpg}
         \caption{Http Live Streaming.\\}
         Fuente: \cite{hls}
         \label{fig:hls}
@@ -437,7 +429,7 @@ En la figura \ref{fig:dash} se visualiza el funcionamiento del estándar DASH. E
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/dash.png}
+        \includegraphics[width=13cm]{img/capitulo_2/dash.png}
         \caption{Dinamyc Adaptative Streamming Over Http.\\}
         Fuente: \cite{dash}
         \label{fig:dash}
@@ -449,23 +441,22 @@ Python es un lenguaje de programación interpretado cuya filosofía hace hincapi
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=2cm]{img/capitulo_2/python.png}
+        \includegraphics[width=1cm]{img/capitulo_2/python.png}
         \caption{Logo del lenguaje de programación Python.\\}
         Fuente: Web
         \label{fig:python}
     \end{center}
 \end{figure}
 
-Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). También es usado en el campor del Machine Learning y el Deep Learning. Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.
+Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). También es usado en el campo del Machine Learning y el Deep Learning. Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.\\
 
 \section{Metodología de desarrollo}
-El término de ingenieria de software se toma propone por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada donde en ese entonces los proyectos de software complejos eran problemáticos y costosos de completar donde se supuso que sería beneficioso considerar el desarrollo de software como ingeniería \cite{Ganis}.\\
+El concepto de ingenieria de software es propuesto por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada. En ese entonces los proyectos de software complejos eran problemáticos y costosos de completar, entonces se supuso que sería beneficioso considerar el desarrollo de software como Ingeniería \cite{Ganis}.\\
 
-Los encargados de la codificación del software denominados programadores, en un principio eran ingenieros y como el costo computacional era alto, se utilizó un concepto de hardware denominado "mide dos veces, corta una vez"\cite{Ganis}.\\
-La naturaleza cautelosa de esta costumbre provocó el desarrollo de metodologías que permitieron a los equipos de proyectos creen planes lentos y metódicos para la creación de sistemas de software.\\
+Los encargados de la codificación del software llamados programadores; en un principio eran ingenieros, pero como el costo computacional era alto, se utilizó un concepto de hardware denominado "mide dos veces, corta una vez"\cite{Ganis}. La naturaleza cautelosa de esta costumbre provocó el desarrollo de metodologías que permitieron a los equipos de proyectos creen planes lentos y metódicos para la creación de sistemas de software.\\
 
-\subsection{Modelo Cascada (Waterfall)}
-En el inicio de su definición como un modelo para el desarrollo de software; este concepto fue abordado por el Dr. Winston Royce, por medio de un artículo escrito sobre la gestión y dirección de proyectos grandes y complejos de software \cite{Winston}. En ese artículo basandose en experiencias de desarrollo de software para la planificacion de misiones aereas; el autor describe los fundamentos del desarrollo de software. Gran parte de esos fundamentos aun son aplicables en la actualidad. En el planteamiento de estos fundamentos, Royce presenta un conjunto de fases los cuales forman parte de una secuencia de desarrollo de software ilustrada en la figura \ref{fig:cascada}.
+\subsection{Modelo Cascada o Waterfall}
+En sus inicios, este concepto fue abordado por el Dr. Winston Royce, por medio de un artículo escrito sobre la gestión y dirección de proyectos grandes y complejos de software \cite{Winston}. En ese artículo en base en experiencias de desarrollo de Software para la planificación de misiones aereas; el autor describe los fundamentos del desarrollo de Software. Gran parte de esos fundamentos aún son aplicables en la actualidad. En el planteamiento de estos fundamentos, Royce presenta un conjunto de fases los cuales forman parte de una secuencia de desarrollo de software ilustrada en la figura \ref{fig:cascada}.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -476,34 +467,88 @@ En el inicio de su definición como un modelo para el desarrollo de software; es
     \label{fig:cascada}
 \end{figure}
 
-Una vez definida esta secuencia, se creó el concepto de ``Cascada", como un modelo de desarrollo con actividades bien definidas y organizadas con un objetivo independiente dando origen al diseño del primer S.D.M.\footnote{Metodología de Desarrollo de Software} \cite{Bell&Thayer}. En la figura \ref{fig:cascada} la fase de análisis y la de codificación entregan la mayor parte del producto esperado, mientras que las otras fases estan puestas para ser organizadas y planificadas de manera independiente para un mejor manejo de los recursos del proyecto.\\
+Una vez definida esta secuencia, se crea el concepto de ``Cascada", como un modelo de desarrollo con actividades bien definidas y organizadas con un objetivo independiente dando origen al diseño del primer S.D.M.\footnote{Metodología de Desarrollo de Software} \cite{Bell&Thayer}. En la figura \ref{fig:cascada} la fase de análisis y la de codificación entregan la mayor parte del producto esperado, mientras que las otras fases estan puestas para ser organizadas y planificadas de manera independiente para un mejor manejo de los recursos del proyecto.\\
 
 De acuerdo al modelo Cascada, se enfatiza en la dependecia secuencial del producto entregado en el paso previo. Es decir existe una dependencia que mantiene en espera el diseño del sistema mientras que el análisis del modelo no sea aprobado o concluido y consecuentemente la fase de codificación se verá en espera también hasta que el diseño se concluya.\\
 
-Cada una de las fases guarda una relacion iterativa con el siguiente paso definido en la metodología que asegura la completitud del producto entregado en la fase antetior. Esta relación esta ilustrada en la figura \ref{fig:cascada_iterativa}. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida dentro de un proyecto de desarrollo de software.\\
+Cada una de las fases guarda una relación iterativa con el siguiente paso definido en la metodología que asegura la completitud del producto entregado en la fase antetior. Esta relación esta ilustrada en la figura \ref{fig:cascada_iterativa}. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida dentro de un proyecto de desarrollo de software.\\
+
+En la práctica, se aplican diversas versiones del modelo. Los más habituales son los modelos que dividen los procesos de desarrollo en cinco fases. En ocasiones, las fases 1, 2 y 3 definidas por Royce se integran en una sola fase de proyecto a modo de análisis de los requisitos.\\
+
+\begin{enumerate}
+    \item Análisis: planificación, análisis y especificación de los requisitos.
+    \item Diseño: diseño y especificación del sistema.
+    \item Implementación: programación y pruebas unitarias.
+    \item Verificación: integración de sistemas, pruebas de sistema y de integración.
+    \item Mantenimiento: entrega, mantenimiento y mejora.
+\end{enumerate}
+
+La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodología donde se añaden funciones iterativas al modelo básico como, por ejemplo, los saltos hacia atrás, que permiten comparar los resultados de cada una de las fases con las hipótesis obtenidas en la fase anterior, de modo que se puedan verificar.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_2/cascada_iterativa.png}
+        \includegraphics[width=12cm]{img/capitulo_2/waterfall.jpeg}
     \end{center}
     \caption{Modelo Cascada: Relación iterativa entre las fases sucesivas.}
-    \centering{Fuente: Elaboracion Propia}
+    \centering{Fuente: }
     \label{fig:cascada_iterativa}
 \end{figure}
 
-Existen diferentes versiones de las fases del modelo en cascada y según la versión o enfoque, la cantidad de fases puede variar. Sin embargo las principales son las siguientes:
+En este modelo, las diferentes fases de un proceso de desarrollo se suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
+
+\subsubsection{Análisis}
+
+Todo proyecto de software comienza con una fase de análisis que incluye un estudio de viabilidad y una definición de los requisitos. En el estudio de viabilidad se evalúan los costes, la rentabilidad y la factibilidad del proyecto de software. El estudio de viabilidad da como resultado un pliego de condiciones (una descripción general de los requisitos), un plan y una estimación financiera del proyecto, así como una propuesta para el cliente, si fuera necesario.\\
+
+Este es el punto de partida en donde se plasma cada detalle de la idea y tomar el impulso necesario para su desarrollo. Esta fase consiste en determinar cuáles son las necesidades y los objetivos, para luego reunir todos los requisitos que se deben cumplir en el desarrollo del software para llevar a cabo todo el proceso.\\
+
+Se realiza una definición detallada de los requisitos, incluyendo un análisis de la situación de salida y un concepto. Mientras que los análisis de salida se encargan de describir la problemática en sí, el concepto ha de definir qué funciones y características debe ofrecer el producto de software para cumplir con las correspondientes exigencias. La definición de los requisitos da como resultado un pliego de condiciones, una descripción detallada de cómo se han de cumplir los requisitos del proyecto, así como un plan para la prueba de aceptación, entre otros.\\
+
+Por último, la primera fase del modelo cascada incluye un análisis de la definición de los requisitos en el que los problemas complejos se dividen en pequeñas tareas secundarias y se elaboran las correspondientes estrategias de resolución.\\
+
+\subsubsection{Diseño}
+
+La fase de diseño sirve para formular una solución específica en base a las exigencias, tareas y estrategias definidas en la fase anterior. En esta fase, los desarrolladores se encargan de diseñar la arquitectura de software, así como un plan de diseño detallado del mismo, centrándose en componentes concretos, como interfaces, entornos de trabajo o bibliotecas. La fase de diseño da como resultado un borrador preliminar con el plan de diseño del software, así como planes de prueba para los diferentes componentes.\\
+
+\subsubsection{Implementación}
+
+La arquitectura de software concebida en la fase de diseño se ejecuta en la fase de implementación, en la que se incluye la programación del software, la búsqueda de errores y las pruebas unitarias. En la fase de implementación, el proyecto de software se traduce al correspondiente lenguaje de programación. Los diversos componentes se desarrollan por separado, se comprueban a través de las pruebas unitarias y se integran poco a poco en el producto final. La fase de implementación da como resultado un producto de software que se comprueba por primera vez como producto final en la siguiente fase (prueba alfa).\\
+
+\subsubsection{Verificación}
+La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad. Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
+
+\subsubsection{Mantenimiento}
+
+Una vez que la fase de prueba ha concluido con éxito, se autoriza la aplicación productiva del software. La última fase del modelo en cascada incluye la entrega, el mantenimiento y la mejora del software. En esta fase se analizan los resultados del hito anterior para realizar los cambios pertinentes para dar por concluido el proyecto.\\
+
+\subsection{Ventajas y desventajas del modelo Cascada}
+Esta metodología permite estructurar la organización de forma clara en aquellos proyectos de desarrollo en los que las diversas fases de proyecto se diferencian claramente entre sí. Como cada una de las fases concluye con un hito, el proceso de desarrollo es muy fácil de comprender. El punto clave del modelo reside en la documentación de todos y cada uno de los pasos de proceso. Los conocimientos adquiridos se registran en pliegos de requisitos o borradores preliminares.\\
+
+En teoría, el desarrollo en cascada pretende crear los requisitos previos para una ejecución rápida y rentable de los proyectos a través de una cuidada planificación previa. Sin embargo, la utilización del modelo en la práctica es controvertida. Por una parte, en el desarrollo de software las fases de proyecto no suelen estar claramente diferenciadas entre sí.\\
+
+En sentido estricto, el modelo en cascada no prevé la realización de ajustes a lo largo del proyecto. Sin embargo, un proyecto de software en el que todos los detalles del desarrollo se definieran al comienzo, solo podría concluir con éxito si desde el principio se invirtiera una gran cantidad de tiempo y dinero en análisis y diseño.\\
+
+En resúmen se tienen las siguientes ventajas: 
+\begin{itemize}
+    \item Una estructura sencilla gracias a unas fases de proyecto claramente diferenciadas.
+    \item Buena documentación del proceso de desarrollo a través de unos hitos bien definidos.
+    \item Los costes y la carga de trabajo se pueden estimar al comenzar el proyecto.
+    \item Aquellos proyectos que se estructuran en base al modelo en cascada se pueden representar cronológicamente de forma sencilla.
+\end{itemize}
+
+Como también las siguientes desventajas:
+\begin{itemize}
+    \item  Por norma general, los proyectos más complejos o de varios niveles no permiten su división en fases de proyecto claramente diferenciadas.
+    \item Poco margen para realizar ajustes a lo largo del proyecto debido a un cambio en las exigencias.
+    \item El usuario final no se integra en el proceso de producción hasta que no termina la programación.
+    \item En ocasiones, los fallos solo se detectan una vez finalizado el proceso de desarrollo.
+\end{itemize}
+
+Se elige el modelo cascada dado que todas las ventajas se ajustan perfectamente al desarrollo del prototipo de sistemas de video-vigilancia. Por lo tanto las fases que tiene el modelo de desarrollo de software elegido para la realización del proyecto son:
 
 \begin{enumerate}
-    \item Requerimientos del sistema
-    \item Requerimientos de Software
-    \item Análisis
-    \item Diseño del programa
-    \item Codificación
-    \item Pruebas
-    \item Mantenimiento 
+    \item \textbf{Análisis}: Esta fase se lleva a cabo a través de la definición de requisitos, la planificación y los casos de uso.
+    \item \textbf{Diseño}: Esta fase se lleva a cabo mediante un diagrama de secuencia y un diseño de la interfaz.
+    \item \textbf{Implementación}: Esta fase se lleva a cabo mediante la implementación del Sistema de video-vigilancia inteligente.
+    \item \textbf{Pruebas}: Esta fase se lleva a cabo mediante la realización de pruebas sobre el sistema de video-vigilancia.
 \end{enumerate}
-
-A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
-
-
-<detalle de cada fase>!!!1
