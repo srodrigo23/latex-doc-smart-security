@@ -10,25 +10,25 @@ El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, alm
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=7cm]{img/capitulo_2/sis_videovigilancia.png}
-        \caption{Componentes de una sistema de video-vigilancia.\\}
+    \end{center}
+    \begin{center}
+        \caption{Componentes de una sistema de video-vigilancia.}
         Fuente: \cite{videosurvellance}
         \label{fig:sistema_video_vigilancia}
     \end{center}
-    
 \end{figure}
 
-Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del mundo especialmente en Asia y la región del Pacífico, debido a la apertura de pequeños negocios y la construcción de áreas residenciales como también ciudades ``inteligentes'' \cite{marketsandmarkets:market-surveillance}. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales aplican nuevas características realizables gracias a la tecnología actual.\\
-
-En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia tuvo un valor de 42.9 billones de dólares en el 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026; cuyo incremento registra una taza de crecimiento anual compuesto del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
+Existe una amplia oportunidad para el mercado de la video-vigilancia en todas las regiones del mundo especialmente en Asia y la región del Pacífico, debido a la apertura de pequeños negocios y la construcción de áreas residenciales como también ciudades ``inteligentes'' \cite{marketsandmarkets:market-surveillance}. El mercado creciente de la vigilancia ha permitido que desarrolladores independientes y fabricantes diseñen nuevas implementaciones de sistemas de video-vigilancia, los cuales aplican nuevas características realizables gracias a la tecnología actual. En la figura \ref{fig:surveillance-market} se muestra como el mercado global de la video-vigilancia tuvo un valor de 42.9 billones de dólares en el 2019 y esta proyectado alcanzar a los 69.1 billones de dólares hasta el 2026; cuyo incremento registra una taza de crecimiento anual compuesto del 10\% desde el 2020 al 2026. \cite{marketsandmarkets:market-surveillance}\\
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=12cm]{img/capitulo_2/surveillance-market.jpg}
-        \caption{Proyección del mercado de la video-vigilancia.\\}
+    \end{center}
+    \begin{center}
+        \caption{Proyección del mercado de la video-vigilancia.}
         Fuente: \cite{marketsandmarkets:market-surveillance}
         \label{fig:surveillance-market}
     \end{center}
-    % \caption{Proyección del mercado de la video-vigilancia\\}    
 \end{figure}
 
 El aspecto más relevante del crecimiento en las oportunidades de este campo, se da en la implementación de nuevas características en este tipo de sistemas; gracias a las técnicas de visión por computadora e inteligencia artificial (I.A.), a la escalabilidad gracias al uso de servicios basados en la nube. Las ramas afines a la inteligencia artificial, como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) han permitido lograr grandes avances en el campo de la video-vigilancia.\\
@@ -55,21 +55,27 @@ Este modelo se organiza de la siguiente manera: las capas 7 a 4 se ocupan de las
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=9cm]{img/capitulo_2/capas.png}
-        \caption{Esquema de capas del modelo OSI.\\}
+    \end{center}
+    \begin{center}
+        \caption{Esquema de capas del modelo OSI.}
         Fuente: \protect\cite[3]{networkProtocolos:handbook}
         \label{fig:osi}
     \end{center}
 \end{figure}
 
-Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, que no sigue exactamente el modelo OSI. Desafortunadamente, no existe un acuerdo universal sobre cómo describir TCP/IP con un modelo en capas. Generalmente se acepta que TCP/IP tiene menos niveles (de tres a cinco capas) que las siete capas del modelo OSI. En la figura \ref{fig:tcpip} se visualiza las capas que se adoptan en esta arquitectura. 
+Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, que no sigue exactamente el modelo OSI. Desafortunadamente, no existe un acuerdo universal sobre cómo describir TCP/IP con un modelo en capas. Generalmente se acepta que TCP/IP tiene menos niveles (de tres a cinco capas) que las siete capas del modelo OSI. En la figura \ref{fig:tcpip} se visualiza las capas que se adoptan en esta arquitectura.\\
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{img/capitulo_2/tcp_ip_osi.jpg}\\
-    \medskip
-    \caption{Modelo TCP/IP frente al modelo OSI.\\}
-    Fuente: \cite{tcpiposi}
-    \label{fig:tcpip}
+    % \centering
+    \begin{center}
+        \includegraphics[width=8cm]{img/capitulo_2/tcp_ip_osi.jpg}\\    
+    \end{center}
+    \begin{center}
+        \caption{Modelo TCP/IP frente al modelo OSI.}
+        Fuente: \cite{tcpiposi}
+        \label{fig:tcpip}    
+    \end{center}
+    % \medskip
     % \end{center}
 \end{figure}
 
@@ -82,9 +88,7 @@ El modelo OSI, y cualquier otro modelo de comunicación de red, proporciona solo
 
 En el contexto de la comunicación de datos, un protocolo es un conjunto formal de reglas, convenciones y estructuras de datos que determinan cómo las computadoras y otros dispositivos de red intercambian información a través de una red. Este método estándar permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos) y agrega un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red.\\
 
-Similar a la manera de hablar el mismo lenguaje entre dos personas; un protocolo, simplifica la comunicación entre dispositivos. La arquitectura de red proporciona solo un esquema conceptual para la comunicación. El modelo no proporciona métodos específicos de comunicación, sino mas bién, la comunicación real está definida por varios protocolos de comunicación que son usados en la comunicación analógica y digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet.\\
-
-Los protocolos de comunicación en red más populares, incluyen:
+Similar a la manera de hablar el mismo lenguaje entre dos personas; un protocolo, simplifica la comunicación entre dispositivos. La arquitectura de red proporciona solo un esquema conceptual para la comunicación. El modelo no proporciona métodos específicos de comunicación, sino mas bién, la comunicación real está definida por varios protocolos de comunicación que son usados en la comunicación analógica y digital, y pueden ser usados en el procesos de transferencia de archivos y acceso a internet. Los protocolos de comunicación en red más populares, incluyen:
 
 \begin{itemize}
     \item \textbf{Automatización}: Automatizan diferentes procesos tanto en entornos comerciales como personales: en edificios inteligentes, tecnología en la nube o vehículos autónomos.
@@ -110,8 +114,10 @@ Un servidor ejecuta uno o más programas de servidor, que comparten sus recursos
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/client-server.jpeg}
-        \caption{Ilustración del Modelo cliente-servidor\\}
+        \includegraphics[width=10cm]{img/capitulo_2/client-server.jpeg}        
+    \end{center}
+    \begin{center}
+        \caption{Ilustración del Modelo cliente-servidor.}
         Fuente: \cite{clientserver}
         \label{fig:client_server}
     \end{center}
@@ -126,7 +132,9 @@ Para realizar una solicitud de conexión, el cliente intenta conectarse con el s
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=6cm]{img/capitulo_2/socket_request.jpg}
-        \caption{Solicitud de conexión por medio de un socket\\}
+    \end{center}
+    \begin{center}
+        \caption{Solicitud de conexión por medio de un socket.}
         Fuente: \cite{socketconnection}
         \label{fig:socket_request}
     \end{center}
@@ -137,7 +145,9 @@ Si la solicitud tiene éxito, el servidor acepta la conexión. Después esta ace
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=6cm]{img/capitulo_2/socket_connection.jpg}
-        \caption{Conexión establecida entre sockets\\}
+    \end{center}
+    \begin{center}
+        \caption{Conexión establecida entre sockets.}
         Fuente: \cite{socketconnection}
         \label{fig:socket_connection}
     \end{center}
@@ -159,7 +169,9 @@ El flujo general de interacción es como sigue: el servidor TCP establece un con
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=6.4cm]{img/capitulo_2/tcp.png}
-        \caption{Flujo de interacción entre servidor y cliente TCP.\\}
+    \end{center}
+    \begin{center}
+        \caption{Flujo de interacción entre servidor y cliente TCP.}
         Fuente: \cite{tcpsocket}
         \label{fig:tcp_flow}
     \end{center}
@@ -186,12 +198,14 @@ Los clientes y servidores intercambian mensajes en un patrón de mensajería de 
 
 % El protocolo de la capa de aplicación define los patrones básicos del diálogo. Para formalizar aún más el intercambio de datos, el servidor puede implementar una interfaz de programación de aplicaciones (API).[3] La API es una capa de abstracción para acceder a un servicio. Al restringir la comunicación a un formato de contenido específico, facilita el análisis. Al abstraer el acceso, facilita el intercambio de datos entre plataformas.[4]
 \subsection{HTTP}
-El protocolo de transferencia de hipertexto (HTTP) es el más utilizado en Internet. Se usa en cada transacción de la Web (www) y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Este protocolo se orienta a las transacciones y sigue el esquema ``Petición - Respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre el cliente y el servidor web.
+El protocolo de transferencia de hipertexto (HTTP) es el más utilizado en Internet. Se usa en cada transacción de la Web (www) y permite la transferencia de archivos (principalmente, en formato HTML) entre un navegador (cliente) y un servidor web. HTTP define la sintaxis y la semántica que utilizan los elementos software de la arquitectura web (clientes, servidores, proxies) para comunicarse. Este protocolo se orienta a las transacciones y sigue el esquema ``Petición - Respuesta'' entre un cliente y un servidor. En la figura \ref{fig:http} se aprecia la interacción entre el cliente y el servidor web.\\
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=8cm]{img/capitulo_2/http1.jpg}
-        \caption{Interacción del protocolo HTTP.\\}
+    \end{center}
+    \begin{center}
+        \caption{Interacción del protocolo HTTP.}
         Fuente: \cite{http}
         \label{fig:http}
     \end{center}
@@ -207,12 +221,15 @@ Este protocolo se compone las siguientes características:
 \section{Inteligencia Artificial}
 La Inteligencia Artificial (I.A.), como área de estudio de las ciencias de la computación, en los últimos tiempos dejó de estar reservada para la investigación y pasó a formar parte del desarrollo de la sociedad. El cerebro es el órgano más increible del cuerpo humano; establece la forma en la que percibimos las imágenes, sonido, olores, sabores y el tacto; por lo tanto permite al ser humano almacenar recuerdos, experimentar emociones e incluso soñar. Sin él, el ser humano sería un organismo primitivo, incapaz de otra cosa que el más simple de los reflejos. Por lo tanto, el cerebro es lo que hace inteligente al ser humano \cite{intro_ia}.\\
 
-Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero en la construcción de estas máquinas artificialmente inteligentes se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, son estudiados por la inteligencia artificial.\\
+% Durante décadas se ha investigado para construir máquinas inteligentes con cerebros como el del ser humano; asistentes robotizados para limpiar los hogares, coches que se conducen por solos, microscopios que detecten enfermedades automáticamente. Pero 
+En la construcción de estas máquinas artificialmente inteligentes, se presentan problemas computacionales complejos; problemas que el cerebro humano puede resolver en una fracción de segundos. Las formas de analizar y resolver este tipo de problemas, son estudiados por la inteligencia artificial. En la figura \ref{fig:ia} se ilustra como la Inteligencia Artificial engloba los subcampos de estudio como son el Machine Learning y el Deep Learning.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=6cm]{img/capitulo_2/ia.png}
-        \caption{La Inteligencia Artificial y sus sub-areas\\}
+        \includegraphics[width=5cm]{img/capitulo_2/ia.png}
+    \end{center}
+    \begin{center}
+        \caption{La Inteligencia Artificial y sus sub-áreas.}
         Fuente: \cite{ia}
         \label{fig:ia}
     \end{center}
@@ -220,15 +237,13 @@ Durante décadas se ha investigado para construir máquinas inteligentes con cer
 
 % A menudo los conceptos de Inteligencia Artificial, Aprendizaje Automático (Machine Learning) y Aprendiazaje Profundo (Deep Learning) son usados de manera indistinta. Por los años `80 la Inteligencia Artificial era una característica que se alcanzaba al definir un conjunto de reglas que decían que hacer en un determinado momento, de esta manera un sistema `inteligente' solo obedecía reglas de acción programadas \cite{researchgate:ia}.
 
-En la figura \ref{fig:ia} se ilustra como la Inteligencia Artificial engloba los subcampos de estudio como son el Machine Learning y el Deep Learning.\\
-
 \subsection{Redes Neuronales}
 Las redes neuronales artificiales, son un modelo inspirado en el funcionamiento del cerebro humano. Está formado por un conjunto de nodos conocidos como neuronas artificiales que están conectadas y transmiten señales entre sí. Estas señales se transmiten desde la entrada hasta generar una salida. En la figura \ref{fig:classical_ml} se aprecia la estructura propia de una neurona artificial.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=5cm]{img/capitulo_2/neurona.png}
-        \caption{Ilustración de una Neurona artificial\\}
+        \includegraphics[width=5.5cm]{img/capitulo_2/neurona.png}
+        \caption{Ilustración de una Neurona Artificial.}
         Fuente: \cite{tensorflow_neurona}
     \label{fig:classical_ml}
     \end{center}
@@ -241,15 +256,13 @@ Las neuronas de una red están a su vez agrupadas en capas formando una red neur
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=6cm]{img/capitulo_2/Redes_neuronales_esquema.png}
-        \caption{Modelo de capas de una red neuronal.\\}
+        \caption{Modelo de capas de una red neuronal.}
         Fuente: \cite{perceptron_multicapa}
         \label{fig:estructura_red_neuronal}
     \end{center}
 \end{figure}
 
-Cuando este proceso llega al final de la red, se obtiene una salida que será la predicción calculada por la red. Cuantas más capas posea la red y aumente la complejidad de sus conexiones; mas complejas serán las funciones que pueda realizar. Para que una red neuronal realice las funciones deseadas, es necesario la ejecución del entrenamiento correspondiente.\\
-
-El entrenamiento de la red neuronal se realiza por medio de la modificación de los pesos de sus neuronas para que consiga extraer los resultados deseados. Para ello, se introduce datos de entrenamiento en la red, según el resultado obtenido y el error se modifican los pesos de las neuronas en función de cuanto haya contribuido cada neurona a dicho resultado. Este método es conocido como ``backpropagation'' o propagación hacia atrás. Con este método se consigue que la red ``aprenda'', consiguiendo un modelo capaz de obtener resultados muy acertados incluso con datos muy diferentes a los de su entrenamiento \cite{atriainnovation:ia}.\\
+Cuando este proceso llega al final de la red, se obtiene una salida que será la predicción calculada por la red. Cuantas más capas posea la red y aumente la complejidad de sus conexiones; mas complejas serán las funciones que pueda realizar. Para que una red neuronal realice las funciones deseadas, es necesario la ejecución del entrenamiento correspondiente. El entrenamiento de la red neuronal se realiza por medio de la modificación de los pesos de sus neuronas para que consiga extraer los resultados deseados. Para ello, se introduce datos de entrenamiento en la red, según el resultado obtenido y el error se modifican los pesos de las neuronas en función de cuanto haya contribuido cada neurona a dicho resultado. Este método es conocido como ``backpropagation'' o propagación hacia atrás. Con este método se consigue que la red ``aprenda'', consiguiendo un modelo capaz de obtener resultados muy acertados incluso con datos muy diferentes a los de su entrenamiento \cite{atriainnovation:ia}.\\
 
 Estas redes neuronales son utilizadas para tareas de predicción y clasificación. Esta técnica se ha convertido en una pieza clave para el desarrollo de la Inteligencia Artificial. Como se describió previamente, es uno de los principales campos de investigación y el que más ha evolucionado con el tiempo, ofreciendo cada vez soluciones más complejas y eficientes.\\
 
@@ -258,8 +271,10 @@ Dentro del conjunto de tipos de redes neuronales están las convolucionales, que
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_2/convolucional.png}
-        \caption{Ilustración de una Red Neuronal Convolucional.\\}
+        \includegraphics[width=12cm]{img/capitulo_2/convolucional.png}
+    \end{center}
+    \begin{center}
+        \caption{Ilustración de una Red Neuronal Convolucional.}
         Fuente: \cite{intro_redes_neuronales}
         \label{fig:red_neuronal_convolucional}
     \end{center}
@@ -269,14 +284,18 @@ Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=2cm]{img/capitulo_2/kernel.png}
-        \caption{Movimiento del Kernel.\\}
+        \includegraphics[width=3cm]{img/capitulo_2/kernel.png}
+    \end{center}
+    \begin{center}
+        \caption{Movimiento del kernel.}
         Fuente: \cite{comprension_redes_neuronales}
         \label{fig:kernel}
     \end{center}
 \end{figure}
 
-Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida. El ``kernel'' dentro las redes convolucionales es considerado como un filtro que se aplica para extraer ciertas características importantes o patrones. Se usa para detectar bordes, enfoque, desenfoques, y características de la imagen por la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que el kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen permitiendo multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo. Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general.\\
+Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
+
+El ``kernel'' dentro las redes convolucionales es considerado como un filtro que se aplica para extraer ciertas características importantes o patrones. Se usa para detectar bordes, enfoque, desenfoques, y características de la imagen por la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que el kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen permitiendo multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo. Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general.\\
 
 % Tiene dos usos:
 % El primero es para que al realizar la convolución la imagen resultante sea de igual tamaño que la imagen original.
@@ -288,14 +307,17 @@ Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estruc
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=9cm]{img/capitulo_2/machinelearning.png}
-        \caption{Diferencias entre programación clásica y M.L.\\}Fuente: \cite{classicprog_and_ml}
+    \end{center}
+    \begin{center}
+        \caption{Diferencias entre programación clásica y M.L.}
+        Fuente: \cite{classicprog_and_ml}
         \label{fig:classical_ml}
     \end{center}
 \end{figure}
 
-En la figura \ref{fig:classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.
+En la figura \ref{fig:classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.\\
 
-\subsection{Métodos de Machine Learning}
+\subsection{Tipos de Machine Learning}
 En el Machine Learning, las tareas se clasifican en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado. Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado y el no supervisado.\\
 
 % que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
@@ -345,23 +367,28 @@ Una de las librerias mas utilizadas para las técnicas de vision por computadora
     \begin{center}
         \includegraphics[width=2cm]{img/capitulo_2/cv2_logo.png}
     \end{center}
-    \caption{Logotipo de la libreria\\Fuente: Web}
-    \label{fig:cv2_logo}
+    \begin{center}
+        \caption{Logotipo de la libreria.}
+        Fuente: Web
+        \label{fig:cv2_logo}    
+    \end{center}
 \end{figure}
 
 % Una de las características mas interesantes de OpenCV es el reconocimiento facial. OpenCV, en su extensa biblioteca de funciones, brinda las capacidades para realizar las tareas de preprocesamiento sin ningún problema, así como los algoritmos de predicción. Además de usar el algoritmo de detección de objetos, es posible usar el seguimiento de objetos, para identificar rostros en una transmisión de video. OpenCV incluso posee funciones para configurar fácilmente el modelo en una transmisión en vivo, como en un video pregrabado \cite{medium:opencv}. 
 
-Existen otras librerias que no son tan populares y representan un pago adicional.
+Existen otras librerias que no son tan populares pero representan un pago adicional.
 
 \section{Streamming}
 Este término también se denomina como transmisión, lectura en continuo, difusión en flujo, lectura en tránsito, difusión en continuo, descarga continua. Es la distribución digital de multimedia a través de una red de computadoras, de manera que el usuario consume el producto (generalmente archivo de vídeo o audio) en paralelo mientras se descarga \cite{streamming:austerberry}.\\
 
-Se aplica habitualmente a la difusión de audio o vídeo. El streaming requiere una conexión por lo menos de igual ancho de banda que la tasa de transmisión del servicio. El streaming de vídeo se popularizó a fines de la década de 2000, cuando el ancho de banda se hizo lo suficientemente barato para gran parte de la población. Sin embargo, con la tecnología del streaming, un archivo puede descargarse y reproducirse al mismo tiempo, con lo que el tiempo de espera es mínimo \cite{streamming:austerberry}. El streamming permite la reproducción directa del contenido multimedia, sin la necesidad de almacenar en memoria la información para después reproducirla, como se puede ver en la figura \ref{fig:stream}.\\
+El streaming requiere una conexión por lo menos de igual ancho de banda que la tasa de transmisión del servicio. El streaming de vídeo se popularizó a fines de la década de 2000, cuando el ancho de banda se hizo lo suficientemente barato para gran parte de la población. Sin embargo, con la tecnología del streaming, un archivo puede descargarse y reproducirse al mismo tiempo, con lo que el tiempo de espera es mínimo \cite{streamming:austerberry}. El streamming permite la reproducción directa del contenido multimedia, sin la necesidad de almacenar en memoria la información para después reproducirla, como se puede ver en la figura \ref{fig:stream}.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=8cm]{img/capitulo_2/stream.png}
-        \caption{Streaming en un servidor web.\\}
+        \includegraphics[width=9cm]{img/capitulo_2/stream.png}
+    \end{center}
+    \begin{center}
+        \caption{Streaming en un servidor web.}
         Fuente: \cite{streamming:austerberry}
         \label{fig:stream}
     \end{center}
@@ -376,8 +403,10 @@ Un servidor web no realiza este proceso sin un servidor Streaming de por medio; 
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_2/streamming.png}
-        \caption{Streaming en un servidor web.\\}
+        \includegraphics[width=11cm]{img/capitulo_2/streamming.png}
+    \end{center}
+    \begin{center}
+        \caption{Streaming en un servidor web.}
         Fuente: \cite{streamming:austerberry}
         \label{fig:streamming}
     \end{center}
@@ -414,8 +443,10 @@ Usando el mismo protocolo que impulsa la web, HLS comparte contenido usando serv
 En la figura, \ref{fig:hls} se visualiza un esquema que representa el proceso de que sigue HLS. El archivo índice ``.m3u8'' permite a los reproductores de video descargar partes del contenido a medida que se reproduce, según el ancho de banda disponible en ese momento. Si el ancho de banda es bajo se realizan peticiónes del video de una calidad más baja para no interrumpir la reproducción, caso contrario se realizan peticiones a la calidad normal o más alta.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_2/hls.jpg}
-        \caption{Http Live Streaming.\\}
+        \includegraphics[width=8cm]{img/capitulo_2/hls.jpg}
+    \end{center}
+    \begin{center}
+        \caption{Http Live Streaming.}
         Fuente: \cite{hls}
         \label{fig:hls}
     \end{center}
@@ -425,14 +456,16 @@ En la figura, \ref{fig:hls} se visualiza un esquema que representa el proceso de
 
 MPEG DASH (Dynamic Adaptive Streaming over HTTP) es un estándar para la transmisión adaptativa a través de HTTP que tiene el potencial de reemplazar tecnologías patentadas existentes como Microsoft Smooth Streaming, Adobe Dynamic Streaming y Apple HTTP Live Streaming (HLS) \cite{dash_streamingmedia}. Todas las tecnologías de transmisión adaptativa basadas en HTTP utilizan una combinación de archivos multimedia codificados y archivos de manifiesto que identifican transmisiones alternativas y sus respectivas URL.\\
 
-Los reproductores respectivos monitorean el estado del búfer (HLS) y la utilización de la CPU (Smooth Streaming y HTTP Dynamic Streaming) cambiando las transmisiones según sea necesario, ubicando la transmisión alternativa de las URL especificadas en el archivo de manifiesto. HLS usa segmentos MPEG-2 Transport Stream (M2TS), almacenados como miles de pequeños archivos M2TS, mientras que Smooth Streaming y HLS usan código de tiempo para encontrar el fragmento necesario de los flujos elementales MP4 apropiados.\\
+% Los reproductores respectivos monitorean el estado del búfer (HLS) y la utilización de la CPU (Smooth Streaming y HTTP Dynamic Streaming) cambiando las transmisiones según sea necesario, ubicando la transmisión alternativa de las URL especificadas en el archivo de manifiesto. HLS usa segmentos MPEG-2 Transport Stream (M2TS), almacenados como miles de pequeños archivos M2TS, mientras que Smooth Streaming y HLS usan código de tiempo para encontrar el fragmento necesario de los flujos elementales MP4 apropiados.\\
 
 En la figura \ref{fig:dash} se visualiza el funcionamiento del estándar DASH. El reproductor realiza las peticiones necesarias a un enlace el cual esta disponible y gestiona las peticiones de los clientes como del servidor en el momente de guardar los videos codificados.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_2/dash.png}
-        \caption{Dinamyc Adaptative Streamming Over Http.\\}
+        \includegraphics[width=11.5cm]{img/capitulo_2/dash.png}        
+    \end{center}
+    \begin{center}
+        \caption{Dinamyc Adaptative Streamming Over Http.}
         Fuente: \cite{dash}
         \label{fig:dash}
     \end{center}
@@ -443,14 +476,16 @@ Python es un lenguaje de programación interpretado cuya filosofía hace hincapi
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=1cm]{img/capitulo_2/python.png}
-        \caption{Logo del lenguaje de programación Python.\\}
+        \includegraphics[width=1.5cm]{img/capitulo_2/python.png}
+    \end{center}
+    \begin{center}
+        \caption{Logo del lenguaje de programación Python.}
         Fuente: Web
         \label{fig:python}
     \end{center}
 \end{figure}
 
-Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). También es usado en el campo del Machine Learning y el Deep Learning. Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.\\
+Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.\\
 
 \section{Metodología de desarrollo}
 El concepto de ingenieria de software es propuesto por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada. En ese entonces los proyectos de software complejos eran problemáticos y costosos de completar, entonces se supuso que sería beneficioso considerar el desarrollo de software como Ingeniería \cite{Ganis}.\\
@@ -462,11 +497,13 @@ En sus inicios, este concepto fue abordado por el Dr. Winston Royce, por medio d
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_2/cascada2.png}
+        \includegraphics[width=11cm]{img/capitulo_2/cascada2.png}
     \end{center}
-    \caption{Modelo Cascada}
-    \centering{Fuente: Elaboracion Propia}
-    \label{fig:cascada}
+    \begin{center}
+        \caption{Diagrama del Modelo Cascada.}
+        \centering{Fuente: Elaboracion Propia}
+        \label{fig:cascada}
+    \end{center}
 \end{figure}
 
 Una vez definida esta secuencia, se crea el concepto de ``Cascada", como un modelo de desarrollo con actividades bien definidas y organizadas con un objetivo independiente dando origen al diseño del primer S.D.M.\footnote{Metodología de Desarrollo de Software} \cite{Bell&Thayer}. En la figura \ref{fig:cascada} la fase de análisis y la de codificación entregan la mayor parte del producto esperado, mientras que las otras fases estan puestas para ser organizadas y planificadas de manera independiente para un mejor manejo de los recursos del proyecto.\\
@@ -491,12 +528,14 @@ La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodolo
     \begin{center}
         \includegraphics[width=12cm]{img/capitulo_2/waterfall.jpeg}
     \end{center}
-    \caption{Modelo Cascada: Relación iterativa entre las fases sucesivas.}
-    \centering{Fuente: }
-    \label{fig:cascada_iterativa}
+    \begin{center}
+        \caption{Modelo Cascada: Relación iterativa entre las fases sucesivas.}
+        Fuente: \cite{blog:modelocascada}
+        \label{fig:cascada_iterativa}    
+    \end{center}
 \end{figure}
 
-En este modelo, las diferentes fases de un proceso de desarrollo se suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase:
+En este modelo, las diferentes fases de un proceso de desarrollo se suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase.\\
 
 \subsubsection{Análisis}
 
@@ -517,7 +556,7 @@ La fase de diseño sirve para formular una solución específica en base a las e
 La arquitectura de software concebida en la fase de diseño se ejecuta en la fase de implementación, en la que se incluye la programación del software, la búsqueda de errores y las pruebas unitarias. En la fase de implementación, el proyecto de software se traduce al correspondiente lenguaje de programación. Los diversos componentes se desarrollan por separado, se comprueban a través de las pruebas unitarias y se integran poco a poco en el producto final. La fase de implementación da como resultado un producto de software que se comprueba por primera vez como producto final en la siguiente fase (prueba alfa).\\
 
 \subsubsection{Verificación}
-La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad. Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
+La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad.Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
 
 \subsubsection{Mantenimiento}
 
