@@ -76,7 +76,7 @@ Los requisitos no funcionales son aquellos relacionados con la calidad y el proc
         \end{itemize}
     \item \textbf{Requisitos de portabilidad}
         \begin{itemize}
-            \item Los módulos de cámara podran ser conectarse de forma cableada o inalámbrica.
+            \item Los módulos de cámara podran conectarse de forma cableada o inalámbrica.
         \end{itemize}
     \item \textbf{Requisitos de disponibilidad}
         \begin{itemize}
@@ -128,8 +128,9 @@ El diseño del sistema de video-vigilancia se divide y se desarrolla según los 
 \subsection{Módulo de cámaras}
 Este módulo es el encargado de controlar y conectar la cámara al servidor TCP. Esta planificado para funcionar en un dispositivo portatil como ser una raspberry. Gracias a la
 \subsubsection{Diseño de interfaz}
-
-\subsubsection{Diagrama de interacción}
+Este es un esbozo de lo que será implementado como la interfaz del módulo de cámara que permite la visualizacion de fotogramas capturados, configuración de la conexión y verificar el estado del envio de los fotogramas al servidor.
+\subsubsection{Diagrama de secuencia}
+Este diagrama consiste en describir el proceso de conexión entre la cámara y el servidor hasta que se empieza el envio de los fotogramas.
 
 En la figura \ref{fig:diagrama_interaccion_general}.
 \begin{figure}[H]
@@ -144,10 +145,16 @@ En la figura \ref{fig:diagrama_interaccion_general}.
 \end{figure}
 
 \subsubsection{Diagrama de estado}
-
+Se estudia los casos en los que el usuario interactura con el módulo de cámara.
+\begin{itemize}
+    \item Usuario inicializa la cámara
+    \item Ingresa la configuracion
+    \item Si hay un dispositivo con la misma configuracion se recahza la conexión.
+    \item sigue el proceso exitoso.
+\end{itemize}
 \subsubsection{Diagrama de clases}
 
-En la figura \ref{fig:camera_clases}
+En la figura \ref{fig:camera_clases} se describe el modelo de clases y a continuacion se detalla los métodos de las clases.\\
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=15cm]{img/capitulo_4/camera_clases.jpg}
@@ -158,16 +165,16 @@ En la figura \ref{fig:camera_clases}
 \end{figure}
 
 \subsection{Módulo de servidor}
-
-\subsubsection{Diagrama de interacción}
-
+El servidor que se encarga de la transmision
+\subsubsection{Diagrama de secuencia}
+Se describe el proceso entre el servidor y la cámara para el respectivo análisis de los frames
 \subsubsection{Diagrama de estado}
+Describe el funcionamiento como se manejan las conexiones internas.
 
 \subsubsection{Diagrama de clases}
-
+Se visualiza el diagrama de clases del servidor.
 \subsubsection{Diagrama de la base de datos}
-
-En la figura \ref{fig:db_diagram}.
+En la figura \ref{fig:db_diagram} se visualiza el diseño de entidades de la base de datos\\.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{img/capitulo_4/db.png}
@@ -181,3 +188,4 @@ En la figura \ref{fig:db_diagram}.
 \end{figure}
 
 \subsubsection{Diseño de notificación por correo electrónico}
+Esbozo del contenido del correo electrónico.
