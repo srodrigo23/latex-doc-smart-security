@@ -5,7 +5,7 @@ Las etapas iniciales de la metodología ``Cascada'' consisten en el análisis y 
 \section{Análisis}
 Para el diseño de un sistema de video-vigilancia inteligente es necesario tener en cuenta los elementos principales que lo componen. Un sistema de video-vigilancia esta compuesto de cámaras individuales y un puesto central o servidor donde todas las conexiones convergen y se centralizan para su control. En el dispositivo central (servidor) se procesan las imágenes que las cámaras capturan y se convierten en video para ser visualizado en un monitor.\\
 
-El sistema propuesto permite visualizar el video en vivo desde cualquier dispositivo con acceso a la red de internet además de que envía notificaciones automáticas en el instante en que se detecta: movimiento, fuego, humo o silueta de un intruso. El usuario recibe la notificación por correo electrónico el cual adjunta capturas y un enlace web para visualizar en vivo lo que esta captando la cámara.\\
+El sistema propuesto permite visualizar el video en vivo desde cualquier dispositivo con acceso a la red de internet además de que envía notificaciones automáticas en el instante en que se detecta: movimiento, fuego, o silueta de un intruso. El usuario recibe la notificación por correo electrónico el cual adjunta capturas y un enlace web para visualizar en vivo lo que esta captando la cámara.\\
 
 % Los principales módulos del sistema son:
 % \begin{itemize}
@@ -15,7 +15,7 @@ El sistema propuesto permite visualizar el video en vivo desde cualquier disposi
 %     % \item Módulo SMTP (Módulo de envio de correo electrónico)
 % \end{itemize}
 
-En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema propuesto. Las cámaras de video-vigilancia se encargan de capturar los fotogramas de video y se enlazan por medio de un socket o conector (uno por cada cámara) al servidor TCP. Cuando es registrada una nueva conexión, el sistema notifica al usuario por medio de un correo electrónico, compartiendo información relevante sobre la conexión de una nueva cámara. El servidor TCP que maneja todas las conexiones, realiza el análisis de los fotogramas de manera individual por cada cámara conectada por medio de una libreria de visión por computadora. Paralelamente se construye el video que se va a transmitir a partir de los fotogramas y es decodificado por medio de un conjunto de paquetes de software libre, los cuales arman las partes del archivo para el streaming de video por la red. Cuando un evento (fuego, humo, movimiento) es identificado, automáticamente se envia un correo electronico al usuario notificando una posible identificación de un evento.\\
+En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema propuesto. Las cámaras de video-vigilancia se encargan de capturar los fotogramas de video y se enlazan por medio de un socket o conector (uno por cada cámara) al servidor TCP. Cuando es registrada una nueva conexión, el sistema notifica al usuario por medio de un correo electrónico, compartiendo información relevante sobre la conexión de una nueva cámara. El servidor TCP que maneja todas las conexiones, realiza el análisis de los fotogramas de manera individual por cada cámara conectada por medio de una libreria de visión por computadora. Paralelamente se construye el video que se va a transmitir a partir de los fotogramas y es decodificado por medio de un conjunto de paquetes de software libre, los cuales arman las partes del archivo para el streaming de video por la red. Cuando un evento (fuego, movimiento, silueta humana) es identificado, automáticamente se envia un correo electronico al usuario notificando una posible identificación de un evento.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -64,13 +64,13 @@ En esta fase es necesario delimitar el alcance y las capacidades del sistema pla
 \end{table}
 
 \subsubsection{Requerimientos No Funcionales}
-Los requisitos no funcionales son aquellos relacionados con la calidad y el proceso de desarrollo del sistema. Los tipos de requisitos no funcionales son: rendimiento, disponibilidad, acecesibilidad, usabilidad, estabilidad, portabilidad, costo, operatividad, interoperabilidad, escalabilidad, concurrencia, mantenibilidad, interfaz, plazo de entrega y herramientas. Los requisitos no funcionales surgen de la necesidad del usuario, debido a las restricciones en el presupuesto y las herramientas utilizadas.\\
+Los requisitos no funcionales son aquellos relacionados con la calidad y el proceso de desarrollo del sistema. Los tipos de requisitos no funcionales son: rendimiento, disponibilidad, accesibilidad, usabilidad, estabilidad, portabilidad, costo, operatividad, interoperabilidad, escalabilidad, concurrencia, mantenibilidad, interfaz, plazo de entrega y herramientas. Los requisitos no funcionales surgen de la necesidad del usuario, debido a las restricciones en el presupuesto y las herramientas utilizadas.\\
 
 \begin{enumerate}
     \item  \textbf{Requisitos de interfaz} 
         \begin{itemize}
             \item Las cámaras tendran una interfaz que permita visualizar el trabajo que estan ejecutando.
-            \item El servidor mostrará información necesaria sobre las tareas qeu realiza.
+            \item El servidor mostrará información necesaria sobre las tareas que realiza.
             \item El sistema deberá ser de fácil configuración.
             \item Las notificaciones por correo electrónico deberán ser visualmente agradables y estilizadas.
         \end{itemize}
@@ -127,6 +127,18 @@ El diseño del sistema de video-vigilancia se divide y se desarrolla según los 
 
 \subsection{Módulo de cámaras}
 Este módulo es el encargado de controlar y conectar la cámara al servidor TCP. Esta planificado para funcionar en un dispositivo portatil como ser una raspberry. Gracias a la
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=13cm]{img/capitulo_4/camera_interface.png}
+    \end{center}
+    \begin{center}
+        \caption{Diseño de interfaz - Módulo de cámara.}
+        Fuente: Elaboración propia.
+        \label{fig:cam_interface}
+    \end{center}
+\end{figure}
+
+
 \subsubsection{Diseño de interfaz}
 Este es un esbozo de lo que será implementado como la interfaz del módulo de cámara que permite la visualizacion de fotogramas capturados, configuración de la conexión y verificar el estado del envio de los fotogramas al servidor.
 \subsubsection{Diagrama de secuencia}
@@ -135,7 +147,7 @@ Este diagrama consiste en describir el proceso de conexión entre la cámara y e
 En la figura \ref{fig:diagrama_interaccion_general}.
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=17cm]{img/capitulo_4/interaccion.png}
+        \includegraphics[width=7cm]{img/capitulo_4/sec_cam_serv.jpg}
     \end{center}
     \begin{center}
         \caption{Diagrama de interacción entre los módulos del sistema.}
@@ -168,24 +180,171 @@ En la figura \ref{fig:camera_clases} se describe el modelo de clases y a continu
 El servidor que se encarga de la transmision
 \subsubsection{Diagrama de secuencia}
 Se describe el proceso entre el servidor y la cámara para el respectivo análisis de los frames
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_4/camera_notif.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Notificación de conexión/desconexión.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_notif_conn}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{img/capitulo_4/fire_detector.jpg}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Detector de fuego.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_dec_fuego}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{img/capitulo_4/human_detection.jpg}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Detector de silueta humana.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_dec_human}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=16cm]{img/capitulo_4/movement_detection.jpg}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Detector de movimiento.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_dec_movimiento}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/stream_secuense.jpg}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
 \subsubsection{Diagrama de estado}
 Describe el funcionamiento como se manejan las conexiones internas.
 
 \subsubsection{Diagrama de clases}
 Se visualiza el diagrama de clases del servidor.
-\subsubsection{Diagrama de la base de datos}
-En la figura \ref{fig:db_diagram} se visualiza el diseño de entidades de la base de datos\\.
+% \subsubsection{Diagrama de la base de datos}
+% En la figura \ref{fig:db_diagram} se visualiza el diseño de entidades de la base de datos\\.
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=10cm]{img/capitulo_4/db.png}
+%         % \caption{Diagrama de clases del módulo de cámara}
+%     \end{center}
+%     \begin{center}
+%         \caption{Diagrama entidad-relación.}
+%         Fuente : Elaboración propia
+%         \label{fig:db_diagram}
+%     \end{center}
+% \end{figure}
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_4/db.png}
-        % \caption{Diagrama de clases del módulo de cámara}
+        \includegraphics[width=18cm]{img/capitulo_4/tcpserver.jpg}
     \end{center}
     \begin{center}
-        \caption{Diagrama entidad-relación.}
-        Fuente : Elaboración propia
-        \label{fig:db_diagram}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
     \end{center}
 \end{figure}
 
+
 \subsubsection{Diseño de notificación por correo electrónico}
 Esbozo del contenido del correo electrónico.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/cam_connected_more_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/cam_connected_no_more_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/cam_disconnected_more_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/cam_disconnected_no_more_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/fire_detection_mail.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/human_detection_mail.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=18cm]{img/capitulo_4/movement_detection_mail.png}
+    \end{center}
+    \begin{center}
+        \caption{Diagrama de secuencia - Streamming de video en vivo.}
+        Fuente: Elaboración propia.
+        \label{fig:diag_sec_streamming}
+    \end{center}
+\end{figure}
+
+

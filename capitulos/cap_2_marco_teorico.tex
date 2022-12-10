@@ -38,7 +38,7 @@ Para la implementación del prototipo propuesto, es necesario describir el marco
 \section{Arquitectura de red}
 Una arquitectura de red es un esquema completo de comunicación entre computadoras, el cual provee: un esquema de trabajo, un diseño principal, la construcción y manejo de una red. \cite[1]{networkProtocolos:handbook}. La arquitectura de red más importante es la de Interconexión de Sistemas Abiertos (OSI), desarrollada por la Organización Internacional para la Estandarización (ISO).\\
 
-La arquitectura OSI, es un estándar abierto para la comunicación en red a través de diferentes equipos y aplicaciones. Aunque no está ampliamente implementado, el modelo de 7 capas OSI es considerado el modelo de arquitectura de red principal para la intercomputación y comunicación entre redes. En la figura \ref{fig:osi} se puede apreciar el modelo OSI de 7 capas, detallando a continuación las siguientes capas:
+La arquitectura OSI, es un estándar abierto para la comunicación en red a través de diferentes equipos y aplicaciones. Aunque no es ampliamente implementado; el modelo de 7 capas OSI es considerado el modelo de arquitectura de red principal para la intercomputación y comunicación entre redes. En la figura \ref{fig:osi} se aprecia el modelo OSI de 7 capas y se detalla a continuación las siguientes capas:
 
 \begin{enumerate}
     \item Capa física (Physical)
@@ -81,7 +81,7 @@ Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, 
 
 La arquitectura TCP/IP omite algunas características que se encuentran en el modelo OSI, combina las características de algunas capas OSI adyacentes y separa otras. La estructura de 4 capas de TCP/IP (capa de aplicación, transporte, internet y acceso a la red) se construye a medida que la información se transmite de la capa de aplicacion a la capa de red física.\\
 
-Cuando los datos son envíados, cada capa trata la información que recibe de la capa superior como datos y agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
+Cuando los datos se envían, cada capa trata la información que recibe de la capa superior como datos y agrega información de control (encabezado) al frente de esos datos y luego los pasa a la capa inferior. Cuando se reciben los datos, se lleva a cabo el procedimiento opuesto ya que cada capa procesa y elimina su encabezado antes de pasar los datos a la capa superior.\\
 
 \subsection{Protocolos}
 El modelo OSI, y cualquier otro modelo de comunicación de red, proporciona solo un esquema conceptual para la comunicación entre computadoras, pero el modelo en sí mismo no proporciona métodos específicos de comunicación \cite{wikipedia:modeloosi}. La comunicación real está definida por varios protocolos de comunicación.\\
