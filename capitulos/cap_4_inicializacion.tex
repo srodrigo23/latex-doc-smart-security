@@ -205,7 +205,7 @@ De acuerdo al planteamiento de comportamiento del módulo de cámaras, para el d
 Para la comprensión de este diagrama de clases se procede a describir cada clase con sus respectivos atributos y métodos.\\
 
 \begin{itemize}
-    \item \textbf{Main}: Es la clase principal que se encarga de cargar todas las instancias del necesarias para el módulo de cámaras. Estos son sus atributos:
+    \item \textbf{Main}: Clase principal encargada de inicializar las instancias necesarias para el módulo de cámaras. Sus atributos son:
         \begin{itemize}
             \item settings: Instancia de la clase Settings, que permite cargar las configuraciones iniciales para iniciar el módulo.
             \item node: Instancia de la clase Node, que representa el ciclo de petición de los fotogramas de la cámara.
@@ -213,71 +213,62 @@ Para la comprensión de este diagrama de clases se procede a describir cada clas
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item run\_node: Método que se encarga de iniciar la vista de la interfaz de usuario en base a la configuración del módulo.
+            \item run: Método encargado de instanciar la clase View que representa la interfaz de usuario.
         \end{itemize}
-    \item \textbf{Node}: Esta clase se encarga de implementar los métodos que permiten obtener los fotogramas directamente cual se la cámara conectada (WebCam o PiCam) como tambien de enviar los fotogramas tanto al servidor como a la pantalla para su visualización. Este es su único atributo:
+    \item \textbf{Node}: Clase encargada de implementar los métodos que permiten obtener los fotogramas directamente cual se la cámara conectada (WebCam o PiCam), tambien envia los fotogramas tanto al servidor y a la interfaz de usuario para su visualización. Este es su único atributo:
         \begin{itemize}
             \item camera: Es la instancia de la cámara que permite la captura de fotogramas.            
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item execute: 
-            \item stop\_node:
+            \item execute: Método encargado de ejecutar la gestión de fotogramas capturados por medio de la cámara física.
+            \item stop\_node: Se encarga cerrar el proceso de gestión de fotogramas al momento de desconectarse del servidor.
         \end{itemize}
-    \item \textbf{Settings}
-        Estos son sus atributos:
+    \item \textbf{Settings}: Clase encargada de cargar las configuraciones des el archivo inicial de configuración para mostrarlo en pantalla. Los métodos de clase son:
         \begin{itemize}
-            \item Settigns :
-            \item Node :
-            \item Connection :
+            \item get\_port: Obtiene el valor del puerto del servidor desde el archivo de configuración.
+            \item get\_host\_address: Obtiene la dirección del servidor desde el archivo de configuración.
+            \item get\_frame\_size: Obtiene el valor del tamaño del fotograma según la configuración.
         \end{itemize}
-        Estos son sus métodos
+    \item \textbf{Connection}: Clase encargada de gestionar los fotogramas obtenidos por medio de la cámara. Los atributos de la clase son:
         \begin{itemize}
-            \item run\_node :
+            \item host: Dirección del servidor.
+            \item port: Puerto por defecto para conectarse al servidor.
+            \item quality: Valor de referencia para la transformación del fotograma a ser enviado.
+            \item node: Instancia de la clase Node  que permite gestionar los fotogramas para ser mostrados y enviados.
         \end{itemize}
-    \item \textbf{Connection}
-        Estos son sus atributos:
+        Los métodos de la clase son:
         \begin{itemize}
-            \item Settigns :
-            \item Node :
-            \item Connection :
+            \item execute: Permite la ejecución en paralelo de la conexión.
+            \item connect\_socket: Permite conectarse al servidor por medio de un conector.
+            \item listen\_message: Método encargado de recibir mensajes por parte del servidor en el momento de la conexión y desconexión del módulo de cámaras.
+            \item send\_frame: Método encargado de enviar los fotogramas por medio de un conector hacia el servidor.
         \end{itemize}
-        Estos son sus métodos
+    \item \textbf{Camera}: Clase encargada de representar la cámara genérica que es conectada físicamente al módulo. Estos son sus atributos:
         \begin{itemize}
-            \item run\_node :
+            \item web\_camera: Instancia de la clase Webcamera, que representa una cámara web.
+            \item pi\_camera: Instancia de la clase PiCamera, que representa una cámara de Raspberry Pi.
         \end{itemize}
-    \item \textbf{Camera}
-        Estos son sus atributos:
+        Estos son los métodos de clase:
         \begin{itemize}
-            \item Settigns :
-            \item Node :
-            \item Connection :
+            \item start: Método de interfaz que incializa la cámara.
+            \item get\_frame: Método que devuelve el frame actual que recibe de la cámara fisica.
+            \item stop: Detiene el proces de captura de fotogramas.
+            \item there\_is\_frames: Devuelve un valor verdadero y falso de acuerdo a si hay fotogramas almacenados en memoria o no.
         \end{itemize}
-        Estos son sus métodos
+    \item \textbf{WebCamera} Clase que representa una cámara web. Estos son sus métodos:
         \begin{itemize}
-            \item run\_node :
+            \item start: Inicializa la cámara web despues de ser conectada.
+            \item rescale\_frame: Redimensiona la imagen para poder ser visualizada en la interfaz de usuario.
+            \item catch\_frames: Captura la imagen por medio del lente de la cámara.
+            \item stop: Detiene el proceso de captura de fotogramas por medio de la cámara web.
         \end{itemize}
-    \item \textbf{WebCamera}
-        Estos son sus atributos:
+    \item \textbf{PiCamera} Clase que representa un cámara de Raspberry Pi. Estos son sus métodos:
         \begin{itemize}
-            \item Settigns :
-            \item Node :
-            \item Connection :
-        \end{itemize}
-        Estos son sus métodos
-        \begin{itemize}
-            \item run\_node :
-        \end{itemize}
-    \item \textbf{PiCamera}
-        Estos son sus atributos:
-        \begin{itemize}
-            \item Settigns :
-            \item Node :
-            \item Connection :
-        \end{itemize}
-        Estos son sus métodos
-        \begin{itemize}
-            \item run\_node :
+            \item start: Inicializa la cámara web despues de ser conectada.
+            \item read: Método encargado de capturar un fotograma a partir del lente de la cámara.
+            \item stop: Método que detiene la captura de fotogramas.
+            \item close: Cierra el proceso de captura de fotogramas por medio de la cámara de Raspberry pi.
         \end{itemize}
 \end{itemize}
 
