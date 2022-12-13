@@ -1,8 +1,198 @@
 \chapter{Pruebas}
 
-\section{Pruebas de conexión al servidor}
+Según la metodologia ``cascada'', la fase final del desarrollo se cierra cuando se realizan pruebas sobre lo implementado en la fase anterior. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
 
-\section{Pruebas de notificación}
+\section{Prueba de conexión del módulo de cámaras}
+En la siguiente tabla se describe la prueba realizada:\\
 
-\section{Prueba de transmisión en vivo}
+\begin{table}[H]
+    \caption{Detalle de prueba de conexión de módulo de cámaras}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Única cámara conectada \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. No existen más cámaras conectadas.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor registra la desconexión y lo muestra en consola.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la desconexión.
+                \item La notificación detalla que hay más conexiones.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
 
+A continuación se muestra las capturas del comportamiento esperado:
+
+En la siguiente tabla se describe otra de las prueba realizadas:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de conexión del módulo de cámaras con más de una cámara disponible}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Más de una cámara conectada \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. Existen más de una cámara conectada.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor acepta la conexión y lo muestra en consola.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la conexión, compartiendo el enlace para la transmisión en vivo.
+                \item La notificación provee la misma información de las demás cámaras conectadas al servidor.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:
+
+
+\section{Prueba de desconexión del módulo de cámaras}
+
+En la siguiente tabla se describe una de las pruebas realizadas:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de desconexión del módulo de cámaras, única cámara conectada}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Única cámara conectada y se desconecta \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y la única instancia del módulo de cámaras se desconecta del servidor. No existen más cámaras conectadas.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor registra la desconexión y lo muestra en consola.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la desconexión.
+                \item La notificación detalla que no hay más conexiones.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+En la siguiente tabla se describe otra de las pruebas realizadas:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de desconexión de módulo de cámaras con más de una cámara conectada}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Una de las cámaras es desconectada \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se desconecta del servidor. Existen más cámaras conectadas.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor acepta la conexión y lo muestra en consola.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la conexión, compartiendo el enlace para la transmisión en vivo.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:
+
+
+\section{Prueba de detección de fuego y notificación inmediata}
+
+En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de detector de fuego}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Detector de fuego identifica incidencia \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de fuego detecta una incidencia.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor captura los fotogramas como prueba de la incidencia.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la incidencia, compartiendo el enlace para la transmisión en vivo.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:
+
+\section{Prueba de detección de silueta humana y notificación inmediata}
+
+En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de detector de silueta humana}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Detector de silueta humana identifica incidencia \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de silueta humana detecta una incidencia.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor captura los fotogramas como prueba de la incidencia.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la incidencia, compartiendo el enlace para la transmisión en vivo.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:
+
+
+\section{Prueba de detección de movimiento y notificación inmediata}
+
+En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de detector de movimiento}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Detector de movimiento identifica incidencia \\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de silueta humana detecta una incidencia.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor captura los fotogramas como prueba de la incidencia.
+                \item El servidor notifica al usuario por medio de correo electronico.
+                \item La notificación provee información sobre la fecha y hora de la incidencia, compartiendo el enlace para la transmisión en vivo.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:
