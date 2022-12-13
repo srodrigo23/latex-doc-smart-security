@@ -489,11 +489,29 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
 \end{itemize}
 
 \subsubsection{Diseño de notificación por correo electrónico}
-Esbozo del contenido del correo electrónico.
+Cuando se identifica un evento por parte de alguno de los tres detectores implementados, es necesario notificar al usuario; el medio elegido es un correo electrónico que debe ser más que solo un texto referente a la identificación de un suceso. Se diseña un mensaje con texto enrriquecido adjuntando mayor información en el momento de:
+\begin{itemize}
+    \item Conectar una cámara del módulo de cámaras al servidor.
+    \item Desconectar una cámara del módulo de cámaras al servidor.
+    \item Indetificación de fuego en fotogramas.
+    \item identificación de silueta humana en los fotogramas.
+    \item itenficacicón de movimiento en los fotogramas.
+\end{itemize}
+Además de agregar información sobre la fecha y hora de conexión/desconexión o identificación de algun suceso; se adjunta capturas acorde a la identificación. A continuación se detalla cada uno de los ejemplos de notificación a desarrollar.
+
+\begin{itemize}
+    \item En la figura \ref{fig:desing_cam_conn_more_cams}, se detalla la conexión de una cámara y se muestra información de otras cámaras disponibles.
+    \item En la figura \ref{fig:desing_cam_conn_no_more_cams}, se detalla la desconexión de una cámara y no existen cámaras disponibles.
+    \item En la figura \ref{fig:desing_cam_disconn_more_cams}, se detalla la desconexión de una cámara y existen otras cámaras disponibles.
+    \item En la figura \ref{fig:desing_cam_disconn_no_more_cams}, se detalla la conexión de una cámara y no existen otras cámaras disponibles.
+    \item En la figura \ref{fig:desing_fire_detection_notif}, se muestra el ejemplo de notificación de identificación de fuego.
+    \item En la figura \ref{fig:desing_human_detection_notif}, se muestra el ejemplo de notificación de identificación de silueta humana.
+    \item En la figura \ref{fig:desing_motion_detection_notif}, se muestra el ejemplo de notificación de identificación de movimiento.
+\end{itemize}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/cam_connected_more_cams.png}
+        \includegraphics[width=10cm]{img/capitulo_4/cam_connected_more_cams.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Conecta una cámara más al sistema.}
@@ -504,7 +522,7 @@ Esbozo del contenido del correo electrónico.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/cam_connected_no_more_cams.png}
+        \includegraphics[width=10cm]{img/capitulo_4/cam_connected_no_more_cams.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Desconexión de la única  cámara.}
@@ -515,7 +533,7 @@ Esbozo del contenido del correo electrónico.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/cam_disconnected_more_cams.png}
+        \includegraphics[width=10cm]{img/capitulo_4/cam_disconnected_more_cams.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Desconexión de una de las cámaras disponibles.}
@@ -526,7 +544,7 @@ Esbozo del contenido del correo electrónico.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/cam_disconnected_no_more_cams.png}
+        \includegraphics[width=10cm]{img/capitulo_4/cam_disconnected_no_more_cams.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Nueva y única conexión.}
@@ -537,7 +555,7 @@ Esbozo del contenido del correo electrónico.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/fire_detection_mail.png}
+        \includegraphics[width=10cm]{img/capitulo_4/fire_detection_mail.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Fuego detectado.}
@@ -548,23 +566,23 @@ Esbozo del contenido del correo electrónico.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/human_detection_mail.png}
+        \includegraphics[width=10cm]{img/capitulo_4/human_detection_mail.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Silueta humana detectada.}
         Fuente: Elaboración propia.
-        \label{fig:fig:desing_human_detection_notif}
+        \label{fig:desing_human_detection_notif}
     \end{center}
 \end{figure}
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_4/movement_detection_mail.png}
+        \includegraphics[width=10prcm]{img/capitulo_4/movement_detection_mail.png}
     \end{center}
     \begin{center}
         \caption{Diseño de notificación: Movimiento detectado.}
         Fuente: Elaboración propia.
-        \label{fig:fig:desing_motion_detection_notif}
+        \label{fig:desing_motion_detection_notif}
     \end{center}
 \end{figure}
 
