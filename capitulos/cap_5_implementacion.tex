@@ -1,11 +1,12 @@
 \chapter{Implementación}
-En el modelo ``cascada'' la fase de implementación es la más importante, debido a que en esta fase se desarrolla el producto final a partir del diseño de la fase anterior. El diseño previo permite al programador implementar con éxito los diferentes módulos del sistema de video-vigilancia planteado. El desarrollo de todo el sistema esta realizado con el lenguaje de programación python.
+En el modelo ``cascada'' la fase de implementación es la más importante, debido a que en esta se desarrolla el producto final a partir del diseño de la fase anterior. El diseño previo permite al programador implementar con éxito los diferentes módulos del sistema de video-vigilancia planteado. El desarrollo de todo el sistema esta programado con el lenguaje de programación Python ne su totalidad.
 
 \section{Módulo de Cámaras}
-A partir del diseño inicial se implementa la interfaz de usuario por medio de la libreria ``tkinter'' propia del lenguaje python. En la figura \ref{fig:camera_screen}, se visualiza la implementacion final en base al diseño de la fase anterior de la metodología.
+A partir del diseño inicial se implementa la interfaz de usuario por medio de la libreria ``tkinter'' propia del lenguaje. En la figura \ref{fig:camera_screen}, se visualiza la implementación final en base al diseño de la fase anterior de la metodología.\\
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_5/camera_interface.png}
+        \includegraphics[width=12cm]{img/capitulo_5/camera_interface.png}
         \caption{Interfaz gráfica del módulo de cámaras.}
         Fuente : Elaboración Propia.
         \label{fig:camera_screen}
@@ -61,10 +62,11 @@ Es el módulo central que gestiona distintos procesos como ser:
     \item Notificación por correo electrónico.
 \end{itemize}
 \subsection{Interfaz de consola}
-Durante la ejecución del servidor es necesario visualizar el estado del mismo. La opcion inmediata y practica es manejar mensajes del servidor por medio de la consola del sistema operativo. En la figura \ref{fig:servertcp_console} se visualiza un ejemplo del estado inicial del servidor.
+Durante la ejecución del servidor es necesario visualizar el estado del mismo. La opcion inmediata y práctica es manejar mensajes del servidor por medio de la consola del sistema operativo. En la figura \ref{fig:servertcp_console} se visualiza un ejemplo del estado inicial del servidor.\\
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_5/tcp_server.png}
+        \includegraphics[width=10cm]{img/capitulo_5/tcp_server.png}
         \caption{Ejecución del servidor TCP.}
         Fuente : Elaboración propia
         \label{fig:servertcp_console}
@@ -87,11 +89,11 @@ Para la ejecución inicial del servidor es necesario ingresar las configuracione
 
 Este archivo permite definir información sobre el nombre del servidor, puerto de escucha y valores relevantes para la notificación por correo electrónico.\\
 
-Las conexiones son gestionadas tambien por el servidor manteniendo informado al usuario sobre las nuevas conexiones por medio de la interfaz de consola como tambien por notificación que sera descrito más adelante. En la figura \ref{fig:server_messages} se visualiza los diferentes mensajes referentes a las conexiones por parte de la interfaz de consola.
+Las conexiones son gestionadas tambien por el servidor manteniendo informado al usuario sobre las nuevas conexiones por medio de la interfaz de consola como tambien por notificación que sera descrito más adelante. En la figura \ref{fig:server_messages} se visualiza los diferentes mensajes referentes a las conexiones por parte de la interfaz de consola.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_5/server_messages.png}
+        \includegraphics[width=12cm]{img/capitulo_5/server_messages.png}
     \end{center}
     \begin{center}
         \caption{Mensages de consola del servidor.}
@@ -101,11 +103,11 @@ Las conexiones son gestionadas tambien por el servidor manteniendo informado al 
 \end{figure}
 
 \subsection{Análisis de fotogramas}
-La característica central de este sistema de video-vigilancia es la detección de diferentes sucesos con el uso de algoritmos de visión por computadora e intelgencia artificial. A continuación se describen los algoritmos encargados para cada detección.
+La característica central de este sistema de video-vigilancia es la detección de diferentes sucesos con el uso de algoritmos de visión por computadora e intelgencia artificial. A continuación se describen los algoritmos encargados para cada detección.\\
 \subsubsection{Detector de Fuego}
-Es el encargado de identificar la presencia de fuego en los fotogramas que recibe el servidor. La detección que realiza hace uso de detectores en cascada, que es un enfoque basado en aprendizaje automático en la que la función cascada se entrena a partir de muchas imágenes positivas y negativas, para luego utilizar este entrenamiento para realizar la detección en otro conjunto de imágenes.\\
+Es el encargado de identificar la presencia de fuego en los fotogramas que recibe el servidor. La detección que realiza hace uso de detectores en ``cascada'', que es un enfoque basado en Aprendizaje Automático en la que la función cascada se entrena a partir de muchas imágenes positivas y negativas, para luego utilizar este entrenamiento para realizar la detección en otro conjunto de imágenes.\\
 
-La libreria de visión por compuradora ``OpenCV'' permite cargar los archivos xml, que representa el entrenamiento a su método HaarCascade, encargado de procesar la imagen. En la figura \ref{fig:fire_detector} se visualiza el código central de la detección de fuego, donde se aprecia el cargado del archivo de entrenamiento para el clasificador.\\
+La libreria de visión por compuradora ``OpenCV'' permite cargar los archivos .xml, que representan el entrenamiento, a su método HaarCascade, encargado de procesar la imágen. En la figura \ref{fig:fire_detector} se visualiza el código central de la detección de fuego, donde se aprecia el cargado del archivo de entrenamiento para el clasificador.\\
 
 
 % \lstset{style=mystyle}
@@ -141,16 +143,18 @@ La libreria de visión por compuradora ``OpenCV'' permite cargar los archivos xm
 El clasificador realiza una detección multi-escala en base a los valores que se asignan al método en las líneas 10, 11 y 12.\\
 
 \subsubsection{Detector de silueta humana}
-Es el encargado de la detección de intrusos en base a la silueta humana en base a los fotogramas recibidos por el servidor. Este detector hace uso del algoritmos HOG (Histograma de gradiente orientado) implementado por la libreria ``OpenCV''. Este método es entrenado para detectar gente que camina, que en la mayoria de los casos estas personas están de pie, asi que no se espera que funcione correctamente en otros casos.
-La idea básica del método es la siguiente:
+Es el encargado de la detección de intrusos por la silueta humana, en base a los fotogramas recibidos por el servidor. Este detector hace uso del algoritmo HOG (Histograma de gradiente orientado) implementado por la libreria ``OpenCV''. Este método es entrenado para detectar gente que camina, que en la mayoria de los casos están de pie, asi que no se espera que funcione correctamente en otros casos.
+La idea básica del método es la siguiente:\\
+
 \begin{itemize}
-    \item La imagen se escanea con una ventana de detección de tamaño variable.
+    \item La imágen se escanea con una ventana de detección de tamaño variable.
     \item Para cada posición y tamaño de la ventana de detección, esta se subdivide en celdas. Estas celdas son relativamente pequeñas: típicamente contienen solo una pequeña parte de la persona a detectar, tal vez el costado de un brazo o la parte superior de la cabeza.
     \item En cada celda, se calcula un gradiente para cada píxel y los gradientes se utilizan para llenar un histograma: el valor es el ángulo del gradiente y el peso es la magnitud del gradiente.
     \item Los histogramas de todas las celdas se juntan y se envían a un discriminador de aprendizaje automático para decidir si las celdas de la ventana de detección actual corresponden a una persona o no.
 \end{itemize}
 
-En la figura \ref{fig:human_detector} se visualiza el código del detector de silueta huamana.
+En la figura \ref{fig:human_detector} se visualiza el código del detector de silueta huamana.\\
+
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=16cm]{img/capitulo_5/human_detector.png}
@@ -183,7 +187,7 @@ En la figura \ref{fig:human_detector} se visualiza el código del detector de si
 % \end{lstlisting}
 
 \subsubsection{Detector de movimiento}
-Encargado de la detección de movimiento en base a los fotogramas recibidos por el servidor. El detector hace uso de métodos  implementados en la libreria ``OpenCV''. En la figura \ref{fig:motion_detector} se detalla el código implementado que hace uso de métodos propios de la libreria.
+Encargado de la detección de movimiento en base a los fotogramas recibidos por el servidor. El detector hace uso de métodos implementados en la libreria ``OpenCV''. En la figura \ref{fig:motion_detector} se detalla el código implementado que hace uso de métodos propios de la libreria.\\
 
 % \lstset{style=mystyle}
 % \begin{lstlisting}[language=Python]
@@ -222,6 +226,29 @@ Encargado de la detección de movimiento en base a los fotogramas recibidos por 
     \end{center}
 \end{figure}
 
-El método implementado convierte el fotograma a otro en escala de grises, aislando el color dureante la detección. Define el primer fotograma como referencial para comparar con los siguientes fotogramas y determinar posibles diferencias que sugieran un movimiento.\\ 
+El método implementado convierte el fotograma a otro en escala de grises, aislando el color dureante la detección. Define el primer fotograma como referencial para comparar con los siguientes fotogramas y determinar posibles diferencias que sugieren un movimiento.\\ 
 \subsection{Transmisión de video en vivo}
-Se implementa la clase que maneja la libreria ``VidGear'' encargada de realizar la decodificación y codificación de video generando el archivo que indexa, las porciones de video que genera el proceso para su transmisión.
+Se implementa la clase que maneja la libreria ``VidGear'' encargada de realizar la decodificación y codificación de video generando el archivo que indexa las porciones de archivos multimedia, generados por el proceso para su transmisión. En la figura \ref{fig:vidgear} se detalla los valores de configuración necesaria para la correcta ejecución de la libreria, especificando la resolución y el framerate del video a generar.\\
+
+% \lstset{style=mystyle}
+% \begin{lstlisting}[language=Python]
+% stream_params = {
+%     "-input_framerate": frame_rate,
+%     "-livestream": True,
+%     "-streams": [{
+%                 "-resolution": "640x360",
+%                 "-framerate": "30.0"}]
+% }
+% self.streamer = StreamGear(output = output_path, format = output_format, **stream_params
+% )
+% \end{lstlisting}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=16cm]{img/capitulo_5/vidgear.png}
+    \end{center}
+    \begin{center}
+        \caption{Código de de configuración de la libreria VidGear.}
+        Fuente : Elaboración propia
+        \label{fig:vidgear}
+    \end{center}
+\end{figure}
