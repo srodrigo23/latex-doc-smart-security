@@ -19,7 +19,7 @@ En la siguiente tabla se describe la prueba realizada:\\
                 \item El servidor registra la desconexión y lo muestra en consola.
                 \item El servidor notifica al usuario por medio de correo electronico.
                 \item La notificación provee información sobre la fecha y hora de la desconexión.
-                \item La notificación detalla que hay más conexiones.
+                \item La notificación detalla que no hay más conexiones.
             \end{itemize} \\ 
             \hline
             \textbf{Estado de prueba} & Exitoso \\
@@ -28,7 +28,27 @@ En la siguiente tabla se describe la prueba realizada:\\
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+A continuación se muestra las capturas del comportamiento esperado:\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/server_cam_connected.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor en parte del}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/mail1.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
 
 En la siguiente tabla se describe otra de las prueba realizadas:\\
 
@@ -57,6 +77,26 @@ En la siguiente tabla se describe otra de las prueba realizadas:\\
 
 A continuación se muestra las capturas del comportamiento esperado:
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{img/capitulo_6/server_cam_connected_more_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_6/mail2.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
 
 \section{Prueba de desconexión del módulo de cámaras}
 
@@ -84,6 +124,26 @@ En la siguiente tabla se describe una de las pruebas realizadas:\\
         \end{tabular}
     \end{center}
 \end{table}
+A continuación se muestra las capturas del comportamiento esperado:\\
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/cam_disconnected_1_cam.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/mail4.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
 
 En la siguiente tabla se describe otra de las pruebas realizadas:\\
 
@@ -111,6 +171,25 @@ En la siguiente tabla se describe otra de las pruebas realizadas:\\
 
 A continuación se muestra las capturas del comportamiento esperado:
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/cam_disconnected_n_cams.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_6/mail3.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
 
 \section{Prueba de detección de fuego y notificación inmediata}
 
@@ -140,9 +219,29 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:\\
 
 A continuación se muestra las capturas del comportamiento esperado:
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=11cm]{img/capitulo_6/fire.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_6/mail_fire.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
 \section{Prueba de detección de silueta humana y notificación inmediata}
 
-En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+En la siguiente tabla se describe la prueba realizada sobre el detector:
 
 \begin{table}[H]
     \caption{Detalle de prueba de detector de silueta humana}
@@ -167,6 +266,26 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:\\
 \end{table}
 
 A continuación se muestra las capturas del comportamiento esperado:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=12cm]{img/capitulo_6/human.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=8.8cm]{img/capitulo_6/mail_human.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
 
 
 \section{Prueba de detección de movimiento y notificación inmediata}
@@ -196,3 +315,68 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:\\
 \end{table}
 
 A continuación se muestra las capturas del comportamiento esperado:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=11cm]{img/capitulo_6/motion.png}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes en consola del servidor}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=9cm]{img/capitulo_6/mail_motion.png}
+    \end{center}
+    \begin{center}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\section{Prueba de transmisión de video en vivo}
+
+En la siguiente tabla se describe la prueba realizada:\\
+
+\begin{table}[H]
+    \caption{Detalle de prueba de la transmisión de video en vivo.}
+    \begin{center}
+        \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
+            \hline
+            \textbf{Título de la prueba} & Transmisión de video\\
+            \hline
+            \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. El usuario ingresa al enlace que le llega en la notificación para la transmisión de video en vivo.\\
+            \hline
+            \textbf{Comportamiento obtenido} & 
+            \begin{itemize}
+                \item El servidor registra la conexión y lo muestra en consola.
+                \item El servidor comienza con la decodificación video en streaming.
+                \item La notificación provee información del enlace para su transmisión en vivo.
+                \item La transmisión se visualiza en un reproductor de video adaptativo en el navegador.
+            \end{itemize} \\ 
+            \hline
+            \textbf{Estado de prueba} & Exitoso \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+A continuación se muestra las capturas del comportamiento esperado:\\
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=10cm]{img/capitulo_6/stream.png}
+        \caption{Mensajes en consola del servidor en parte del}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=15cm]{img/capitulo_6/stream_web.png}
+        \caption{Detalle de notificación por correo electrónico.}
+        Fuente : Elaboración propia
+    \end{center}
+\end{figure}

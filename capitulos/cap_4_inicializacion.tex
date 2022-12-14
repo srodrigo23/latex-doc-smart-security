@@ -21,7 +21,7 @@ En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema
     \begin{center}
         \includegraphics[width=17cm]{img/capitulo_4/main.jpeg}
         \caption{Diseño de interacción de los módulos del sistema de video-vigilancia.}
-        Fuente : Elaboración propia
+        Fuente : Elaboración propia.
         \label{fig:system_desing}
     \end{center}
 \end{figure}
@@ -114,7 +114,7 @@ En la figura \ref{fig:gannt} se visualiza e diagrama de Gannt en base a la plani
     \end{center}
     \begin{center}
         \caption{Diagrama de Gannt.}
-        Fuente : Elaboración propia
+        Fuente : Elaboración propia.
         \label{fig:gannt}
     \end{center}
 \end{figure}
@@ -197,7 +197,7 @@ De acuerdo al planteamiento de comportamiento del módulo de cámaras, para el d
     \begin{center}
         \includegraphics[width=15cm]{img/capitulo_4/camera_clases.jpg}
         \caption{Diagrama de clases del módulo de cámaras.}
-        Fuente : Elaboración propia
+        Fuente : Elaboración propia.
         \label{fig:camera_clases}
     \end{center}
 \end{figure}
@@ -251,9 +251,9 @@ Para la comprensión de este diagrama de clases se procede a describir cada clas
         \end{itemize}
         Estos son los métodos de clase:
         \begin{itemize}
-            \item start: Método de interfaz que incializa la cámara.
+            \item start: Método de interfaz que inicializa la cámara.
             \item get\_frame: Método que devuelve el frame actual que recibe de la cámara fisica.
-            \item stop: Detiene el proces de captura de fotogramas.
+            \item stop: Detiene el proceso de captura de fotogramas.
             \item there\_is\_frames: Devuelve un valor verdadero y falso de acuerdo a si hay fotogramas almacenados en memoria o no.
         \end{itemize}
     \item \textbf{WebCamera} Clase que representa una cámara web. Estos son sus métodos:
@@ -273,13 +273,13 @@ Para la comprensión de este diagrama de clases se procede a describir cada clas
 \end{itemize}
 
 \subsection{Módulo de servidor}
-El servidor que se encarga de la transmision
-\subsubsection{Diagrama de secuencia}
-Se describe el proceso entre el servidor y la cámara para el respectivo análisis de los frames
+El servidor que se encarga  de gestionar las conexiones del módulo de cámaras, almacenar los fotogramas recibidos, manejar los procesos de los detectores, notificación por correo electrónico y de la transmisión de video.\\
+\subsubsection{Diagramas de secuencia}
+En la figura \ref{fig:diag_sec_notif_conn} se visualiza la secuencia a seguir para notificar al usuario sobre una conexión/desconexión del módulo de cámaras.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_4/camera_notif.png}
+        \includegraphics[width=10cm]{img/capitulo_4/camera_notif.png}
     \end{center}
     \begin{center}
         \caption{Diagrama de secuencia: Notificación de conexión/desconexión.}
@@ -291,7 +291,7 @@ Se describe el proceso entre el servidor y la cámara para el respectivo anális
 A continuación se describe la interacción entre la cámara, el servidor y el proceso de notificación:
 \begin{enumerate}
     \item El módulo de cámaras realiza una petición de conexión al servidor.
-    \item El servidor responde la petición aceptando la conexión con la designación un puerto.
+    \item El servidor responde la petición aceptando la conexión con la designación de un puerto.
     \item El servidor registra el identificador, hora y fecha de conexión de la cámara.
     \item El servidor prepara la notificación con los datos registrados e información sobre otras cámaras disponibles.
     \item El servidor envia notificación por correo electrónico a la dirección configurada.
@@ -419,7 +419,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \begin{itemize}
             \item run\_tcp\_server: Inicializa el servidor en la dirección y puerto provistas desde la configuración.
         \end{itemize}
-    \item \textbf{TCPServer}: Clase que maneja las peticiones de nuevas conexiónes del módulos de cámaras, prepara el servidor y registra las nuevos procesos que se crean a partir de una nueva conexión. Los atributos de clase son:
+    \item \textbf{TCPServer}: Clase que maneja las peticiones de nuevas conexiones del módulo de cámaras; prepara el servidor y registra las nuevos procesos que se crean a partir de una nueva conexión. Los atributos de clase son:
         \begin{itemize}
             \item socket: Es la libreria que permite las conexiónes a sistemas externos.
             \item host: Representa la dirección de escucha del servidor.
@@ -428,7 +428,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item prepare\_server: Método encargado de preparar las configuraciones de l servidor antes de empezar su ejecución.
+            \item prepare\_server: Método encargado de preparar las configuraciones del servidor antes de empezar su ejecución.
             \item run: Lanza la ejecución del servidor.
             \item stop\_all\_connections: Cierra todas las conexiónes existentes en el momento de cerrar el servidor.
         \end{itemize}
@@ -436,7 +436,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \begin{itemize}
             \item get\_host: Obtiene la dirección por defecto desde el archivo de configuración.
             \item get\_port: Obtiene el puerto por defecto desde el archivo de configuración.
-            \item get\_path\_folder\_streaming: Obtiene el directorio por defecto para el streamming de video de las cámars desde el archivo de configuración.
+            \item get\_path\_folder\_streaming: Obtiene el directorio por defecto para el streamming de video de las cámaras desde el archivo de configuración.
             \item get\_email\_port: Obtiene el puerto del servicio de correo electrónico desde el archivo de configuración.
             \item get\_smtp\_server: Obtiene la dirección por defecto del servicio de correo electrónico desde el archivo de configuración.
             \item get\_sender\_mail: Obtiene a dirección de correo electrónico para el envío de correos de notificación. 
@@ -461,10 +461,10 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
             \item store\_frame: Almacena en memoria un fotograma.
             \item make\_notification: Prepara y envia la notificación a partir de la señal de un detector.
         \end{itemize}
-    \item \textbf{LiveStreamming}: Clase que se encarga de la codificación y decodicación de video, construyendo el archivo que registra los fragmentos de video creados para su transmisión:
+    \item \textbf{LiveStreamming}: Clase que se encarga de la codificación y decodificación de video, construyendo el archivo que registra los fragmentos de video creados para su transmisión:
         \begin{itemize}
             \item init: Inicializa el módulo de transmisión de video en vivo.
-            \item run: Ejecuta de manera constante el decodifiado del video.
+            \item run: Ejecuta de manera constante el decodificado del video.
             \item stop\_stream: Termina la transmisión y cierra el proceso de codificación.
         \end{itemize}
     \item \textbf{MailSender}: Clase encargada de ofrecer el servicio de envio de mensajes por correo electrónico:
@@ -476,28 +476,28 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \end{itemize}
     \item \textbf{PeopleDetector} Clase encargada de la detección de siluetas humana en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect: Método que se encarga de aplica el algoritmo de detección de siluetas humanas sobre los fotogramas.
+            \item detect: Método que se encarga de aplicar el algoritmo de detección de siluetas humanas sobre los fotogramas.
         \end{itemize}
     \item \textbf{FireDetector} Clase encargada de la detección de fuego en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect: Método que se encarga de aplica el algoritmo de detección de fuego sobre los fotogramas.
+            \item detect: Método que se encarga de aplicar el algoritmo de detección de fuego sobre los fotogramas.
         \end{itemize}
     \item \textbf{MotionDetector} Clase encargada de la detección de movimiento en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect : Método que se encarga de aplica el algoritmo de detección de movimiento sobre los fotogramas.
+            \item detect : Método que se encarga de aplicar el algoritmo de detección de movimiento sobre los fotogramas.
         \end{itemize}
 \end{itemize}
 
 \subsubsection{Diseño de notificación por correo electrónico}
-Cuando se identifica un evento por parte de alguno de los tres detectores implementados, es necesario notificar al usuario; el medio elegido es un correo electrónico que debe ser más que solo un texto referente a la identificación de un suceso. Se diseña un mensaje con texto enrriquecido adjuntando mayor información en el momento de:
+Cuando se identifica un evento por parte de alguno de los tres detectores implementados, es necesario notificar al usuario; el medio elegido es un correo electrónico que debe ser más que solo un texto referente a la identificación de un suceso. Se diseña un mensaje con texto enriquecido adjuntando mayor información en el momento de:
 \begin{itemize}
     \item Conectar una cámara del módulo de cámaras al servidor.
     \item Desconectar una cámara del módulo de cámaras al servidor.
-    \item Indetificación de fuego en fotogramas.
-    \item identificación de silueta humana en los fotogramas.
-    \item itenficacicón de movimiento en los fotogramas.
+    \item Identificación de fuego en fotogramas.
+    \item Identificación de silueta humana en los fotogramas.
+    \item Identificación de movimiento en los fotogramas.
 \end{itemize}
-Además de agregar información sobre la fecha y hora de conexión/desconexión o identificación de algun suceso; se adjunta capturas acorde a la identificación. A continuación se detalla cada uno de los ejemplos de notificación a desarrollar.
+Además de agregar información sobre la fecha y hora de conexión/desconexión o identificación de algun suceso; se adjunta capturas acorde a lo identificado. A continuación se detalla cada uno de los ejemplos de notificación a desarrollar.
 
 \begin{itemize}
     \item En la figura \ref{fig:desing_cam_conn_more_cams}, se detalla la conexión de una cámara y se muestra información de otras cámaras disponibles.

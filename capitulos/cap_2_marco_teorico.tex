@@ -31,7 +31,7 @@ Existe una amplia oportunidad para el mercado de la video-vigilancia en todas la
     \end{center}
 \end{figure}
 
-El aspecto más relevante del crecimiento en las oportunidades de este campo, se da en la implementación de nuevas características en este tipo de sistemas; gracias a las técnicas de visión por computadora e inteligencia artificial (I.A.), a la escalabilidad gracias al uso de servicios basados en la nube. Las ramas afines a la inteligencia artificial, como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) han permitido lograr grandes avances en el campo de la video-vigilancia.\\
+El aspecto más relevante del crecimiento en las oportunidades de este campo, se da en la implementación de nuevas características en este tipo de sistemas; gracias a las técnicas de visión por computadora e inteligencia artificial (I.A.), a la escalabilidad, gracias al uso de servicios basados en la nube. Las ramas afines a la inteligencia artificial, como el Machine Learning (Aprendizaje Automático) y el Deep Learning (Aprendizaje profundo) han permitido lograr grandes avances en el campo de la video-vigilancia.\\
 
 Para la implementación del prototipo propuesto, es necesario describir el marco teórico relevante en la captura de fotogramas de video, transmisión de datos por medio de la red por el protocolo tcp/ip, reconstrucción de información, consolidación y procesamiento de imágenes, como también la transmisión de video en vivo. A continuación se detallan los conceptos teóricos relevantes anteriormente descritos.\\
 
@@ -280,7 +280,7 @@ Dentro del conjunto de tipos de redes neuronales están las convolucionales, que
     \end{center}
 \end{figure}
 
-Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:estructura_red_neuronal}, donde las primeras puedan detectan líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
+Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:red_neuronal_convolucional}, donde las primeras puedan detectan líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
 
 \begin{figure}[H]
     \begin{center}
@@ -440,7 +440,7 @@ La URL de reproducción tiene la siguiente forma:
 Usando el mismo protocolo que impulsa la web, HLS comparte contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.\\
 
 % Es un protcolo (HLS) envía audio y video a través de HTTP desde un servidor web común para su reproducción en dispositivos basados en iOS, incluidos iPhone, iPad, iPod touch y Apple TV, y en computadoras de escritorio (macOS). Usando el mismo protocolo que impulsa la web, HLS implementa contenido usando servidores web y redes de entrega de contenido ordinarios. HLS está diseñado para brindar confiabilidad y se adapta dinámicamente a las condiciones de la red al optimizar la reproducción para la velocidad disponible de las conexiones por cable e inalámbricas.
-En la figura, \ref{fig:hls} se visualiza un esquema que representa el proceso de que sigue HLS. El archivo índice ``.m3u8'' permite a los reproductores de video descargar partes del contenido a medida que se reproduce, según el ancho de banda disponible en ese momento. Si el ancho de banda es bajo se realizan peticiónes del video de una calidad más baja para no interrumpir la reproducción, caso contrario se realizan peticiones a la calidad normal o más alta.
+En la figura \ref{fig:hls} se visualiza un esquema que representa el proceso de que sigue HLS. El archivo índice ``.m3u8'' permite a los reproductores de video descargar partes del contenido a medida que se reproduce, según el ancho de banda disponible en ese momento. Si el ancho de banda es bajo se realizan peticiónes del video de una calidad más baja para no interrumpir la reproducción, caso contrario se realizan peticiones a la calidad normal o más alta.
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=8cm]{img/capitulo_2/hls.jpg}
@@ -501,7 +501,7 @@ En sus inicios, este concepto fue abordado por el Dr. Winston Royce, por medio d
     \end{center}
     \begin{center}
         \caption{Diagrama del Modelo Cascada.}
-        \centering{Fuente: Elaboracion Propia}
+        \centering{Fuente: Elaboracion Propia.}
         \label{fig:cascada}
     \end{center}
 \end{figure}
@@ -535,7 +535,7 @@ La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodolo
     \end{center}
 \end{figure}
 
-En este modelo, las diferentes fases de un proceso de desarrollo se suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase.\\
+En este modelo, las diferentes fases de un proceso de desarrollo suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase.\\
 
 \subsubsection{Análisis}
 
@@ -556,7 +556,7 @@ La fase de diseño sirve para formular una solución específica en base a las e
 La arquitectura de software concebida en la fase de diseño se ejecuta en la fase de implementación, en la que se incluye la programación del software, la búsqueda de errores y las pruebas unitarias. En la fase de implementación, el proyecto de software se traduce al correspondiente lenguaje de programación. Los diversos componentes se desarrollan por separado, se comprueban a través de las pruebas unitarias y se integran poco a poco en el producto final. La fase de implementación da como resultado un producto de software que se comprueba por primera vez como producto final en la siguiente fase (prueba alfa).\\
 
 \subsubsection{Verificación}
-La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad.Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
+La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad. Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
 
 \subsubsection{Mantenimiento}
 
@@ -571,7 +571,7 @@ En sentido estricto, el modelo en cascada no prevé la realización de ajustes a
 
 En resúmen se tienen las siguientes ventajas: 
 \begin{itemize}
-    \item Una estructura sencilla gracias a unas fases de proyecto claramente diferenciadas.
+    \item Una estructura sencilla gracias a las fases de proyecto claramente diferenciadas.
     \item Buena documentación del proceso de desarrollo a través de unos hitos bien definidos.
     \item Los costes y la carga de trabajo se pueden estimar al comenzar el proyecto.
     \item Aquellos proyectos que se estructuran en base al modelo en cascada se pueden representar cronológicamente de forma sencilla.
