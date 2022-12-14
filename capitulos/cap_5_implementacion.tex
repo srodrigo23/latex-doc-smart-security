@@ -1,8 +1,8 @@
 \chapter{Implementación}
-En el modelo ``cascada'' la fase de implementación es la más importante, debido a que en esta se desarrolla el producto final a partir del diseño de la fase anterior. El diseño previo permite al programador implementar con éxito los diferentes módulos del sistema de video-vigilancia planteado. El desarrollo de todo el sistema esta programado con el lenguaje de programación Python ne su totalidad.
+En el metodología ``cascada'' la fase de implementación es la más importante, debido a que en esta se desarrolla el producto final a partir del diseño de la fase anterior. El diseño previo permite al programador implementar con éxito los diferentes módulos del sistema de video-vigilancia planteado. El desarrollo de todo el sistema esta programado con el lenguaje de programación Python ne su totalidad.
 
 \section{Módulo de Cámaras}
-A partir del diseño inicial se implementa la interfaz de usuario por medio de la libreria ``tkinter'' propia del lenguaje. En la figura \ref{fig:camera_screen}, se visualiza la implementación final en base al diseño de la fase anterior de la metodología.\\
+A partir del diseño inicial se implementa la interfaz de usuario por medio de la libreria ``tkinter'' propia del lenguaje. En la figura \ref{fig:camera_screen}, se visualiza la implementación final en base al diseño de la fase anterior de la metodología.
 
 \begin{figure}[H]
     \begin{center}
@@ -59,10 +59,11 @@ Es el módulo central que gestiona distintos procesos como ser:
     \item Gestión de conexiones del módulo de cámaras.
     \item Recepción de fotogramas recibidos.
     \item Análisis de fotogramas según algoritmos de visón artificial.
+    \item Transmisión de video en vivo.
     \item Notificación por correo electrónico.
 \end{itemize}
 \subsection{Interfaz de consola}
-Durante la ejecución del servidor es necesario visualizar el estado del mismo. La opcion inmediata y práctica es manejar mensajes del servidor por medio de la consola del sistema operativo. En la figura \ref{fig:servertcp_console} se visualiza un ejemplo del estado inicial del servidor.\\
+Durante la ejecución del servidor es necesario visualizar el estado del mismo. La opcion inmediata y práctica es manejar mensajes del servidor por medio de la consola del sistema operativo. En la figura \ref{fig:servertcp_console} se visualiza un ejemplo del estado inicial del servidor.
 
 \begin{figure}[H]
     \begin{center}
@@ -74,7 +75,7 @@ Durante la ejecución del servidor es necesario visualizar el estado del mismo. 
 \end{figure}
 Además de registrar cada mensaje en pantalla se agrega la fecha y hora de su lanzamiento como se aprecia en la figura anterior.
 \subsection{Configuración y conexiones}
-Para la ejecución inicial del servidor es necesario ingresar las configuraciones relevantes para un funcionamiento consistente. Para tal objetivo se prevee de un archivo inicial de configuración en el cual se registran todos los valores en los que se basará el servidor. En la figura \ref{fig:config_file} se visualiza el archivo de configuración del servidor.\\
+Para la ejecución inicial del servidor es necesario ingresar las configuraciones relevantes para un funcionamiento consistente. Para tal objetivo se prevee de un archivo inicial de configuración en el cual se registran todos los valores en los que se basará el servidor. En la figura \ref{fig:config_file} se visualiza el archivo de configuración del servidor.
 
 \begin{figure}[H]
     \begin{center}
