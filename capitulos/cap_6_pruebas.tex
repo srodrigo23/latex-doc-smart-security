@@ -1,9 +1,9 @@
 \chapter{Pruebas}
 
-Según la metodologia ``cascada'', la fase final del desarrollo se cierra cuando se realizan pruebas sobre lo implementado en la fase anterior. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
+Según la metodología ``cascada'', la fase de implementación es cerrada cuando se realizan pruebas sobre lo que se implementó. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
 
 \section{Prueba de conexión del módulo de cámaras}
-En la siguiente tabla se describe la prueba realizada:\\
+En la siguiente tabla se describe la prueba realizada:
 
 \begin{table}[H]
     \caption{Detalle de prueba de conexión de módulo de cámaras}
@@ -28,12 +28,12 @@ En la siguiente tabla se describe la prueba realizada:\\
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:\\
+A continuación se muestra capturas del comportamiento esperado:\\
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_6/server_cam_connected.png}
-        \caption{Mensajes en consola del servidor en parte del}
+        \caption{Mensajes en consola del servidor - Una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -41,12 +41,12 @@ A continuación se muestra las capturas del comportamiento esperado:\\
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_6/mail1.png}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Notificación por correo - Una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
 
-En la siguiente tabla se describe otra de las prueba realizadas:\\
+En la siguiente tabla se describe otra prueba realizada:\\
 
 \begin{table}[H]
     \caption{Detalle de prueba de conexión del módulo de cámaras con más de una cámara disponible}
@@ -71,12 +71,12 @@ En la siguiente tabla se describe otra de las prueba realizadas:\\
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+A continuación se muestra capturas del comportamiento esperado:
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=15cm]{img/capitulo_6/server_cam_connected_more_cams.png}
-        \caption{Mensajes en consola del servidor}
+        \caption{Mensajes en consola del servidor - Más de una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -84,7 +84,7 @@ A continuación se muestra las capturas del comportamiento esperado:
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{img/capitulo_6/mail2.png}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Notificación por correo - Más de una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -92,7 +92,7 @@ A continuación se muestra las capturas del comportamiento esperado:
 
 \section{Prueba de desconexión del módulo de cámaras}
 
-En la siguiente tabla se describe una de las pruebas realizadas:\\
+En la siguiente tabla se describe una de las pruebas realizadas:
 
 \begin{table}[H]
     \caption{Detalle de prueba de desconexión del módulo de cámaras, única cámara conectada}
@@ -116,13 +116,15 @@ En la siguiente tabla se describe una de las pruebas realizadas:\\
         \end{tabular}
     \end{center}
 \end{table}
-A continuación se muestra las capturas del comportamiento esperado:\\
+
+A continuación se muestra capturas del comportamiento esperado:
+
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=12cm]{img/capitulo_6/cam_disconnected_1_cam.png}
     \end{center}
     \begin{center}
-        \caption{Mensajes en consola del servidor}
+        \caption{Mensajes en consola del servidor - Única cámara desconectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -132,7 +134,7 @@ A continuación se muestra las capturas del comportamiento esperado:\\
         \includegraphics[width=12cm]{img/capitulo_6/mail4.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Notificación por correo - Única cámara desconectada.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -161,12 +163,12 @@ En la siguiente tabla se describe otra de las pruebas realizadas:\\
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+A continuación se muestra capturas del comportamiento esperado:
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_6/cam_disconnected_n_cams.png}
-        \caption{Mensajes en consola del servidor}
+        \caption{Mensajes en consola del servidor - Cámara desconectada de varias.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -176,7 +178,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=10cm]{img/capitulo_6/mail3.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Notificación por correo - Cámara desconectada de varias.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -214,7 +216,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=11cm]{img/capitulo_6/fire.png}
     \end{center}
     \begin{center}
-        \caption{Mensajes en consola del servidor}
+        \caption{Visualización en módulo de cámaras - Presencia de fuego en la escena.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -224,7 +226,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=10cm]{img/capitulo_6/mail_fire.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Detalle de notificación por correo electrónico - Alerta de fuego.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -262,7 +264,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=12cm]{img/capitulo_6/human.png}
     \end{center}
     \begin{center}
-        \caption{Mensajes en consola del servidor}
+        \caption{Visualización en módulo de cámaras - Presencia de intruso en la escena.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -272,7 +274,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=8.8cm]{img/capitulo_6/mail_human.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Detalle de notificación por correo electrónico - Alerta de intruso.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -311,7 +313,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=11cm]{img/capitulo_6/motion.png}
     \end{center}
     \begin{center}
-        \caption{Mensajes en consola del servidor}
+        \caption{Visualización en módulo de cámaras - Movimiento.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -321,7 +323,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=9cm]{img/capitulo_6/mail_motion.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Detalle de notificación por correo electrónico - Alerta de movimiento.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -358,7 +360,7 @@ A continuación se muestra las capturas del comportamiento esperado:\\
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{img/capitulo_6/stream.png}
-        \caption{Mensajes en consola del servidor en parte del}
+        \caption{Visualización en módulo de cámaras.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -366,7 +368,7 @@ A continuación se muestra las capturas del comportamiento esperado:\\
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=15cm]{img/capitulo_6/stream_web.png}
-        \caption{Detalle de notificación por correo electrónico.}
+        \caption{Reproductor web de video en Streaming.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
