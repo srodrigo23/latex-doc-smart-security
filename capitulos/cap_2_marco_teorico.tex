@@ -2,7 +2,7 @@
 \chapter{Marco Teórico}
 % En este capítulo, se presenta las principales tecnologías de detección en primer  plano del objeto en movimiento, descripción y extracción de características,  clasificación y reconocimiento del movimiento humano. Basado en el flujo óptico para la detección de objetos en movimiento. Como también la imagen de flujo de energía óptico para la detección de características de movimiento y se adoptaron redes neuronales convolucionales de región para elegir  características y reducir la dimensión. Luego, gracias al clasificador de máquina de vectores de soporte que puede ser entrenado y utilizado para clasificar y reconocer acciones; es posible distinguir efectivamente las acciones humanas y mejorar significativamente la precision del reconocimineto de las acciones humanas.
 
-\section{Sistema de video vigilancia}
+\section{Sistema de video-vigilancia}
 El término ``video-vigilancia'' es usado para hacer referencia al despliegue de cámaras de vídeo que cumplen el rol de videofilmadoras, las cuales guardan el contenido recolectado en un almacén digital y puede ser visualizado en un monitor central \cite{wikipedia:vvigilancia}. Por lo tanto, un sistema de video-vigilancia consiste en una instalación de seguridad cuya finalidad es el control y supervisión visual en tiempo real de instalaciones locales y remotas, mediante el uso de múltiples cámaras de vigilancia, así como de sistemas de visualización, grabación y archivo. Estos sistemas ayudan a proteger a las personas, bienes y recursos, manteniendo una alerta activa con un gran efecto disuasorio.\\
 
 El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, almacenados, o enviados por una red de comunicación y pueden ser instalados en cualquier ambiente. En la figura \ref{fig:sistema_video_vigilancia} se visualiza el conjunto de elementos que forman un sistema de video-vigilancia. Este sistema compone de un conjunto de cámaras que estan conectadas directamente a un grabador de video en red o N.V.R. (Network Video Recorder), el cual permite la visualización de las imágenes captadas por las cámaras en un monitor local y por medio de una conección a internet, permite su visualización en dispositivos externos a la red local.\\
@@ -12,7 +12,7 @@ El sistema llega a capturar imágenes y vídeos, que pueden ser comprimidos, alm
         \includegraphics[width=7cm]{img/capitulo_2/sis_videovigilancia.png}
     \end{center}
     \begin{center}
-        \caption{Componentes de una sistema de video-vigilancia.}
+        \caption{Componentes de un sistema de video-vigilancia.}
         Fuente: \cite{videosurvellance}
         \label{fig:sistema_video_vigilancia}
     \end{center}
@@ -25,7 +25,7 @@ Existe una amplia oportunidad para el mercado de la video-vigilancia en todas la
         \includegraphics[width=12cm]{img/capitulo_2/surveillance-market.jpg}
     \end{center}
     \begin{center}
-        \caption{Proyección del mercado de la video-vigilancia.}
+        \caption{Proyección del mercado en el campo de la video-vigilancia.}
         Fuente: \cite{marketsandmarkets:market-surveillance}
         \label{fig:surveillance-market}
     \end{center}
@@ -57,7 +57,7 @@ Este modelo se organiza de la siguiente manera: las capas 7 a 4 se ocupan de las
         \includegraphics[width=9cm]{img/capitulo_2/capas.png}
     \end{center}
     \begin{center}
-        \caption{Esquema de capas del modelo OSI.}
+        \caption{Modelo de capas OSI.}
         Fuente: \protect\cite[3]{networkProtocolos:handbook}
         \label{fig:osi}
     \end{center}
@@ -71,7 +71,7 @@ Su contraparte en las arquitecturas de red del modelo OSI, es el modelo TCP/IP, 
         \includegraphics[width=8cm]{img/capitulo_2/tcp_ip_osi.jpg}\\    
     \end{center}
     \begin{center}
-        \caption{Modelo TCP/IP frente al modelo OSI.}
+        \caption{Modelo TCP/IP y modelo OSI.}
         Fuente: \cite{tcpiposi}
         \label{fig:tcpip}    
     \end{center}
@@ -114,7 +114,7 @@ Un servidor ejecuta uno o más programas de servidor, que comparten sus recursos
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_2/client-server.jpeg}        
+        \includegraphics[width=10cm]{img/capitulo_2/client-server.jpeg}
     \end{center}
     \begin{center}
         \caption{Ilustración del Modelo cliente-servidor.}
@@ -134,7 +134,7 @@ Para realizar una solicitud de conexión, el cliente intenta conectarse con el s
         \includegraphics[width=6cm]{img/capitulo_2/socket_request.jpg}
     \end{center}
     \begin{center}
-        \caption{Solicitud de conexión por medio de un socket.}
+        \caption{Ilustración de solicitud de conexión por medio de sockets.}
         Fuente: \cite{socketconnection}
         \label{fig:socket_request}
     \end{center}
@@ -147,7 +147,7 @@ Si la solicitud tiene éxito, el servidor acepta la conexión. Después esta ace
         \includegraphics[width=6cm]{img/capitulo_2/socket_connection.jpg}
     \end{center}
     \begin{center}
-        \caption{Conexión establecida entre sockets.}
+        \caption{Ilustración de conexión establecida entre sockets.}
         Fuente: \cite{socketconnection}
         \label{fig:socket_connection}
     \end{center}
@@ -171,7 +171,7 @@ El flujo general de interacción es como sigue: el servidor TCP establece un con
         \includegraphics[width=6.4cm]{img/capitulo_2/tcp.png}
     \end{center}
     \begin{center}
-        \caption{Flujo de interacción entre servidor y cliente TCP.}
+        \caption{Interacción entre servidor y cliente TCP.}
         Fuente: \cite{tcpsocket}
         \label{fig:tcp_flow}
     \end{center}
@@ -229,7 +229,7 @@ En la construcción de estas máquinas artificialmente inteligentes, se presenta
         \includegraphics[width=5cm]{img/capitulo_2/ia.png}
     \end{center}
     \begin{center}
-        \caption{La Inteligencia Artificial y sus sub-áreas.}
+        \caption{Inteligencia Artificial y sub-áreas.}
         Fuente: \cite{ia}
         \label{fig:ia}
     \end{center}
@@ -243,7 +243,7 @@ Las redes neuronales artificiales, son un modelo inspirado en el funcionamiento 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=5.5cm]{img/capitulo_2/neurona.png}
-        \caption{Ilustración de una Neurona Artificial.}
+        \caption{Ilustración de una neurona artificial.}
         Fuente: \cite{tensorflow_neurona}
     \label{fig:classical_ml}
     \end{center}
@@ -274,7 +274,7 @@ Dentro del conjunto de tipos de redes neuronales están las convolucionales, que
         \includegraphics[width=12cm]{img/capitulo_2/convolucional.png}
     \end{center}
     \begin{center}
-        \caption{Ilustración de una Red Neuronal Convolucional.}
+        \caption{Ilustración de Red Neuronal Convolucional.}
         Fuente: \cite{intro_redes_neuronales}
         \label{fig:red_neuronal_convolucional}
     \end{center}
@@ -287,7 +287,7 @@ Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la
         \includegraphics[width=3cm]{img/capitulo_2/kernel.png}
     \end{center}
     \begin{center}
-        \caption{Movimiento del kernel.}
+        \caption{Movimiento de kernel.}
         Fuente: \cite{comprension_redes_neuronales}
         \label{fig:kernel}
     \end{center}
@@ -311,13 +311,13 @@ Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estruc
     \begin{center}
         \caption{Diferencias entre programación clásica y M.L.}
         Fuente: \cite{classicprog_and_ml}
-        \label{fig:classical_ml}
+        \label{fig:prog_classical_ml}
     \end{center}
 \end{figure}
 
 En la figura \ref{fig:classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.\\
 
-\subsection{Tipos de Machine Learning}
+\subsection{Tipos de aprendizaje}
 En el Machine Learning, las tareas se clasifican en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado. Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado y el no supervisado.\\
 
 % que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
@@ -388,7 +388,7 @@ El streaming requiere una conexión por lo menos de igual ancho de banda que la 
         \includegraphics[width=9cm]{img/capitulo_2/stream.png}
     \end{center}
     \begin{center}
-        \caption{Streaming en un servidor web.}
+        \caption{Reproducción directa sin almanenamiento en memoria.}
         Fuente: \cite{streamming:austerberry}
         \label{fig:stream}
     \end{center}
@@ -406,7 +406,7 @@ Un servidor web no realiza este proceso sin un servidor Streaming de por medio; 
         \includegraphics[width=11cm]{img/capitulo_2/streamming.png}
     \end{center}
     \begin{center}
-        \caption{Streaming en un servidor web.}
+        \caption{Secuencia de reproducción por streaming.}
         Fuente: \cite{streamming:austerberry}
         \label{fig:streamming}
     \end{center}
@@ -446,7 +446,7 @@ En la figura \ref{fig:hls} se visualiza un esquema que representa el proceso de 
         \includegraphics[width=8cm]{img/capitulo_2/hls.jpg}
     \end{center}
     \begin{center}
-        \caption{Http Live Streaming.}
+        \caption{Ilustración del protocolo Http Live Streaming.}
         Fuente: \cite{hls}
         \label{fig:hls}
     \end{center}
@@ -500,8 +500,8 @@ En sus inicios, este concepto fue abordado por el Dr. Winston Royce, por medio d
         \includegraphics[width=11cm]{img/capitulo_2/cascada2.png}
     \end{center}
     \begin{center}
-        \caption{Diagrama del Modelo Cascada.}
-        \centering{Fuente: Elaboracion Propia.}
+        \caption{Ilustración del diagrama del Modelo Cascada.}
+        \centering{Fuente: Elaboración Propia.}
         \label{fig:cascada}
     \end{center}
 \end{figure}
@@ -529,7 +529,7 @@ La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodolo
         \includegraphics[width=12cm]{img/capitulo_2/waterfall.jpeg}
     \end{center}
     \begin{center}
-        \caption{Modelo Cascada: Relación iterativa entre las fases sucesivas.}
+        \caption{Modelo Cascada: Relación iterativa entre fases sucesivas.}
         Fuente: \cite{blog:modelocascada}
         \label{fig:cascada_iterativa}    
     \end{center}
