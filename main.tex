@@ -38,6 +38,17 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\centering \LARGE \bfseries}
+    {\textbf{Capítulo \thechapter}}{5pt}{\huge}
+    
+    % {\normalfont \LARGE \bfseries}
+    % {\titleline{} \vspace{5pt} \titleline{} \vspace{1pt}%
+    % \MakeUppercase{\chaptertitlename} \thechapter}
+    % {1pc}
+    % {\titleline{}\vspace{0.5pc}}
+\pagenumbering{arabic}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -105,6 +116,6 @@
     \appendixpage
     \include{anexos/anexo_A}
     \include{anexos/anexo_B}
-    % \include{anexos/anexo_C}
+    \include{anexos/anexo_C}
     
 \end{document}
