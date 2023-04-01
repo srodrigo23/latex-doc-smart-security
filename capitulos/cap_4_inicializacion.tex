@@ -36,61 +36,64 @@ La definición de requerimientos es una de las actividades más importantes del 
     \item Los usuarios finales son personas que a menudo dejan su hogar para salir a trabajar, y usan constamente su correo electrónico.
 \end{itemize}
 
-\subsubsection{Requerimientos Funcionales}
-En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista de requerimientos funcionales del sistema de video-vigilancia inteligente.
+\begin{itemize}
+    \item \textbf{Requerimientos Funcionales}
+    En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista de requerimientos funcionales del sistema de video-vigilancia inteligente.
+    
+    \begin{table}[H]
+        \caption{Lista de requerimientos funcionales }
+        \label{tabla:req_funcionales}
+        \begin{center}
+            \begin{tabular}{ |c|l|} 
+                \hline
+                1. & Capturar fotogramas por medio de una o varias cámaras portatiles.\\ \hline
+                2. & Visualizar fotogramas capturados en tiempo real (captura de video).\\  \hline
+                3. & Notificar al usuario cuando una nueva cámara se conecta.\\  \hline
+                4. & Notificar al usuario cuando una cámara se desconecta.\\  \hline
+                5. & Enviar fotogramas capturados por medio de la red al servicio encargado de su análisis.\\ \hline
+                6. & Análizar y procesar fotogramas capturados individualmente por cada cámara.\\  \hline
+                7. & Permitir la recepción de fotogramas de varias fuentes hacia el servicio.\\ \hline
+                8. & Transmitir los fotogramas convertidos en video en vivo desde fuentes diferentes.\\ \hline
+                9. & Detectar movimiento a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
+                10. & Detectar silueta humana a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
+                11. & Detectar fuego a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
+                12. & Notificar al usuario por medio de un correo electrónico cuando se de una detección.\\ \hline
+            \end{tabular}
+        \end{center}
+        \begin{center}
+            Fuente: Elaboración propia.
+        \end{center}
+    \end{table}
 
-\begin{table}[H]
-    \caption{Lista de requerimientos funcionales }
-    \label{tabla:req_funcionales}
-    \begin{center}
-        \begin{tabular}{ |c|l|} 
-            \hline
-            1. & Capturar fotogramas por medio de una o varias cámaras portatiles.\\ \hline
-            2. & Visualizar fotogramas capturados en tiempo real (captura de video).\\  \hline
-            3. & Notificar al usuario cuando una nueva cámara se conecta.\\  \hline
-            4. & Notificar al usuario cuando una cámara se desconecta.\\  \hline
-            5. & Enviar fotogramas capturados por medio de la red al servicio encargado de su análisis.\\ \hline
-            6. & Análizar y procesar fotogramas capturados individualmente por cada cámara.\\  \hline
-            7. & Permitir la recepción de fotogramas de varias fuentes hacia el servicio.\\ \hline
-            8. & Transmitir los fotogramas convertidos en video en vivo desde fuentes diferentes.\\ \hline
-            9. & Detectar movimiento a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
-            10. & Detectar silueta humana a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
-            11. & Detectar fuego a partir de fotogramas recibidos desde distintas fuentes.\\ \hline
-            12. & Notificar al usuario por medio de un correo electrónico cuando se de una detección.\\ \hline
-        \end{tabular}
-    \end{center}
-    \begin{center}
-        Fuente: Elaboración propia.
-    \end{center}
-\end{table}
+    \item \textbf{Requerimientos No Funcionales}
+    Los requerimientos no funcionales son aquellos relacionados con la calidad y el proceso de desarrollo del sistema. Los tipos de requisitos no funcionales aplican: rendimiento, disponibilidad, accesibilidad, usabilidad, estabilidad, portabilidad, costo, operatividad, interoperabilidad, escalabilidad, concurrencia, mantenibilidad, interfaz, plazo de entrega y herramientas. Los requisitos no funcionales surgen de la necesidad del usuario, debido a las restricciones en el presupuesto y las herramientas utilizadas.\\
+    
+    \begin{enumerate}
+        \item  \textbf{Requisitos de interfaz} 
+            \begin{itemize}
+                \item Las cámaras tendran una interfaz que permita visualizar la tarea que ejecutan.
+                \item El servidor mostrará información necesaria sobre las tareas que realiza.
+                \item El sistema deberá ser de fácil configuración.
+                \item Las notificaciones por correo electrónico deberán ser visualmente estilizadas.
+            \end{itemize}
+        \item \textbf{Requisitos de portabilidad}
+            \begin{itemize}
+                \item Los módulos de cámara podran conectarse de forma cableada o inalámbrica.
+            \end{itemize}
+        \item \textbf{Requisitos de disponibilidad}
+            \begin{itemize}
+                \item La transmisión en vivo estará disponible cuando el usuario quiera visualizar lo que captan las cámaras.
+            \end{itemize}
+    \end{enumerate}
 
-\subsubsection{Requerimientos No Funcionales}
-Los requerimientos no funcionales son aquellos relacionados con la calidad y el proceso de desarrollo del sistema. Los tipos de requisitos no funcionales aplican: rendimiento, disponibilidad, accesibilidad, usabilidad, estabilidad, portabilidad, costo, operatividad, interoperabilidad, escalabilidad, concurrencia, mantenibilidad, interfaz, plazo de entrega y herramientas. Los requisitos no funcionales surgen de la necesidad del usuario, debido a las restricciones en el presupuesto y las herramientas utilizadas.\\
-
-\begin{enumerate}
-    \item  \textbf{Requisitos de interfaz} 
-        \begin{itemize}
-            \item Las cámaras tendran una interfaz que permita visualizar la tarea que ejecutan.
-            \item El servidor mostrará información necesaria sobre las tareas que realiza.
-            \item El sistema deberá ser de fácil configuración.
-            \item Las notificaciones por correo electrónico deberán ser visualmente estilizadas.
-        \end{itemize}
-    \item \textbf{Requisitos de portabilidad}
-        \begin{itemize}
-            \item Los módulos de cámara podran conectarse de forma cableada o inalámbrica.
-        \end{itemize}
-    \item \textbf{Requisitos de disponibilidad}
-        \begin{itemize}
-            \item La transmisión en vivo estará disponible cuando el usuario quiera visualizar lo que captan las cámaras.
-        \end{itemize}
-\end{enumerate}
+\end{itemize}
 
 \section{Planificación}
 Todas las fases del modelo cascada son planificadas según la complejidad y tareas que presenta cada fase. Dado que cada fase debe culminarse por completo para pasar a la siguiente o en su defecto requerir mínimas modificaciones para regresar a la fase anterior, se plantea una planificación de 70 días hábiles que se visualiza en la tabla \ref{tabla:planning}.\\
 
 \begin{table}[H]
     \caption{Tabla de planificación según fases del modelo Cascada.}
-    \label{tabla:planning}
+    \label{tabla:planning}    
     \begin{center}
         \begin{tabular}{|c|l|c|c|c|}
             \hline
@@ -101,9 +104,9 @@ Todas las fases del modelo cascada son planificadas según la complejidad y tare
             \textbf{4.} & Fase de pruebas        & 22-ago         &   2-sep     &    10     \\ \hline
             \textbf{5.} & Fase de mantenimiento        & 5-sep        & 9-sep        & 5        \\ \hline
         \end{tabular}
-        \begin{center}            
-            Fuente: Elaboración propia.
-        \end{center}
+    \end{center}
+    \begin{center}
+        Fuente: Elaboración propia.
     \end{center}
 \end{table}
 

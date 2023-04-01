@@ -179,13 +179,13 @@ El flujo general de interacción es como sigue: el servidor TCP establece un con
 
 A continuación se detalla los métodos que se muestran en la figura \ref{fig:tcp_flow}:
 \begin{itemize}
-    \item socket(): Crea un punto final para la comunicación en el servidor.
-    \item bind(): Asigna un número único al socket y reservar una combinación única de dirección IP y puerto para el socket creado.
-    \item listen(): Espera a que un cliente se conecte.
-    \item accept(): Recibe una solicitud de conexión de un socket de cliente.
-    \item connect(): El cliente y el servidor están conectados entre sí.
-    \item send()/recieve(): Intercambian datos entre el cliente y el servidor
-    \item close(): El servidor y el cliente cortan la conexión.
+    \item \textbf{socket():} Crea un punto final para la comunicación en el servidor.
+    \item \textbf{bind():} Asigna un número único al socket y reservar una combinación única de dirección IP y puerto para el socket creado.
+    \item \textbf{listen():} Espera a que un cliente se conecte.
+    \item \textbf{accept():} Recibe una solicitud de conexión de un socket de cliente.
+    \item \textbf{connect():} El cliente y el servidor están conectados entre sí.
+    \item \textbf{send()/recieve():} Intercambian datos entre el cliente y el servidor
+    \item \textbf{close():} El servidor y el cliente cortan la conexión.
 \end{itemize}
 
 % En el lado del cliente: el cliente conoce el nombre de host de la máquina en la que se ejecuta el servidor y el número de puerto en el que escucha el servidor. Para realizar una solicitud de conexión, el cliente intenta reunirse con el servidor en la máquina y el puerto del servidor. El cliente también necesita identificarse ante el servidor para vincularse a un número de puerto local que utilizará durante esta conexión. Normalmente lo asigna el sistema.
@@ -266,8 +266,10 @@ Cuando este proceso llega al final de la red, se obtiene una salida que será la
 
 Estas redes neuronales son utilizadas para tareas de predicción y clasificación. Esta técnica se ha convertido en una pieza clave para el desarrollo de la Inteligencia Artificial. Como se describió previamente, es uno de los principales campos de investigación y el que más ha evolucionado con el tiempo, ofreciendo cada vez soluciones más complejas y eficientes.\\
 
-\subsubsection{Redes neuronales convolucionales}
-Dentro del conjunto de tipos de redes neuronales están las convolucionales, que se usan en el campo de la visión artificial. Las redes neuronales convolucionales representan un algoritmo de Aprendizaje Profundo (Deep Learning) que está diseñado para trabajar con imágenes. Toma las imágenes como entrada, les asigna un valor (peso) a ciertos elementos en la imagen para su clasificación.\\
+% \subsubsection{Redes neuronales convolucionales}
+Dentro del conjunto de tipos de redes neuronales están las redes neuronales convolucionales, que se usan en el campo de la visión artificial. Las redes neuronales convolucionales representan un algoritmo de Aprendizaje Profundo (Deep Learning) que está diseñado para trabajar con imágenes. Toma las imágenes como entrada, les asigna un valor (peso) a ciertos elementos en la imagen para su clasificación.\\
+
+Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:red_neuronal_convolucional}, donde las primeras puedan detectan líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
 
 \begin{figure}[H]
     \begin{center}
@@ -280,7 +282,7 @@ Dentro del conjunto de tipos de redes neuronales están las convolucionales, que
     \end{center}
 \end{figure}
 
-Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la visión por computadora. Las redes convolucionales contienen varias capas ocultas como se ilustra en la figura \ref{fig:red_neuronal_convolucional}, donde las primeras puedan detectan líneas, curvas y así se van especializando hasta poder reconocer formas complejas como un rostro, siluetas, etc. \cite{convolutional:ia}. \\
+Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -293,8 +295,6 @@ Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la
     \end{center}
 \end{figure}
 
-Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
-
 El ``kernel'' dentro las redes convolucionales es considerado como un filtro que se aplica para extraer ciertas características importantes o patrones. Se usa para detectar bordes, enfoque, desenfoques, y características de la imagen por la convolución entre la imagen y el kernel. Este proceso se desarrolla entre la imagen y el kernel, con la finalidad de que el kernel recorra toda la imagen (pixel por pixel). Por lo general, el kernel es de menor tamaño que la imagen permitiendo multiplicar el kernel con la porción de imagen escogida, realiza un producto escalar a medida que el kernel se va desplazando; por esta razón es un proceso iterativo. Las tareas comunes de este tipo de redes son: detección o categorización de objetos, clasificación de escenas y clasificación de imágenes en general.\\
 
 % Tiene dos usos:
@@ -303,6 +303,8 @@ El ``kernel'' dentro las redes convolucionales es considerado como un filtro que
 
 \section{Machine Learning (Aprendizaje de Máquina)}
 Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estructura de la información y ajustar estos datos en modelos que puedan ser entendidos y utilizados por las personas. \cite{digitalocean:machinelearning}. A diferencia de la computación tradicional, donde los algoritmos resuelven problemas específicos, los algoritmos de Machine Learning entrenan a las computadoras con datos de entrada y emplean análisis estadístico para generar valores de salida que se clasifican según a un rango específico. Por eso el Machine Learning facilita a las computadoras construir modelos a partir de datos ejemplo para automatizar el proceso de toma de decisiones basados en estos datos.\\
+
+En la figura \ref{fig:prog_classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -314,19 +316,15 @@ Es un subcampo de la Inteligencia Artificial cuyo objetivo es entender la estruc
         \label{fig:prog_classical_ml}
     \end{center}
 \end{figure}
-
-En la figura \ref{fig:classical_ml} se visualiza la diferencia y similitud entre la programación clásica de la inteligencia artificial de los años `80 y las novedosas técnicas del aprendizaje automático. La programación clásica necesita de reglas y datos de entrada para que esta funcione como un sistema inteligente y pueda dar una respuesta, mientras que el Machine Learning necesita de datos y sus respectivas respuestas esperadas, para identificar patrones que los relacionen y asi desarrollar reglas que generan respuestas para nuevos datos.\\
-
 \subsection{Tipos de aprendizaje}
 En el Machine Learning, las tareas se clasifican en grandes categorias, las cuales estan basadas en el modo en el que el ``aprendizaje'' es ejecutado. Los métodos más adoptados en el Machine Learning son: el aprendizaje supervisado y el no supervisado.\\
 
 % que entrena un algoritmo basado en un ejemplo de entrada y salida el cual esta categorizado por un humano, y el aprendizaje no supervisado, que proporciona el algoritmo sin ningún dato categorizado permitiendo encontrar una estructura dentro de los datos de entrada.\
+\begin{itemize}
+    \item \textbf{Aprendizaje Supervisado:} La computadora es provista de entradas ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
 
-\subsubsection{Aprendizaje Supervisado}
-La computadora es provista de entradas ejemplo las cuales se categorizan con sus respectivas salidas esperadas. El propósito de este metodo consiste en que el algoritmo pueda  ``aprender'' comparando la actual salida con las salidas esperadas para encontrar errores y en consecuencia modificar el modelo. El aprendizaje supervisado por lo tanto usa patrones para predecir valores categorizados en datos no categorizados.\\
-
-\subsubsection{Aprendizaje No Supervisado}
-La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\\
+    \item \textbf{Aprendizaje No Supervisado:} La información provista a la computadora no está categorizada, por lo que los algoritmos de aprendizaje buscan similitudes entre los datos de entrada. Como los datos no etiquetados son más abundantes que los datos etiquetados, los métodos de aprendizaje automático que facilitan el ``aprendizaje'' pasan a ser más importantes.\\
+\end{itemize}
 
 \section{Deep Learning (Aprendizaje profundo)}
 En la figura \ref{fig:ia}, se visualiza que el aprendizaje profundo es un subcampo dentro del Machine Learning, el cual hace uso de distintas redes neuronales para lograr el ``aprendizaje'' de sucesivas capas de representación que son relevantes para los datos. El término Deep ``profundo'', hace referencia a la cantidad de capas de representación que se utilizan en un modelo; en general es posible utilizar decenas incluso cientos capas de representación, los cuales aprenden de forma automática a medida que el modelo es entrenado con los datos \cite{iaarbook:artificialvision}.
@@ -352,16 +350,9 @@ Esta rama de la Inteligencia Artificial aún sigue en investigación y mejoras d
 \end{itemize}
 
 \subsection{Librerias}
-Una de las librerias mas utilizadas para las técnicas de vision por computadora es OpenCV. Es una biblioteca de uso libre para el desarrollo de aplicaciones usando visión artificial desarrollada por Intel. Esta libreria reune diversas caracteristicas que la hacen popular, por ejemplo: 
-\begin{itemize}
-    \item Permite su uso para fines comerciales y de investigación.
-    \item Se encuentra disponible par varias plataformas como ser GNU/Linux, Mac OS, Windows y Android.
-    \item Documentación completa y explicada, con una comunidad de desarrolladores activa.
-    \item El procesamiento de imágenes en su escalado, eliminación de ruido y formateo de imagen y video.
-    \item El uso y modificación de sus 2500 modelos pre-optimizados que son incluidos en la libreria, acorde a las necesidades del usuario.
-    \item El uso del estado del arte de modelos de visión por computadora como también de aprendizaje de máquina (Machine Learning).
-    \item El desarrollo de modelos en varias categorías de investigación como ser: reconocimiento facial, detección y seguimiento de objetos, extracción de modelos 3D, etc.
-\end{itemize}
+Una librería de programación es un conjunto de archivos de código utilizado para desarrollar software. Su objetivo es facilitar la programación, al proporcionar funcionalidades comunes, que ya han sido resueltas previamente por otros programadores. En el campo de la visión por computadora existen varias librerías de código abierto especializadas para implementar funciones como son: VLX, RAVL, OpenCV por nombrar algunas de ellas; estas se encuentran disponibles para las plataformas de Linux, Windows y Android. Estas librerías permiten construir sistemas en distintons lenguajes como ser: Phyton, C++, C\#, Java.\\
+
+Una de las librerias más utilizadas para la implementación de aplicaciones usando visión artificial es OpenCV. Es de uso libre y desarrollada por Intel. Existen otras librerias que no son tan populares pero representan un pago adicional. En la figura \ref{fig:cv2_logo} se visualiza el logotipo de la libreria que permite identificarla.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -374,9 +365,20 @@ Una de las librerias mas utilizadas para las técnicas de vision por computadora
     \end{center}
 \end{figure}
 
+OpenCV ofrece más de 500 algoritmos entre los que se incluye funciones de propósito general para procesamiento de imágenes, descripciones geométricas, segmentación, seguimiento, etc. Esta libreria reune diversas caracteristicas que la hacen popular, por ejemplo:\\
+
+\begin{itemize}
+    \item Permite su uso para fines comerciales y de investigación.
+    % -
+    \item Documentación completa y explicada, con una comunidad de desarrolladores activa.
+    \item El procesamiento de imágenes en su escalado, eliminación de ruido y formateo de imagen y video.
+    \item El uso y modificación de sus 2500 modelos pre-optimizados que son incluidos en la libreria, acorde a las necesidades del usuario.
+    \item El uso del estado del arte de modelos de visión por computadora como también de aprendizaje de máquina (Machine Learning).
+    \item El desarrollo de modelos en varias categorías de investigación como ser: reconocimiento facial, detección y seguimiento de objetos, extracción de modelos 3D, etc.
+\end{itemize}
+
 % Una de las características mas interesantes de OpenCV es el reconocimiento facial. OpenCV, en su extensa biblioteca de funciones, brinda las capacidades para realizar las tareas de preprocesamiento sin ningún problema, así como los algoritmos de predicción. Además de usar el algoritmo de detección de objetos, es posible usar el seguimiento de objetos, para identificar rostros en una transmisión de video. OpenCV incluso posee funciones para configurar fácilmente el modelo en una transmisión en vivo, como en un video pregrabado \cite{medium:opencv}. 
 
-Existen otras librerias que no son tan populares pero representan un pago adicional.
 
 \section{Streamming}
 Este término también se denomina como transmisión, lectura en continuo, difusión en flujo, lectura en tránsito, difusión en continuo, descarga continua. Es la distribución digital de multimedia a través de una red de computadoras, de manera que el usuario consume el producto (generalmente archivo de vídeo o audio) en paralelo mientras se descarga \cite{streamming:austerberry}.\\
@@ -471,8 +473,10 @@ En la figura \ref{fig:dash} se visualiza el funcionamiento del estándar DASH. E
     \end{center}
 \end{figure}
 
-\section{Lenguaje de Programacion}
+\section{Lenguaje de Programación}
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad de su código. Se trata de un lenguaje multiparadigma, ya que soporta parcialmente la orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, dinámico y multiplataforma.\\
+
+En la figura \ref{fig:python} se visualiza el logotipo del lenguaje que permite identificarlo. Este lenguaje usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de este lenguaje, es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). Actualmente es el lenguaje más popular y de ámplio alcance en ek el campo de la inteligencia artificial \cite{python:popular}.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -485,7 +489,6 @@ Python es un lenguaje de programación interpretado cuya filosofía hace hincapi
     \end{center}
 \end{figure}
 
-Python usa tipado dinámico y conteo de referencias para la administración de memoria. Una característica importante de Python es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de variable durante la ejecución del programa (también llamado enlace dinámico de métodos). Actualmente es el lenguaje más popular y de ámplio alcance en la inteligencia artificial \cite{python:popular}.\\
 
 \section{Metodología de desarrollo}
 El concepto de ingenieria de software es propuesto por primera vez en el conjunto de conferencias históricas organizadas por el comité de ciencia de la OTAN.\footnote{Organización del Tratado del Atlántico Norte.} en los años 60. Para ese tiempo la ingenieria de software tampoco era conocida ni aceptada. En ese entonces los proyectos de software complejos eran problemáticos y costosos de completar, entonces se supuso que sería beneficioso considerar el desarrollo de software como Ingeniería \cite{Ganis}.\\
@@ -537,30 +540,23 @@ La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodolo
 
 En este modelo, las diferentes fases de un proceso de desarrollo suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase.\\
 
-\subsubsection{Análisis}
+\begin{enumerate}
+    \item \textbf{Análisis:} Todo proyecto de software comienza con una fase de análisis que incluye un estudio de viabilidad y una definición de los requisitos. En el estudio de viabilidad se evalúan los costes, la rentabilidad y la factibilidad del proyecto de software. El estudio de viabilidad da como resultado un pliego de condiciones (una descripción general de los requisitos), un plan y una estimación financiera del proyecto, así como una propuesta para el cliente, si fuera necesario.\\
+    
+    Este es el punto de partida en donde se plasma cada detalle de la idea y tomar el impulso necesario para su desarrollo. Esta fase consiste en determinar cuáles son las necesidades y los objetivos, para luego reunir todos los requisitos que se deben cumplir en el desarrollo del software para llevar a cabo todo el proceso.\\
+    
+    Se realiza una definición detallada de los requisitos, incluyendo un análisis de la situación de salida y un concepto. Mientras que los análisis de salida se encargan de describir la problemática en sí, el concepto ha de definir qué funciones y características debe ofrecer el producto de software para cumplir con las correspondientes exigencias. La definición de los requisitos da como resultado un pliego de condiciones, una descripción detallada de cómo se han de cumplir los requisitos del proyecto, así como un plan para la prueba de aceptación, entre otros.\\
 
-Todo proyecto de software comienza con una fase de análisis que incluye un estudio de viabilidad y una definición de los requisitos. En el estudio de viabilidad se evalúan los costes, la rentabilidad y la factibilidad del proyecto de software. El estudio de viabilidad da como resultado un pliego de condiciones (una descripción general de los requisitos), un plan y una estimación financiera del proyecto, así como una propuesta para el cliente, si fuera necesario.\\
+    Por último, la primera fase del modelo cascada incluye un análisis de la definición de los requisitos en el que los problemas complejos se dividen en pequeñas tareas secundarias y se elaboran las correspondientes estrategias de resolución.\\
 
-Este es el punto de partida en donde se plasma cada detalle de la idea y tomar el impulso necesario para su desarrollo. Esta fase consiste en determinar cuáles son las necesidades y los objetivos, para luego reunir todos los requisitos que se deben cumplir en el desarrollo del software para llevar a cabo todo el proceso.\\
+    \item \textbf{Diseño:} La fase de diseño sirve para formular una solución específica en base a las exigencias, tareas y estrategias definidas en la fase anterior. En esta fase, los desarrolladores se encargan de diseñar la arquitectura de software, así como un plan de diseño detallado del mismo, centrándose en componentes concretos, como interfaces, entornos de trabajo o bibliotecas. La fase de diseño da como resultado un borrador preliminar con el plan de diseño del software, así como planes de prueba para los diferentes componentes.\\
+    
+    \item \textbf{Implementación:} La arquitectura de software concebida en la fase de diseño se ejecuta en la fase de implementación, en la que se incluye la programación del software, la búsqueda de errores y las pruebas unitarias. En la fase de implementación, el proyecto de software se traduce al correspondiente lenguaje de programación. Los diversos componentes se desarrollan por separado, se comprueban a través de las pruebas unitarias y se integran poco a poco en el producto final. La fase de implementación da como resultado un producto de software que se comprueba por primera vez como producto final en la siguiente fase (prueba alfa).\\
 
-Se realiza una definición detallada de los requisitos, incluyendo un análisis de la situación de salida y un concepto. Mientras que los análisis de salida se encargan de describir la problemática en sí, el concepto ha de definir qué funciones y características debe ofrecer el producto de software para cumplir con las correspondientes exigencias. La definición de los requisitos da como resultado un pliego de condiciones, una descripción detallada de cómo se han de cumplir los requisitos del proyecto, así como un plan para la prueba de aceptación, entre otros.\\
+    \item \textbf{Verificación:} La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad. Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
+    \item \textbf{Mantenimiento:} Una vez que la fase de prueba ha concluido con éxito, se autoriza la aplicación productiva del software. La última fase del modelo en cascada incluye la entrega, el mantenimiento y la mejora del software. En esta fase se analizan los resultados del hito anterior para realizar los cambios pertinentes para dar por concluido el proyecto.\\
 
-Por último, la primera fase del modelo cascada incluye un análisis de la definición de los requisitos en el que los problemas complejos se dividen en pequeñas tareas secundarias y se elaboran las correspondientes estrategias de resolución.\\
-
-\subsubsection{Diseño}
-
-La fase de diseño sirve para formular una solución específica en base a las exigencias, tareas y estrategias definidas en la fase anterior. En esta fase, los desarrolladores se encargan de diseñar la arquitectura de software, así como un plan de diseño detallado del mismo, centrándose en componentes concretos, como interfaces, entornos de trabajo o bibliotecas. La fase de diseño da como resultado un borrador preliminar con el plan de diseño del software, así como planes de prueba para los diferentes componentes.\\
-
-\subsubsection{Implementación}
-
-La arquitectura de software concebida en la fase de diseño se ejecuta en la fase de implementación, en la que se incluye la programación del software, la búsqueda de errores y las pruebas unitarias. En la fase de implementación, el proyecto de software se traduce al correspondiente lenguaje de programación. Los diversos componentes se desarrollan por separado, se comprueban a través de las pruebas unitarias y se integran poco a poco en el producto final. La fase de implementación da como resultado un producto de software que se comprueba por primera vez como producto final en la siguiente fase (prueba alfa).\\
-
-\subsubsection{Verificación}
-La fase de verificación o pruebas incluye la integración del software en el entorno seleccionado. Por norma general, los productos de software se envían en primer lugar a los usuarios finales seleccionados en versión beta (pruebas beta). Las pruebas de aceptación desarrolladas en la fase de análisis permiten determinar si el software cumple con las exigencias definidas con anterioridad. Aquellos productos de software que superan con éxito las pruebas beta están listos para su lanzamiento.\\
-
-\subsubsection{Mantenimiento}
-
-Una vez que la fase de prueba ha concluido con éxito, se autoriza la aplicación productiva del software. La última fase del modelo en cascada incluye la entrega, el mantenimiento y la mejora del software. En esta fase se analizan los resultados del hito anterior para realizar los cambios pertinentes para dar por concluido el proyecto.\\
+\end{enumerate}
 
 \subsection{Ventajas y desventajas del modelo Cascada}
 Esta metodología permite estructurar la organización de forma clara en aquellos proyectos de desarrollo en los que las diversas fases de proyecto se diferencian claramente entre sí. Como cada una de las fases concluye con un hito, el proceso de desarrollo es muy fácil de comprender. El punto clave del modelo reside en la documentación de todos y cada uno de los pasos de proceso. Los conocimientos adquiridos se registran en pliegos de requisitos o borradores preliminares.\\

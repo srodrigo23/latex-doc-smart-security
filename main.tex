@@ -37,8 +37,12 @@
 
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage[singlelinecheck=false]{caption} % <-- important
 \usepackage{titlesec}
+
+\usepackage{caption}
+\captionsetup{skip=0pt}
+
 \titleformat{\chapter}[display]
     {\centering \LARGE \bfseries}
     {\textbf{Capítulo \thechapter}}{5pt}{\huge}
