@@ -37,10 +37,18 @@
 
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage[singlelinecheck=false]{caption} % <-- important
+% \usepackage[singlelinecheck=false]{caption} % <-- important
 \usepackage{titlesec}
 
 \usepackage{caption}
+
+\usepackage{enumitem}
+\usepackage{amsfonts}
+
+% \setlist[itemize,1]{label=$\times$}
+\setlist[itemize,2]{label=$\checkmark$}
+\setlist[itemize,3]{label=$\diamond$}
+\setlist[itemize,4]{label=$\bullet$}
 \captionsetup{skip=0pt}
 
 \titleformat{\chapter}[display]

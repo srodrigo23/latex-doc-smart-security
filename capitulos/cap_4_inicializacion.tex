@@ -122,17 +122,17 @@ En la figura \ref{fig:gannt} se visualiza e diagrama de Gannt en base a la plani
     \end{center}
 \end{figure}
 
-\section{Diseño}
-El diseño del sistema de video-vigilancia se divide y se desarrolla según los módulos que componen el sistema completo:
-\begin{itemize}
-    \item Módulo de cámaras
-    \item Módulo de servidor
-\end{itemize}
+% \section{Diseño}
+% El diseño del sistema de video-vigilancia se divide y se desarrolla según los módulos que componen el sistema completo:
+% \begin{itemize}
+%     \item Módulo de cámaras
+%     \item Módulo de servidor
+% \end{itemize}
 
-\subsection{Módulo de cámaras}
+\section{Diseño del módulo de cámaras}
 El módulo de cámaras permite el control de conexión de una cámara al servidor central. Permite conectar una cámara web o una cámara de  una Raspberry Pi. Presenta campos para ingresar datos de configuración que permiten la conexión al servidor central.\\
 
-\subsubsection{Diseño de interfaz}
+\subsection{Diseño de interfaz}
 En la figura \ref{fig:cam_user_interface} se presenta el esbozo de interfaz de ususario que servirá de diseño final para el desarrollo del presente módulo. El módulo de cámaras permite la visualizacion de fotogramas capturados por medio de la cámara conectada, configuración de la conexión y verificación del estado de envio de los fotogramas al servidor.
 
 \begin{figure}[H]
@@ -158,7 +158,7 @@ A continuación se describe a detalle cada uno de los elementos que conforman la
     \item \textbf{Cuadro de mensajes}: Cuadro de lista para mostrar diferentes mensajes de módulo: envio de fotogramas, conexión/desconexión al servidor, etc.
 \end{enumerate}
 
-\subsubsection{Diagrama de secuencia}
+\subsection{Diagrama de secuencia}
 En la figura \ref{fig:diag_sec_mod_camera} se ilustra el diagrama de secuencia del módulo de cámaras. El diagrama describe de forma gráfica el comportamiento de la interacción entre el módulo de cámaras con el servidor.
 
 \begin{figure}[H]
@@ -193,7 +193,7 @@ La interacción entre el módulo cámaras y el servidor es como sigue:
 %     \item Si hay un dispositivo con la misma configuracion se recahza la conexión.
 %     \item sigue el proceso exitoso.
 % \end{itemize}
-\subsubsection{Diagrama de clases}
+\subsection{Diagrama de clases}
 De acuerdo al planteamiento de comportamiento del módulo de cámaras, para el desarrollo de este módulo se plantea el diagrama de clases que se visualiza en la figura \ref{fig:camera_clases}.\\
 
 \begin{figure}[H]
@@ -210,74 +210,75 @@ Para la comprensión de este diagrama de clases se procede a describir cada clas
 \begin{itemize}
     \item \textbf{Main}: Clase principal encargada de inicializar las instancias necesarias para el módulo de cámaras. Sus atributos son:
         \begin{itemize}
-            \item settings: Instancia de la clase Settings, que permite cargar las configuraciones iniciales para iniciar el módulo.
-            \item node: Instancia de la clase Node, que representa el ciclo de petición de los fotogramas de la cámara.
-            \item connection: Instancia de la clase Connection, que permite la conexión/desconexión con el servidor a partir de la configuracion por defecto establecida en el archivo de configuración inicial.
+            \item \textbf{settings}: Instancia de la clase Settings, que permite cargar las configuraciones iniciales para iniciar el módulo.
+            \item \textbf{node}: Instancia de la clase Node, que representa el ciclo de petición de los fotogramas de la cámara.
+            \item \textbf{connection}: Instancia de la clase Connection, que permite la conexión/desconexión con el servidor a partir de la configuracion por defecto establecida en el archivo de configuración inicial.
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item run: Método encargado de instanciar la clase View que representa la interfaz de usuario.
+            \item \textbf{run}: Método encargado de instanciar la clase View que representa la interfaz de usuario.
         \end{itemize}
     \item \textbf{Node}: Clase encargada de implementar los métodos que permiten obtener los fotogramas directamente cual se la cámara conectada (WebCam o PiCam), tambien envia los fotogramas tanto al servidor y a la interfaz de usuario para su visualización. Este es su único atributo:
         \begin{itemize}
-            \item camera: Es la instancia de la cámara que permite la captura de fotogramas.            
+            \item \textbf{camera}: Es la instancia de la cámara que permite la captura de fotogramas.            
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item execute: Método encargado de ejecutar la gestión de fotogramas capturados por medio de la cámara física.
-            \item stop\_node: Se encarga cerrar el proceso de gestión de fotogramas al momento de desconectarse del servidor.
+            \item \textbf{execute}: Método encargado de ejecutar la gestión de fotogramas capturados por medio de la cámara física.
+            \item \textbf{stop\_node}: Se encarga cerrar el proceso de gestión de fotogramas al momento de desconectarse del servidor.
         \end{itemize}
     \item \textbf{Settings}: Clase encargada de cargar las configuraciones des el archivo inicial de configuración para mostrarlo en pantalla. Los métodos de clase son:
         \begin{itemize}
-            \item get\_port: Obtiene el valor del puerto del servidor desde el archivo de configuración.
-            \item get\_host\_address: Obtiene la dirección del servidor desde el archivo de configuración.
-            \item get\_frame\_size: Obtiene el valor del tamaño del fotograma según la configuración.
+            \item \textbf{get\_port}: Obtiene el valor del puerto del servidor desde el archivo de configuración.
+            \item \textbf{get\_host\_address}: Obtiene la dirección del servidor desde el archivo de configuración.
+            \item \textbf{get\_frame\_size}: Obtiene el valor del tamaño del fotograma según la configuración.
         \end{itemize}
     \item \textbf{Connection}: Clase encargada de gestionar los fotogramas obtenidos por medio de la cámara. Los atributos de la clase son:
         \begin{itemize}
-            \item host: Dirección del servidor.
-            \item port: Puerto por defecto para conectarse al servidor.
-            \item quality: Valor de referencia para la transformación del fotograma a ser enviado.
-            \item node: Instancia de la clase Node  que permite gestionar los fotogramas para ser mostrados y enviados.
+            \item \textbf{host}: Dirección del servidor.
+            \item \textbf{port}: Puerto por defecto para conectarse al servidor.
+            \item \textbf{quality}: Valor de referencia para la transformación del fotograma a ser enviado.
+            \item \textbf{node}: Instancia de la clase Node  que permite gestionar los fotogramas para ser mostrados y enviados.
         \end{itemize}
         Los métodos de la clase son:
         \begin{itemize}
-            \item execute: Permite la ejecución en paralelo de la conexión.
-            \item connect\_socket: Permite conectarse al servidor por medio de un conector.
-            \item listen\_message: Método encargado de recibir mensajes por parte del servidor en el momento de la conexión y desconexión del módulo de cámaras.
-            \item send\_frame: Método encargado de enviar los fotogramas por medio de un conector hacia el servidor.
+            \item \textbf{execute}: Permite la ejecución en paralelo de la conexión.
+            \item \textbf{connect\_socket}: Permite conectarse al servidor por medio de un conector.
+            \item \textbf{listen\_message}: Método encargado de recibir mensajes por parte del servidor en el momento de la conexión y desconexión del módulo de cámaras.
+            \item \textbf{send\_frame}: Método encargado de enviar los fotogramas por medio de un conector hacia el servidor.
         \end{itemize}
     \item \textbf{Camera}: Clase encargada de representar la cámara genérica que es conectada físicamente al módulo. Estos son sus atributos:
         \begin{itemize}
-            \item web\_camera: Instancia de la clase Webcamera, que representa una cámara web.
-            \item pi\_camera: Instancia de la clase PiCamera, que representa una cámara de Raspberry Pi.
+            \item \textbf{send\_frame}: Método encargado de enviar los fotogramas por medio de un conector hacia el servidor.
+            \item \textbf{web\_camera}: Instancia de la clase Webcamera, que representa una cámara web.
+            \item \textbf{pi\_camera}: Instancia de la clase PiCamera, que representa una cámara de Raspberry Pi.
         \end{itemize}
         Estos son los métodos de clase:
         \begin{itemize}
-            \item start: Método de interfaz que inicializa la cámara.
-            \item get\_frame: Método que devuelve el frame actual que recibe de la cámara fisica.
-            \item stop: Detiene el proceso de captura de fotogramas.
-            \item there\_is\_frames: Devuelve un valor verdadero y falso de acuerdo a si hay fotogramas almacenados en memoria o no.
+            \item \textbf{start}: Método de interfaz que inicializa la cámara.
+            \item \textbf{get\_frame}: Método que devuelve el frame actual que recibe de la cámara fisica.
+            \item \textbf{stop}: Detiene el proceso de captura de fotogramas.
+            \item \textbf{there\_is\_frames}: Devuelve un valor verdadero y falso de acuerdo a si hay fotogramas almacenados en memoria o no.
         \end{itemize}
     \item \textbf{WebCamera} Clase que representa una cámara web. Estos son sus métodos:
         \begin{itemize}
-            \item start: Inicializa la cámara web despues de ser conectada.
-            \item rescale\_frame: Redimensiona la imagen para poder ser visualizada en la interfaz de usuario.
-            \item catch\_frames: Captura la imagen por medio del lente de la cámara.
-            \item stop: Detiene el proceso de captura de fotogramas por medio de la cámara web.
+            \item \textbf{start}: Inicializa la cámara web despues de ser conectada.
+            \item \textbf{rescale\_frame}: Redimensiona la imagen para poder ser visualizada en la interfaz de usuario.
+            \item \textbf{catch\_frames}: Captura la imagen por medio del lente de la cámara.
+            \item \textbf{stop}: Detiene el proceso de captura de fotogramas por medio de la cámara web.
         \end{itemize}
     \item \textbf{PiCamera} Clase que representa un cámara de Raspberry Pi. Estos son sus métodos:
         \begin{itemize}
-            \item start: Inicializa la cámara web despues de ser conectada.
-            \item read: Método encargado de capturar un fotograma a partir del lente de la cámara.
-            \item stop: Método que detiene la captura de fotogramas.
-            \item close: Cierra el proceso de captura de fotogramas por medio de la cámara de Raspberry pi.
+            \item \textbf{start}: Inicializa la cámara web despues de ser conectada.
+            \item \textbf{read}: Método encargado de capturar un fotograma a partir del lente de la cámara.
+            \item \textbf{stop}: Método que detiene la captura de fotogramas.
+            \item \textbf{close}: Cierra el proceso de captura de fotogramas por medio de la cámara de Raspberry pi.
         \end{itemize}
 \end{itemize}
 
-\subsection{Módulo de servidor}
+\section{Diseño del módulo de servidor}
 El servidor que se encarga  de gestionar las conexiones del módulo de cámaras, almacenar los fotogramas recibidos, manejar los procesos de los detectores, notificación por correo electrónico y de la transmisión de video.\\
-\subsubsection{Diagramas de secuencia}
+\subsection{Diagramas de secuencia}
 En la figura \ref{fig:diag_sec_notif_conn} se visualiza la secuencia a seguir para notificar al usuario sobre una conexión/desconexión del módulo de cámaras.\\
 
 \begin{figure}[H]
@@ -408,7 +409,7 @@ A continuación se describe el diagrama de secuencia de la transmisión en vivo 
 \end{enumerate}
 
 
-\subsubsection{Diagrama de clases}
+\subsection{Diagrama de clases}
 En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del servidor.\\
 
 \begin{figure}[H]
@@ -423,76 +424,77 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
 \end{figure}
 
 \begin{itemize}
+    
     \item \textbf{Main}: Es la clase principal que permite la ejecución constante del servidor. El único método de clase es:
         \begin{itemize}
-            \item run\_tcp\_server: Inicializa el servidor en la dirección y puerto provistas desde la configuración.
+            \item \textbf{run\_tcp\_server}: Inicializa el servidor en la dirección y puerto provistas desde la configuración.
         \end{itemize}
     \item \textbf{TCPServer}: Clase que maneja las peticiones de nuevas conexiones del módulo de cámaras; prepara el servidor y registra las nuevos procesos que se crean a partir de una nueva conexión. Los atributos de clase son:
         \begin{itemize}
-            \item socket: Es la libreria que permite las conexiónes a sistemas externos.
-            \item host: Representa la dirección de escucha del servidor.
-            \item port: Representa el puerto general de escucha del servidor.
-            \item connections: Almacena los nuevos hilos de conexión cuando una nueva cámara se conecta.
+            \item \textbf{socket}: Es la libreria que permite las conexiónes a sistemas externos.
+            \item \textbf{host}: Representa la dirección de escucha del servidor.
+            \item \textbf{port}: Representa el puerto general de escucha del servidor.
+            \item \textbf{connections}: Almacena los nuevos hilos de conexión cuando una nueva cámara se conecta.
         \end{itemize}
         Los métodos de clase son:
         \begin{itemize}
-            \item prepare\_server: Método encargado de preparar las configuraciones del servidor antes de empezar su ejecución.
-            \item run: Lanza la ejecución del servidor.
-            \item stop\_all\_connections: Cierra todas las conexiónes existentes en el momento de cerrar el servidor.
+            \item \textbf{prepare\_server}: Método encargado de preparar las configuraciones del servidor antes de empezar su ejecución.
+            \item \textbf{run}: Lanza la ejecución del servidor.
+            \item \textbf{stop\_all\_connections}: Cierra todas las conexiónes existentes en el momento de cerrar el servidor.
         \end{itemize}
     \item \textbf{Settings}: Clase que se encarga de gestionar todos los valores de configuración en el servidor. Estos son sus métodos de clase:
         \begin{itemize}
-            \item get\_host: Obtiene la dirección por defecto desde el archivo de configuración.
-            \item get\_port: Obtiene el puerto por defecto desde el archivo de configuración.
-            \item get\_path\_folder\_streaming: Obtiene el directorio por defecto para el streamming de video de las cámaras desde el archivo de configuración.
-            \item get\_email\_port: Obtiene el puerto del servicio de correo electrónico desde el archivo de configuración.
-            \item get\_smtp\_server: Obtiene la dirección por defecto del servicio de correo electrónico desde el archivo de configuración.
-            \item get\_sender\_mail: Obtiene a dirección de correo electrónico para el envío de correos de notificación. 
-            \item get\_pass\_sender: Obtiene la contraseña del correo electrónico para el envío de correos de notificación. 
-            \item get\_receiver\_mail: Obtiene la dirección de correo electronico destino.
-            \item get\_path\_captures: Obtiene el directorio por defecto de las capturas de los detectores desde el archivo de configuración.
+            \item \textbf{get\_host}: Obtiene la dirección por defecto desde el archivo de configuración.
+            \item \textbf{get\_port}: Obtiene el puerto por defecto desde el archivo de configuración.
+            \item \textbf{get\_path\_folder\_streaming}: Obtiene el directorio por defecto para el streamming de video de las cámaras desde el archivo de configuración.
+            \item \textbf{get\_email\_port}: Obtiene el puerto del servicio de correo electrónico desde el archivo de configuración.
+            \item \textbf{get\_smtp\_server}: Obtiene la dirección por defecto del servicio de correo electrónico desde el archivo de configuración.
+            \item \textbf{get\_sender\_mail}: Obtiene a dirección de correo electrónico para el envío de correos de notificación. 
+            \item \textbf{get\_pass\_sender}: Obtiene la contraseña del correo electrónico para el envío de correos de notificación. 
+            \item \textbf{get\_receiver\_mail}: Obtiene la dirección de correo electronico destino.
+            \item \textbf{get\_path\_captures}: Obtiene el directorio por defecto de las capturas de los detectores desde el archivo de configuración.
         \end{itemize}
     \item \textbf{Connection}: Clase encargada de gestionar, duplicar y almacenar los fotogramas que son enviados desde el módulo de cámaras. Sus propiedades son:
         \begin{itemize}
-            \item fire\_detector: Instancia de la clase del detector de fuego.
-            \item people\_detector: Instancia de la clase del detector de silueta humana.
-            \item motion\_detector: Instancia de la clase del detector de movimiento.
+            \item \textbf{fire\_detector}: Instancia de la clase del detector de fuego.
+            \item \textbf{people\_detector}: Instancia de la clase del detector de silueta humana.
+            \item \textbf{motion\_detector}: Instancia de la clase del detector de movimiento.
         \end{itemize}
         Sus métodos de clase son:
         \begin{itemize}
-            \item run: Ejecuta el proceso de escucha y gestion de nuevas conexiones por parte del módulo de cámaras.
-            \item init\_detectors: Lanza los procesos de detección.
-            \item get\_message\_size: Obtiene el valor del tamaño de los mensajes para procesar las capturas recibidas por el módulo de cámaras.
-            \item read\_frame: Recibe el fotograma y convierte la información de un valor binario a imagen
-            \item stop\_connection: Cierre el proceso de conexión del módulo de cámaras y procesos de detección.
-            \item get\_frame: Devuelve un fotograma hacia los detectores o al módulo de transmisión de video en vivo.
-            \item store\_frame: Almacena en memoria un fotograma.
-            \item make\_notification: Prepara y envia la notificación a partir de la señal de un detector.
+            \item \textbf{run}: Ejecuta el proceso de escucha y gestion de nuevas conexiones por parte del módulo de cámaras.
+            \item \textbf{init\_detectors}: Lanza los procesos de detección.
+            \item \textbf{get\_message\_size}: Obtiene el valor del tamaño de los mensajes para procesar las capturas recibidas por el módulo de cámaras.
+            \item \textbf{read\_frame}: Recibe el fotograma y convierte la información de un valor binario a imagen
+            \item \textbf{stop\_connection}: Cierre el proceso de conexión del módulo de cámaras y procesos de detección.
+            \item \textbf{get\_frame}: Devuelve un fotograma hacia los detectores o al módulo de transmisión de video en vivo.
+            \item \textbf{store\_frame}: Almacena en memoria un fotograma.
+            \item \textbf{make\_notification}: Prepara y envia la notificación a partir de la señal de un detector.
         \end{itemize}
     \item \textbf{LiveStreamming}: Clase que se encarga de la codificación y decodificación de video, construyendo el archivo que registra los fragmentos de video creados para su transmisión:
         \begin{itemize}
-            \item init: Inicializa el módulo de transmisión de video en vivo.
-            \item run: Ejecuta de manera constante el decodificado del video.
-            \item stop\_stream: Termina la transmisión y cierra el proceso de codificación.
+            \item \textbf{init}: Inicializa el módulo de transmisión de video en vivo.
+            \item \textbf{run}: Ejecuta de manera constante el decodificado del video.
+            \item \textbf{stop\_stream}: Termina la transmisión y cierra el proceso de codificación.
         \end{itemize}
     \item \textbf{MailSender}: Clase encargada de ofrecer el servicio de envio de mensajes por correo electrónico:
         \begin{itemize}
-            \item init: Inicia el módulo de envio de correo electrónico.
-            \item prepare\_server: Prepara el servicio de correo electrónico a partir de los valores de configuración.
-            \item prepare\_mail: Prepara el mensaje de correo a partir del detector que genera la alarma.
-            \item send\_mail: Envia el correo electrónico a la dirección registrada en el archivo de configuraciones.
+            \item \textbf{init}: Inicia el módulo de envio de correo electrónico.
+            \item \textbf{prepare\_server}: Prepara el servicio de correo electrónico a partir de los valores de configuración.
+            \item \textbf{prepare\_mail}: Prepara el mensaje de correo a partir del detector que genera la alarma.
+            \item \textbf{send\_mail}: Envia el correo electrónico a la dirección registrada en el archivo de configuraciones.
         \end{itemize}
     \item \textbf{PeopleDetector}: Clase encargada de la detección de siluetas humana en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect: Método que se encarga de aplicar el algoritmo de detección de siluetas humanas sobre los fotogramas.
+            \item \textbf{detect}: Método que se encarga de aplicar el algoritmo de detección de siluetas humanas sobre los fotogramas.
         \end{itemize}
     \item \textbf{FireDetector}: Clase encargada de la detección de fuego en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect: Método que se encarga de aplicar el algoritmo de detección de fuego sobre los fotogramas.
+            \item \textbf{detect}: Método que se encarga de aplicar el algoritmo de detección de fuego sobre los fotogramas.
         \end{itemize}
     \item \textbf{MotionDetector}: Clase encargada de la detección de movimiento en los fotogramas. Este es el único método de clase:
         \begin{itemize}
-            \item detect : Método que se encarga de aplicar el algoritmo de detección de movimiento sobre los fotogramas.
+            \item \textbf{detect}: Método que se encarga de aplicar el algoritmo de detección de movimiento sobre los fotogramas.
         \end{itemize}
 \end{itemize}
 
