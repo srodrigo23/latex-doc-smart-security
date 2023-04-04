@@ -1,16 +1,17 @@
 \chapter{Pruebas}
 
-Según la metodología ``cascada'', la fase de implementación es cerrada cuando se realizan pruebas sobre lo que se implementó. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
+Según la metodología ``cascada'', la fase de implementación se cierra cuando se realizan las pruebas respectivas sobre los módulos que se implementaron. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
 
 \section{Prueba de conexión del módulo de cámaras}
-En la siguiente tabla se describe la prueba realizada:
+En la tabla \ref{con_modulo_cameras} se detalla la prueba realizadas de conexión del módulo de cámaras.
 
 \begin{table}[H]
-    \caption{Detalle de prueba de conexión de módulo de cámaras}
+    \caption{Prueba de conexión en módulo de cámaras}
+    \label{con_modulo_cameras}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Única cámara conectada \\
+            \textbf{Título de la prueba} & \textbf{Única cámara conectada} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. No existen más cámaras conectadas.\\
             \hline
@@ -31,28 +32,36 @@ En la siguiente tabla se describe la prueba realizada:
     \end{center}
 \end{table}
 
-A continuación se muestra capturas del comportamiento esperado:\\
+El módulo del servidor se encuentra a la espera de nuevas conexiones y en la figura \ref{camera_connected_one_camera} se visualiza los mensajes que se muestran el la interfaz del servidor a partir del comportamiento esperado del módulo.\\
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_6/server_cam_connected.png}
-        \caption{Mensajes en consola del servidor - Una cámara conectada.}
+    \end{center}
+    \begin{center}
+        \caption{Mensajes de la interfaz del servidor.}
         Fuente : Elaboración propia
+        \label{camera_connected_one_camera}
     \end{center}
 \end{figure}
+
+En la figura \ref{mail_one_camera_connected} se visualiza el correo electrónico que el usuario recibe como notificación despues de que una cámara se conecta al sistema.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_6/mail1.png}
+        \includegraphics[width=12cm]{img/capitulo_6/mail1.png}
+    \end{center}
+    \begin{center}
         \caption{Notificación por correo - Una cámara conectada.}
         Fuente : Elaboración propia
+        \label{mail_one_camera_connected}
     \end{center}
 \end{figure}
 
-En la siguiente tabla se describe otra prueba realizada:\\
+En la tabla \ref{many_cameras_connected_table} se detalla el caso cuando se tiene varias cámaras conectadas y se conecta una cámara adicional.\\
 
 \begin{table}[H]
-    \caption{Detalle de prueba de conexión del módulo de cámaras con más de una cámara disponible}
+    \caption{Conexión de varias cámaras}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
@@ -71,6 +80,7 @@ En la siguiente tabla se describe otra prueba realizada:\\
             \textbf{Estado de prueba} & Exitoso \\
             \hline
         \end{tabular}
+        \label{many_cameras_connected_table}
         \begin{center}
             Fuente: Elaboración propia.
         \end{center}
@@ -81,7 +91,9 @@ A continuación se muestra capturas del comportamiento esperado:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=15cm]{img/capitulo_6/server_cam_connected_more_cams.png}
+        \includegraphics[width=12cm]{img/capitulo_6/server_cam_connected_more_cams.png}
+    \end{center}
+    \begin{center}
         \caption{Mensajes en consola del servidor - Más de una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
@@ -90,6 +102,8 @@ A continuación se muestra capturas del comportamiento esperado:
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{img/capitulo_6/mail2.png}
+    \end{center}
+    \begin{center}
         \caption{Notificación por correo - Más de una cámara conectada.}
         Fuente : Elaboración propia
     \end{center}
@@ -180,6 +194,8 @@ A continuación se muestra capturas del comportamiento esperado:
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=13cm]{img/capitulo_6/cam_disconnected_n_cams.png}
+    \end{center}
+    \begin{center}
         \caption{Mensajes en consola del servidor - Cámara desconectada de varias.}
         Fuente : Elaboración propia
     \end{center}
@@ -231,7 +247,7 @@ A continuación se muestra las capturas del comportamiento esperado:
         \includegraphics[width=11cm]{img/capitulo_6/fire.png}
     \end{center}
     \begin{center}
-        \caption{Visualización en módulo de cámaras - Presencia de fuego en la escena.}
+        \caption{Presencia de fuego en la escena.}
         Fuente : Elaboración propia
     \end{center}
 \end{figure}
@@ -289,7 +305,7 @@ A continuación se muestra las capturas del comportamiento esperado:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=8.8cm]{img/capitulo_6/mail_human.png}
+        \includegraphics[width=8cm]{img/capitulo_6/mail_human.png}
     \end{center}
     \begin{center}
         \caption{Detalle de notificación por correo electrónico - Alerta de intruso.}
@@ -383,7 +399,9 @@ A continuación se muestra las capturas del comportamiento esperado:\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_6/stream.png}
+        \includegraphics[width=12cm]{img/capitulo_6/stream.png}
+    \end{center}
+    \begin{center}
         \caption{Visualización en módulo de cámaras.}
         Fuente : Elaboración propia
     \end{center}
@@ -392,6 +410,8 @@ A continuación se muestra las capturas del comportamiento esperado:\\
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=15cm]{img/capitulo_6/stream_web.png}
+    \end{center}
+    \begin{center}
         \caption{Reproductor web de video en Streaming.}
         Fuente : Elaboración propia
     \end{center}
