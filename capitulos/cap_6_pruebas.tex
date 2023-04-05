@@ -1,12 +1,12 @@
 \chapter{Pruebas}
 
-Según la metodología ``cascada'', la fase de implementación se cierra cuando se realizan las pruebas respectivas sobre los módulos que se implementaron. Para probar en su totalidad el sistema de video-vigilancia se plantean las siguientes pruebas de aceptación.\\
+Según la metodología ``cascada'', la fase de implementación se cierra cuando se realizan las pruebas respectivas sobre los módulos implementados. Para probar en su totalidad el sistema de video-vigilancia se realizaron pruebas en el móodulo de cámara y el servidor.\\
 
-\section{Prueba de conexión del módulo de cámaras}
-En la tabla \ref{con_modulo_cameras} se detalla la prueba realizadas de conexión del módulo de cámaras.
+\section{Prueba de conexión de cámaras}
+En la tabla \ref{con_modulo_cameras} se detalla la prueba realizada sobre la conexión de una nueva cámara en el módulo de cámaras.
 
 \begin{table}[H]
-    \caption{Prueba de conexión en módulo de cámaras}
+    \caption{Detalle de prueba de conexión}
     \label{con_modulo_cameras}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
@@ -18,7 +18,8 @@ En la tabla \ref{con_modulo_cameras} se detalla la prueba realizadas de conexió
             \textbf{Comportamiento obtenido} & 
             \begin{itemize}
                 \item El servidor registra la desconexión y lo muestra en consola.
-                \item El servidor notifica al usuario por medio de correo electronico.
+                \item El servidor notifica al usuario por medio de correo electrónico.
+                \item El servidor notifica al usuario por medio de whatsapp.
                 \item La notificación provee información sobre la fecha y hora de la desconexión.
                 \item La notificación detalla que no hay más conexiones.
             \end{itemize} \\ 
@@ -32,7 +33,7 @@ En la tabla \ref{con_modulo_cameras} se detalla la prueba realizadas de conexió
     \end{center}
 \end{table}
 
-El módulo del servidor se encuentra a la espera de nuevas conexiones y en la figura \ref{camera_connected_one_camera} se visualiza los mensajes que se muestran el la interfaz del servidor a partir del comportamiento esperado del módulo.\\
+El servidor se encuentra a la espera de nuevas conexiones y en la figura \ref{camera_connected_one_camera} se visualiza los mensajes mostrados en su interfaz a partir del comportamiento esperado del módulo.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -45,11 +46,11 @@ El módulo del servidor se encuentra a la espera de nuevas conexiones y en la fi
     \end{center}
 \end{figure}
 
-En la figura \ref{mail_one_camera_connected} se visualiza el correo electrónico que el usuario recibe como notificación despues de que una cámara se conecta al sistema.\\
+En la figura \ref{mail_one_camera_connected} se visualiza el correo electrónico que el usuario recibe como notificación después de la conexión de una cámara en el sistema.\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_6/mail1.png}
+        \includegraphics[width=11cm]{img/capitulo_6/mail1.png}
     \end{center}
     \begin{center}
         \caption{Notificación por correo - Una cámara conectada.}
@@ -58,14 +59,14 @@ En la figura \ref{mail_one_camera_connected} se visualiza el correo electrónico
     \end{center}
 \end{figure}
 
-En la tabla \ref{many_cameras_connected_table} se detalla el caso cuando se tiene varias cámaras conectadas y se conecta una cámara adicional.\\
+En la tabla \ref{many_cameras_connected_table} se detalla la prueba realizada en el caso de cuando se tiene varias cámaras conectadas y se conecta una cámara adicional.\\
 
 \begin{table}[H]
     \caption{Conexión de varias cámaras}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Más de una cámara conectada \\
+            \textbf{Título de la prueba} & \textbf{ Más de una cámara conectada} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. Existen más de una cámara conectada.\\
             \hline
@@ -87,39 +88,42 @@ En la tabla \ref{many_cameras_connected_table} se detalla el caso cuando se tien
     \end{center}
 \end{table}
 
-A continuación se muestra capturas del comportamiento esperado:
+En la figura \ref{n_cameras_connected}, se visualiza los mensajes que se muestran en la consola del servidor cuando se conecta una cámara adicional.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_6/server_cam_connected_more_cams.png}
+        \includegraphics[width=11cm]{img/capitulo_6/server_cam_connected_more_cams.png}
     \end{center}
     \begin{center}
-        \caption{Mensajes en consola del servidor - Más de una cámara conectada.}
+        \caption{Interfaz de servidor en más de una cámara conectada.}
         Fuente : Elaboración propia
+        \label{n_cameras_connected}
     \end{center}
 \end{figure}
+
+En la figura \ref{notif_mail_n_cameras} se visualiza la notificación por correo electronico recibido cuando se conecta una cámara adicional.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=10cm]{img/capitulo_6/mail2.png}
     \end{center}
     \begin{center}
-        \caption{Notificación por correo - Más de una cámara conectada.}
+        \caption{Notificación de más de una cámara conectada.}
         Fuente : Elaboración propia
+        \label{notif_mail_n_cameras}
     \end{center}
 \end{figure}
 
+\section{Prueba de desconexión de cámaras}
 
-\section{Prueba de desconexión del módulo de cámaras}
-
-En la siguiente tabla se describe una de las pruebas realizadas:
+En la tabla \ref{desconected_camera} se describe la prueba realizada en la desconexión de la única cámara conectada.
 
 \begin{table}[H]
-    \caption{Detalle de prueba de desconexión del módulo de cámaras, única cámara conectada}
+    \caption{Desconexión de una cámara conectada}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Única cámara conectada y se desconecta \\
+            \textbf{Título de la prueba} & \textbf{Única cámara conectada y se desconecta} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y la única instancia del módulo de cámaras se desconecta del servidor. No existen más cámaras conectadas.\\
             \hline
@@ -137,10 +141,11 @@ En la siguiente tabla se describe una de las pruebas realizadas:
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{desconected_camera}
     \end{center}
 \end{table}
 
-A continuación se muestra capturas del comportamiento esperado:
+En la figura \ref{desconected_camera_server} se muestra la interfaz del servidor sobre la desconexión de una cámara.
 
 \begin{figure}[H]
     \begin{center}
@@ -148,36 +153,44 @@ A continuación se muestra capturas del comportamiento esperado:
     \end{center}
     \begin{center}
         \caption{Mensajes en consola del servidor - Única cámara desconectada.}
-        Fuente : Elaboración propia
+        Fuente: Elaboración propia
+        \label{desconected_camera_server}
     \end{center}
 \end{figure}
+
+En la figura \ref{desconected_camera_server_mail} se visualiza el correo electrónico que es enviado al usuario después de la desconexión de una cámara.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=12cm]{img/capitulo_6/mail4.png}
     \end{center}
     \begin{center}
-        \caption{Notificación por correo - Única cámara desconectada.}
-        Fuente : Elaboración propia
+        \caption{Notificación por correo - cámara desconectada.}
+        Fuente: Elaboración propia
+        \label{desconected_camera_server_mail}
     \end{center}
 \end{figure}
 
-En la siguiente tabla se describe otra de las pruebas realizadas:\\
+En la tabla \ref{n_cameras_one_desconnected} se describe el proceso de desconexión de una de las cámaras conectadas:\\
 
 \begin{table}[H]
-    \caption{Detalle de prueba de desconexión de módulo de cámaras con más de una cámara conectada}
+    \caption{Desconexión de una de las cámaras}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Una de las cámaras es desconectada \\
+            \textbf{Título de la prueba} & \textbf{Una de las cámaras se desconecta} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se desconecta del servidor. Existen más cámaras conectadas.\\
             \hline
             \textbf{Comportamiento obtenido} & 
             \begin{itemize}
-                \item El servidor acepta la conexión y lo muestra en consola.
-                \item El servidor notifica al usuario por medio de correo electronico.
-                \item La notificación provee información sobre la fecha y hora de la conexión, compartiendo el enlace para la transmisión en vivo.
+                \item El servidor registra la desconexión y lo muestra en consola.
+                \item El servidor notifica al usuario por medio de correo electrónico.
+                \item La notificación provee información sobre la fecha y hora de la desconexión.
+                \item La notificación detalla que no hay más conexiones.
+                % \item El servidor acepta la conexión y lo muestra en consola.
+                % \item El servidor notifica al usuario por medio de correo electronico.
+                % \item La notificación provee información sobre la fecha y hora de la conexión, compartiendo el enlace para la transmisión en vivo.
             \end{itemize} \\ 
             \hline
             \textbf{Estado de prueba} & Exitoso \\
@@ -186,6 +199,7 @@ En la siguiente tabla se describe otra de las pruebas realizadas:\\
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{n_cameras_one_desconnected}
     \end{center}    
 \end{table}
 
@@ -193,7 +207,7 @@ A continuación se muestra capturas del comportamiento esperado:
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=13cm]{img/capitulo_6/cam_disconnected_n_cams.png}
+        \includegraphics[width=12cm]{img/capitulo_6/cam_disconnected_n_cams.png}
     \end{center}
     \begin{center}
         \caption{Mensajes en consola del servidor - Cámara desconectada de varias.}
@@ -211,16 +225,16 @@ A continuación se muestra capturas del comportamiento esperado:
     \end{center}
 \end{figure}
 
-\section{Prueba de detección de fuego y notificación inmediata}
+\section{Prueba de detección de fuego}
 
-En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+En la tabla \ref{table_fire_detection} se describe la prueba realizada sobre el detector de fuego.\\
 
 \begin{table}[H]
     \caption{Detalle de prueba de detector de fuego}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Detector de fuego identifica incidencia \\
+            \textbf{Título de la prueba} & \textbf{Detector de fuego identifica incidencia} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de fuego detecta una incidencia.\\
             \hline
@@ -237,10 +251,11 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:\\
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{table_fire_detection}
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+En la figura \ref{camera_fire_detector} se visualiza el módulo de cámaras durante la detección.
 
 \begin{figure}[H]
     \begin{center}
@@ -249,29 +264,33 @@ A continuación se muestra las capturas del comportamiento esperado:
     \begin{center}
         \caption{Presencia de fuego en la escena.}
         Fuente : Elaboración propia
+        \label{camera_fire_detector}
     \end{center}
 \end{figure}
+
+En la figura \ref{mail_fire_detection} se visualiza la notificación por correo electrónico despues de la detección.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=10cm]{img/capitulo_6/mail_fire.png}
+        \includegraphics[width=9cm]{img/capitulo_6/mail_fire.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico - Alerta de fuego.}
+        \caption{Notificación por correo electrónico - Alerta de fuego.}
         Fuente : Elaboración propia
+        \label{mail_fire_detection}
     \end{center}
 \end{figure}
 
-\section{Prueba de detección de silueta humana y notificación inmediata}
+\section{Prueba de detección de silueta humana}
 
-En la siguiente tabla se describe la prueba realizada sobre el detector:
+En la tabla \ref{table_human_siluete} se describe la prueba realizada para la detección de intrusos.
 
 \begin{table}[H]
     \caption{Detalle de prueba de detector de silueta humana}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Detector de silueta humana identifica incidencia \\
+            \textbf{Título de la prueba} & \textbf{Detector de silueta humana identifica incidencia} \\
             \hline
             \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de silueta humana detecta una incidencia.\\
             \hline
@@ -288,10 +307,11 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{table_human_siluete}
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+En la figura \ref{camera_human_siluete} se visualiza el funcionameinto del módulo de cámaras durante la prueba.
 
 \begin{figure}[H]
     \begin{center}
@@ -300,32 +320,35 @@ A continuación se muestra las capturas del comportamiento esperado:
     \begin{center}
         \caption{Visualización en módulo de cámaras - Presencia de intruso en la escena.}
         Fuente : Elaboración propia
+        \label{camera_human_siluete}
     \end{center}
 \end{figure}
+
+En la figura \ref{mail_human_siluete} se visualiza el correo electrónico como notificación enviado al usuario después de la detección de intrusos.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=8cm]{img/capitulo_6/mail_human.png}
     \end{center}
     \begin{center}
-        \caption{Detalle de notificación por correo electrónico - Alerta de intruso.}
+        \caption{Correo electrónico para alerta de intrusos.}
         Fuente : Elaboración propia
+        \label{mail_human_siluete}
     \end{center}
 \end{figure}
 
+\section{Prueba de detección de movimiento}
 
-\section{Prueba de detección de movimiento y notificación inmediata}
-
-En la siguiente tabla se describe la prueba realizada sobre el detector:\\
+En la tabla \ref{table_movement_detection} se detalla la prueba realizada sobre el detector de movimiento.\\
 
 \begin{table}[H]
     \caption{Detalle de prueba de detector de movimiento}
     \begin{center}
         \begin{tabular}{|>{\centering}p{0.3\textwidth}|m{0.6\textwidth}<{\centering}|} 
             \hline
-            \textbf{Título de la prueba} & Detector de movimiento identifica incidencia \\
+            \textbf{Título de la prueba} & \textbf{Detector de movimiento identifica incidencia} \\
             \hline
-            \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de silueta humana detecta una incidencia.\\
+            \textbf{Descripción} & El servidor se encuentra en ejecución y el proceso de identificación de movimiento detecta una incidencia.\\
             \hline
             \textbf{Comportamiento obtenido} & 
             \begin{itemize}
@@ -340,20 +363,24 @@ En la siguiente tabla se describe la prueba realizada sobre el detector:\\
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{table_movement_detection}
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:
+En la figura \ref{camera_movement} se visualiza el comportamiento de la cámara durante la prueba.
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=11cm]{img/capitulo_6/motion.png}
+        \includegraphics[width=10cm]{img/capitulo_6/motion.png}
     \end{center}
     \begin{center}
         \caption{Visualización en módulo de cámaras - Movimiento.}
         Fuente : Elaboración propia
+        \label{camera_movement}
     \end{center}
 \end{figure}
+
+En la figura \ref{mail_movement} se visualiza el correo electrónico que se envia al usuario como notificación con capturas adjuntas sobre la detección.
 
 \begin{figure}[H]
     \begin{center}
@@ -362,12 +389,13 @@ A continuación se muestra las capturas del comportamiento esperado:
     \begin{center}
         \caption{Detalle de notificación por correo electrónico - Alerta de movimiento.}
         Fuente : Elaboración propia
+        \label{mail_movement}
     \end{center}
 \end{figure}
 
 \section{Prueba de transmisión de video en vivo}
 
-En la siguiente tabla se describe la prueba realizada:\\
+En la tabla \ref{stream_camera} se describe la prueba de la transmisión en vivo.\\
 
 \begin{table}[H]
     \caption{Detalle de prueba de la transmisión de video en vivo.}
@@ -376,12 +404,12 @@ En la siguiente tabla se describe la prueba realizada:\\
             \hline
             \textbf{Título de la prueba} & Transmisión de video\\
             \hline
-            \textbf{Descripción} & El servidor se encuentra en ejecución y una instancia del módulo de cámaras se conecta al servidor. El usuario ingresa al enlace que le llega en la notificación para la transmisión de video en vivo.\\
+            \textbf{Descripción} & El servidor se encuentra en ejecución. El usuario ingresa al enlace adjunto en la notificación de conexión para la transmisión de video en vivo.\\
             \hline
             \textbf{Comportamiento obtenido} & 
             \begin{itemize}
-                \item El servidor registra la conexión y lo muestra en consola.
-                \item El servidor comienza con la decodificación video en streaming.
+                \item El servidor registra la conexión y se muestra en consola.
+                \item El servidor comienza con la decodificación video.
                 \item La notificación provee información del enlace para su transmisión en vivo.
                 \item La transmisión se visualiza en un reproductor de video adaptativo en el navegador.
             \end{itemize} \\ 
@@ -392,20 +420,24 @@ En la siguiente tabla se describe la prueba realizada:\\
     \end{center}
     \begin{center}
         Fuente: Elaboración propia.
+        \label{stream_camera}
     \end{center}
 \end{table}
 
-A continuación se muestra las capturas del comportamiento esperado:\\
+En la figura \ref{mod_camera_stream} se visualiza el estado del módulo de cámara durante la transmisión:\\
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=12cm]{img/capitulo_6/stream.png}
+        \includegraphics[width=11cm]{img/capitulo_6/stream.png}
     \end{center}
     \begin{center}
         \caption{Visualización en módulo de cámaras.}
         Fuente : Elaboración propia
+        \label{mod_camera_stream}
     \end{center}
 \end{figure}
+
+En la figura \ref{stream_chrome} se visualiza la transmisión de video en vivo por medio de un reproductor de video adaptativo directamente en un navegador web.
 
 \begin{figure}[H]
     \begin{center}
@@ -414,5 +446,17 @@ A continuación se muestra las capturas del comportamiento esperado:\\
     \begin{center}
         \caption{Reproductor web de video en Streaming.}
         Fuente : Elaboración propia
+        \label{stream_chrome}
     \end{center}
 \end{figure}
+
+Las pruebas re acpetación realizadas sobre el sistema de video-vigilancia intelignete implementado prueban: la conexón y desconexión de cámaras al sistema, como también las notificaciones según a lo que llegue a identificarse.
+
+% \begin{itemize}
+%     \item Prueba de conexión de cámaras.
+%     \item Prueba de desconexión de cámaras.
+%     \item Prueba de detección de fuego y notificación.
+%     \item Prueba de detección de silueta humana y notificación.
+%     \item Prueba de detección de movimiento y notificación.
+%     \item Prueba de transmisión de video en vivo.
+% \end{itemize}
