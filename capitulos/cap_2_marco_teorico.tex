@@ -282,7 +282,7 @@ Estas redes han contribuido en el desarrollo y perfeccionamiento del campo de la
     \end{center}
 \end{figure}
 
-Estas redes funiconan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida.\\
+Estas redes funcionan en base de convoluciones. Este proceso consiste en tomar un grupo de píxeles de la imagen de entrada e ir realizando un producto escalar con un kernel. El kernel recorrerá todas las neuronas de entrada y obtendremos una nueva matriz, la cual será una de las capas ocultas. En el caso de que la imagen sea de color se tendrán 3 kernels del mismo tamaño que se sumarán para obtener una imagen de salida. En la figura \ref{fig:kernel} se visualiza un ejemplo del movimiento del kernel sobre una imagen.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -515,7 +515,7 @@ De acuerdo al modelo Cascada, se enfatiza en la dependecia secuencial del produc
 
 Cada una de las fases guarda una relación iterativa con el siguiente paso definido en la metodología que asegura la completitud del producto entregado en la fase antetior. Esta relación esta ilustrada en la figura \ref{fig:cascada_iterativa}. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida dentro de un proyecto de desarrollo de software.\\
 
-En la práctica, se aplican diversas versiones del modelo. Los más habituales son los modelos que dividen los procesos de desarrollo en cinco fases. En ocasiones, las fases 1, 2 y 3 definidas por Royce se integran en una sola fase de proyecto a modo de análisis de los requisitos.\\
+En la práctica, se aplican diversas versiones del modelo. Los más habituales son los modelos que dividen los procesos de desarrollo en cinco fases. En ocasiones, las fases 1, 2 y 3 definidas por Royce se integran en una sola fase de proyecto a modo de análisis de los requisitos. Las fases más comunes en la metodología son:\\
 
 \begin{enumerate}
     \item Análisis: planificación, análisis y especificación de los requisitos.
@@ -541,9 +541,7 @@ La figura \ref{fig:cascada_iterativa} se muestra la ampliación de esta metodolo
 En este modelo, las diferentes fases de un proceso de desarrollo suceden una detrás de otra como en una cascada. Cada una de las fases concluye con un resultado provisional o ``hito''. A continuacion se detalla cada una de las fases y las actividades que implica cada fase.\\
 
 \begin{enumerate}
-    \item \textbf{Análisis:} Todo proyecto de software comienza con una fase de análisis que incluye un estudio de viabilidad y una definición de los requisitos. En el estudio de viabilidad se evalúan los costes, la rentabilidad y la factibilidad del proyecto de software. El estudio de viabilidad da como resultado un pliego de condiciones (una descripción general de los requisitos), un plan y una estimación financiera del proyecto, así como una propuesta para el cliente, si fuera necesario.\\
-    
-    Este es el punto de partida en donde se plasma cada detalle de la idea y tomar el impulso necesario para su desarrollo. Esta fase consiste en determinar cuáles son las necesidades y los objetivos, para luego reunir todos los requisitos que se deben cumplir en el desarrollo del software para llevar a cabo todo el proceso.\\
+    \item \textbf{Análisis:} Todo proyecto de software comienza con una fase de análisis que incluye un estudio de viabilidad y una definición de los requisitos. En el estudio de viabilidad se evalúan los costes, la rentabilidad y la factibilidad del proyecto de software. El estudio de viabilidad da como resultado un pliego de condiciones (una descripción general de los requisitos), un plan y una estimación financiera del proyecto, así como una propuesta para el cliente, si fuera necesario. Este es el punto de partida en donde se plasma cada detalle de la idea y tomar el impulso necesario para su desarrollo. Esta fase consiste en determinar cuáles son las necesidades y los objetivos, para luego reunir todos los requisitos que se deben cumplir en el desarrollo del software para llevar a cabo todo el proceso.\\
     
     Se realiza una definición detallada de los requisitos, incluyendo un análisis de la situación de salida y un concepto. Mientras que los análisis de salida se encargan de describir la problemática en sí, el concepto ha de definir qué funciones y características debe ofrecer el producto de software para cumplir con las correspondientes exigencias. La definición de los requisitos da como resultado un pliego de condiciones, una descripción detallada de cómo se han de cumplir los requisitos del proyecto, así como un plan para la prueba de aceptación, entre otros.\\
 

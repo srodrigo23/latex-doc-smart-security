@@ -29,12 +29,14 @@ En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema
 \subsection{Definición de Requerimientos}
 La definición de requerimientos es una de las actividades más importantes del desarrollo de software; de ello depende el resto de actividades del proyecto. Anteriormente se describe completamente el comportamiento del sistema que se desarrolla para la identificación de los requerimientos. Inicialmente se plantean los criterios de partida a tomar en cuenta en el diseño del sistema de video-vigilancia inteligente:
 
-\begin{itemize}
+\begin{enumerate}
     \item Costos altos en la infraestructura de transmisión de video en vivo.
     \item Las características de identificación automática, estan disponibles para sistemas de video-vigilancia de alto nivel.
     \item Una alerta inmediata puede minimizar el impacto de alguna situación que ponga en peligro la integridad de bienes materiales y humanos.
     \item Los usuarios finales son personas que a menudo dejan su hogar para salir a trabajar, y usan constamente su correo electrónico.
-\end{itemize}
+\end{enumerate}
+
+A partir de estos criterios planteados a continuación se definen los requerimientos funcionales y no funcionales:
 
 \begin{itemize}
     \item \textbf{Requerimientos Funcionales}
@@ -498,7 +500,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \end{itemize}
 \end{itemize}
 
-\subsubsection{Diseño de notificación por correo electrónico}
+\section{Diseño de notificación por correo electrónico}
 Cuando se identifica un evento por parte de alguno de los tres detectores implementados, es necesario notificar al usuario; el medio elegido es un correo electrónico que debe ser más que solo un texto referente a la identificación de un suceso. Se diseña un mensaje con texto enriquecido adjuntando mayor información en el momento de:
 \begin{itemize}
     \item Conectar una cámara del módulo de cámaras al servidor.
