@@ -15,7 +15,7 @@ El sistema propuesto permite visualizar video en vivo desde cualquier dispositiv
 %     % \item Módulo SMTP (Módulo de envio de correo electrónico)
 % \end{itemize}
 
-En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema propuesto. Las cámaras de video-vigilancia se encargan de capturar los fotogramas de video y se enlazan por medio de un socket o conector (uno por cada cámara) al servidor central. Cuando es registrada una nueva conexión, el sistema notifica al usuario por medio de un correo electrónico, compartiendo información relevante sobre la conexión de una nueva cámara. El servidor central, maneja todas las conexiones, además realiza el análisis de los fotogramas de manera individual por cada cámara conectada por medio de una libreria de visión por computadora. De forma paralela se construye el video que se va a transmitir a partir de los fotogramas, siendo decodificado por medio de un conjunto de paquetes de software libre, los cuales arman las partes del archivo para el streaming de video por medio de la red. Cuando un evento (fuego, movimiento, silueta humana) es identificado, automáticamente el sistema envia la notificación correspondiente por medio de correo electronico al usuario avisando una posible situación identificada.\\
+En la figura \ref{fig:system_desing} se visualiza el esquema general del sistema propuesto. Las cámaras de video-vigilancia se encargan de capturar los fotogramas de video y se enlazan por medio de un socket o conector (uno por cada cámara) al servidor central. Cuando es registrada una nueva conexión, el sistema notifica al usuario por medio de un correo electrónico, compartiendo información relevante sobre la conexión de una nueva cámara. El servidor central, maneja todas las conexiones, además realiza el análisis de los fotogramas de manera individual por cada cámara conectada por medio de una libreria de visión por computadora. De forma paralela se construye el video que se va a transmitir a partir de los fotogramas, siendo decodificado por medio de un conjunto de paquetes de software libre, los cuales arman las partes del archivo para el streaming de video por medio de la red. Cuando un evento (fuego, movimiento, silueta humana) es identificado, automáticamente el sistema envia la notificación correspondiente por medio de correo electrónico al usuario avisando una posible situación identificada.\\
 
 \begin{figure}[H]
     \begin{center}
@@ -43,7 +43,7 @@ A partir de estos criterios planteados a continuación se definen los requerimie
     En esta fase es necesario delimitar el alcance y las capacidades del sistema planteado para la realización de la planificación inicial, estimación de tiempos, diseño y desarrollo. Para ello se define la lista de requerimientos funcionales del sistema de video-vigilancia inteligente.
     
     \begin{table}[H]
-        \caption{Lista de requerimientos funcionales }
+        \caption{Lista de requerimientos funcionales.}
         \label{tabla:req_funcionales}
         \begin{center}
             \begin{tabular}{ |c|l|} 
@@ -333,7 +333,7 @@ A continuación se describe el diagrama de secuencia de la notificación de iden
     \item Se envia la notificación por medio de correo electrónico con capturas adjuntas de los fotogramas con incidencias.
 \end{enumerate}
 
-En la figura \ref{fig:diag_sec_dec_human} se visualiza el diagrama de secuencia para la detección y notificación de la presencia de intrusos en base a la silueta huamana.
+En la figura \ref{fig:diag_sec_dec_human} se visualiza el diagrama de secuencia para la detección y notificación de la presencia de intrusos en base a la silueta humana.
 
 \begin{figure}[H]
     \begin{center}
@@ -419,7 +419,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
         \includegraphics[width=18cm]{img/capitulo_4/tcpserver.jpg}
     \end{center}
     \begin{center}
-        \caption{Diagrama de clases: Servidor}
+        \caption{Diagrama de clases: Servidor.}
         Fuente: Elaboración propia.
         \label{fig:diag_clases_server}
     \end{center}
@@ -453,7 +453,7 @@ En la figura \ref{fig:diag_clases_server} se muestra el diagrama de clases del s
             \item \textbf{get\_smtp\_server}: Obtiene la dirección por defecto del servicio de correo electrónico desde el archivo de configuración.
             \item \textbf{get\_sender\_mail}: Obtiene a dirección de correo electrónico para el envío de correos de notificación. 
             \item \textbf{get\_pass\_sender}: Obtiene la contraseña del correo electrónico para el envío de correos de notificación. 
-            \item \textbf{get\_receiver\_mail}: Obtiene la dirección de correo electronico destino.
+            \item \textbf{get\_receiver\_mail}: Obtiene la dirección de correo electrónico destino.
             \item \textbf{get\_path\_captures}: Obtiene el directorio por defecto de las capturas de los detectores desde el archivo de configuración.
         \end{itemize}
     \item \textbf{Connection}: Clase encargada de gestionar, duplicar y almacenar los fotogramas que son enviados desde el módulo de cámaras. Sus propiedades son:
